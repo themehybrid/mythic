@@ -1,5 +1,5 @@
 {
     "require": {
-	"league/plates" : "3.*"
+	"league/plates" : "v4.0.0-alpha"
     }
 }
