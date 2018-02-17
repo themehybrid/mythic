@@ -1,5 +1,6 @@
 {
     "require": {
-	"league/plates" : "v4.0.0-alpha"
+	"league/plates" : "v4.0.0-alpha",
+        "justintadlock/hybrid-core": "^4.0"
     }
 }

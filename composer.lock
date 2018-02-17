@@ -4,8 +4,46 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "5e8f831bd72baa573d6810b0cc058bdb",
+    "content-hash": "69f182c13727dd3b1798ad8f6477b7cf",
     "packages": [
+        {
+            "name": "justintadlock/hybrid-core",
+            "version": "4.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/justintadlock/hybrid-core.git",
+                "reference": "272a96f692379cca31d442c5785d1610be74013e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/justintadlock/hybrid-core/zipball/272a96f692379cca31d442c5785d1610be74013e",
+                "reference": "272a96f692379cca31d442c5785d1610be74013e",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "hybrid.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Justin Tadlock",
+                    "email": "justin@justintadlock.com",
+                    "homepage": "http://justintadlock.com"
+                }
+            ],
+            "description": "Hybrid Core WordPress theme framework",
+            "homepage": "https://themehybrid.com/hybrid-core",
+            "keywords": [
+                "wordpress"
+            ],
+            "time": "2017-07-31T22:44:46+00:00"
+        },
         {
             "name": "league/plates",
             "version": "v4.0.0-alpha",
