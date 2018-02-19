@@ -1,5 +1,5 @@
-<div class="sidebar sidebar--<?= $view->e( $name ) ?>">
+<div class="sidebar sidebar--<?= esc_attr( $data['name'] ) ?>">
 
-	<?= $view->e( $name ) ?>
+	<?= esc_html( $data['name'] ) ?>
 
 </div>

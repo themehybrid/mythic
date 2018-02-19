@@ -2,7 +2,17 @@
 
 return [
 
-	/**
+	/*
+	 |-------------------------------------------------------------------------
+	 | Theme namespace.
+	 |-------------------------------------------------------------------------
+	 |
+	 | A prefix/namespace used for filter hooks and such in the theme.
+	 |
+	 */
+	 'namespace' => get_template(),
+
+	/*
 	 |-------------------------------------------------------------------------
 	 | Theme Directory Path
 	 |-------------------------------------------------------------------------
@@ -11,9 +21,9 @@ return [
 	 |
 	 */
 
-	'dir' = trailingslashit( get_parent_theme_file_path() ),
+	'dir' => trailingslashit( get_parent_theme_file_path() ),
 
-	/**
+	/*
 	 |-------------------------------------------------------------------------
 	 | Theme Directory URI
 	 |-------------------------------------------------------------------------
@@ -22,5 +32,5 @@ return [
 	 |
 	 */
 
-	'uri' = trailingslashit( get_parent_theme_file_uri() )
+	'uri' => trailingslashit( get_parent_theme_file_uri() )
 ];

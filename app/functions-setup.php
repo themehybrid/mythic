@@ -17,6 +17,8 @@
  * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
+ namespace ABC;
+
 /**
  * Set up theme support.  This is where calls to `add_theme_support()` happen.
  *
@@ -72,7 +74,7 @@ add_action( 'after_setup_theme', function() {
 add_action( 'init', function() {
 
 	register_nav_menus( [
-		'primary' => esc_html__x( 'Primary', 'nav menu location' )
+		'primary' => esc_html_x( 'Primary', 'nav menu location' )
 	] );
 
 }, 5 );
@@ -92,7 +94,7 @@ add_action( 'init', function() {
 
 	// Register custom image sizes.
 	// @link https://developer.wordpress.org/reference/functions/add_image_size/
-	register_image_size( app()->namespace . '/medium', 750, 422, true );
+	add_image_size( app()->namespace . '/medium', 750, 422, true );
 }, 5 );
 
 /**

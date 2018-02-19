@@ -2,7 +2,7 @@
 
 namespace ABC;
 
-/**
+/*
  |-------------------------------------------------------------------------
  | Render The View.
  |-------------------------------------------------------------------------
@@ -10,5 +10,4 @@ namespace ABC;
  | Uses the engine to render the correct view located in `/resources/views`.
  |
  */
-
-echo templates()->render( 'index' );
+render_view( 'index' );
