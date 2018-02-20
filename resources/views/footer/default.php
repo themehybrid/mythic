@@ -1,16 +1,15 @@
-		</div>
+	</div><!-- .site__body -->
 
 	<footer class="site-footer">
 
-	<p class="site-footer__credit">
-		<?php printf(
-			// Translators: 1 is WordPress name/link.
-			esc_html__( 'Powered by crazy ideas and %s.' ), hybrid_get_wp_link()
-		); ?>
-	</p>
+		<p class="site-footer__credit">
+			<?php esc_html_e( 'Powered by crazy ideas and passion.' ) ?>
+		</p>
 
 	</footer>
 
-<?php wp_footer(); ?>
+</div><!-- .site -->
+
+<?php wp_footer() ?>
 </body>
 </html>

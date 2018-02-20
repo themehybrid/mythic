@@ -43,11 +43,18 @@ class View {
 		// Locate the template.
 		$this->locate();
 
-		// Make `$data` available to the template.
-		$data = $this->data;
-
 		if ( $this->template ) {
 
+			// Make `$data` available to the template.
+			${ app()->config_view['name'] } = (object) $this->data;
+
+			// Extract the data into individual variables if set.
+			if ( app()->config_view['extract'] ) {
+
+				extract( $this->data );
+			}
+
+			// Load the template.
 			include( $this->template );
 		}
 	}

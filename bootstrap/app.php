@@ -17,6 +17,8 @@ function app() {
 		$app = new App( require_once( $dir . 'config/theme.php' ) );
 
 		$app->container = new Container();
+
+		$app->config_view = require_once( $dir . 'config/view.php' );
 	}
 
 	return $app;
