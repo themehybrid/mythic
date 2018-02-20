@@ -1,7 +1,16 @@
 <?php
+/**
+ * The primary view class for handling the output of templates within the theme.
+ */
 
 namespace ABC;
 
+/**
+ * View class.
+ *
+ * @since  1.0.0
+ * @access public
+ */
 class View {
 
 	/**
@@ -97,7 +106,12 @@ class View {
 		// Fallback to `{$name}.php` as a last resort.
 		$templates[] = "resources/views/{$this->name}.php";
 
-		return apply_filters( app()->namespace . "/view_hierarchy_{$this->name}", $templates );
+		// Allow developers to overwrite the hierarchy.
+		return apply_filters(
+			app()->namespace . "/view_hierarchy_{$this->name}",
+			$templates,
+			$this
+		);
 	}
 
 	/**
