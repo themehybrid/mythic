@@ -21,6 +21,6 @@ return [
 	 |
 	 */
 
-	'extract' => false,
+	'extract' => true,
 
 ];
