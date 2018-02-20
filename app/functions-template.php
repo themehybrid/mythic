@@ -14,5 +14,5 @@ function render_view( $name, $slugs = [], $data = [] ) {
 
 function fetch_view( $name, $slugs = [], $data = [] ) {
 
-	get_view( $name, $slugs, $data )->fetch();
+	return get_view( $name, $slugs, $data )->fetch();
 }
