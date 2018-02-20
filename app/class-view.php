@@ -70,6 +70,18 @@ class View {
 	}
 
 	/**
+	 * When attempting to use the object as a string, return the template output.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return string
+	 */
+	 public function __toString() {
+
+		 return $this->fetch();
+	 }
+
+	/**
 	 * Locates the template using the core WordPress `locate_template()` function.
 	 *
 	 * @since  1.0.0
