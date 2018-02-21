@@ -141,10 +141,10 @@ class View {
 		if ( $this->template ) {
 
 			// Make `$data` available to the template.
-			${ app()->config_view['name'] } = (object) $this->data;
+			${ app()->config['view']['name'] } = (object) $this->data;
 
 			// Extract the data into individual variables if set.
-			if ( app()->config_view['extract'] ) {
+			if ( app()->config['view']['extract'] ) {
 
 				extract( $this->data );
 			}

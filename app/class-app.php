@@ -12,6 +12,8 @@ class App {
 
 	public $container = '';
 
+	public $config = [];
+
 	public function __construct( array $args = [] ) {
 
 		foreach ( array_keys( get_object_vars( $this ) ) as $key ) {
