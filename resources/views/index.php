@@ -6,12 +6,12 @@
 
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-		<?php render_view( 'entry' ) ?>
+		<?php render_view( 'entry', get_post_type() ) ?>
 
 	<?php endwhile; endif;  ?>
 
 </main>
 
-<?php render_view( 'sidebar', [ 'primary' ], [ 'name' => 'primary' ] ) ?>
+<?php render_view( 'sidebar', 'primary', [ 'name' => 'primary' ] ) ?>
 
 <?php render_view( 'footer' ) ?>

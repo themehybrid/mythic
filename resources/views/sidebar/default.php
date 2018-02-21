@@ -1,5 +1,11 @@
-<div class="sidebar sidebar--<?= esc_attr( $data->name ) ?>">
+<?php if ( is_active_sidebar( $data->name ) ) : ?>
 
-	<?= esc_html( $data->name ) ?>
+	<aside class="sidebar sidebar--<?= esc_attr( $data->name ) ?>">
 
-</div>
+		<h3 class="sidebar__title"><?= hybrid_get_sidebar_name( $data->name ) ?></h3>
+
+		<?php dynamic_sidebar( $data->name ) ?>
+
+	</aside>
+
+<?php endif ?>

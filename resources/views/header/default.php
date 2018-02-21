@@ -16,7 +16,7 @@
 			<div class="site-header__description"><?php bloginfo( 'description' ) ?></div>
 		</div>
 
-		<?php ABC\render_view( 'menu', [ 'primary' ], [ 'name' => 'primary' ] ) ?>
+		<?php ABC\render_view( 'menu', 'primary', [ 'name' => 'primary' ] ) ?>
 
 	</header>
 

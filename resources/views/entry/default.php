@@ -43,6 +43,6 @@
 			<?php wp_link_pages() ?>
 		</div>
 
-	<?php endif; ?>
+	<?php endif ?>
 
 </article>

@@ -5,15 +5,15 @@
 		<h3 class="menu__title"><?= hybrid_get_menu_name( $data->name ) ?></h3>
 
 		<?php wp_nav_menu( [
-			'theme_location'  => $data->name,
-			'container'       => '',
-			'menu_id'         => '',
-			'menu_class'      => 'menu__items',
-			'link_before'     => '<span class="menu__anchor-text">',
-			'link_after'      => '</span>',
-			'items_wrap'      => '<ul class="%2$s">%3$s</ul>',
-			'item_spacing'    => 'discard'
-		] ); ?>
+			'theme_location' => $data->name,
+			'container'      => '',
+			'menu_id'        => '',
+			'menu_class'     => 'menu__items',
+			'link_before'    => '<span class="menu__anchor-text">',
+			'link_after'     => '</span>',
+			'items_wrap'     => '<ul class="%2$s">%3$s</ul>',
+			'item_spacing'   => 'discard'
+		] ) ?>
 
 	</nav>
 
