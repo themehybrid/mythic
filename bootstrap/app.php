@@ -13,10 +13,13 @@ function app() {
 
 		require_once( $dir . 'app/class-app.php' );
 		require_once( $dir . 'app/class-container.php' );
+		require_once( $dir . 'app/class-wrapper.php' );
 
 		$app = new App( require_once( $dir . 'config/theme.php' ) );
 
 		$app->container = new Container();
+
+		$app->container->add( 'wrapper', new Wrapper() );
 
 		$app->config['view'] = require_once( $dir . 'config/view.php' );
 	}

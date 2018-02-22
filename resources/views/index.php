@@ -1,17 +1,9 @@
-<?php use function ABC\render_view; // Imports the `render_view()` function. ?>
+<?php namespace ABC; ?>
 
-<?php render_view( 'header' ) ?>
+<?php render_view( 'header', get_template_base() ) ?>
 
-<main class="site__content">
-
-	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-
-		<?php render_view( 'entry', get_post_type() ) ?>
-
-	<?php endwhile; endif;  ?>
-
-</main>
+<?php render_view( 'content', get_template_base() ) ?>
 
 <?php render_view( 'sidebar', 'primary', [ 'name' => 'primary' ] ) ?>
 
-<?php render_view( 'footer' ) ?>
+<?php render_view( 'footer', get_template_base() ) ?>

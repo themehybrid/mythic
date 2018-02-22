@@ -106,17 +106,17 @@ class View {
 		// Uses the slugs to build a hierarchy.
 		foreach ( $this->slugs as $slug ) {
 
-			$templates[] = "resources/views/{$this->name}/{$slug}.php";
+			$templates[] = "{$this->name}/{$slug}.php";
 		}
 
 		// Add in a `default.php` template.
 		if ( ! in_array( 'default', $this->slugs ) ) {
 
-			$templates[] = "resources/views/{$this->name}/default.php";
+			$templates[] = "{$this->name}/default.php";
 		}
 
 		// Fallback to `{$name}.php` as a last resort.
-		$templates[] = "resources/views/{$this->name}.php";
+		$templates[] = "{$this->name}.php";
 
 		// Allow developers to overwrite the hierarchy.
 		return apply_filters(
