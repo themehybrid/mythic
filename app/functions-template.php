@@ -38,5 +38,5 @@ function filter_templates( $templates ) {
 
 function get_template_base() {
 
-	return app()->container->get( 'wrapper' )->base;
+	return app()->get( 'wrapper' )->base;
 }

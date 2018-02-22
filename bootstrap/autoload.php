@@ -8,6 +8,9 @@ namespace ABC;
  * of the class name.  Classes with an underscore in the name are
  * hyphenated in the file name.
  *
+ * `ABC\My_Class`       = `/app/class-my-class.php`
+ * `ABC\Admin\My_Class` = `/app/admin/class-my-class.php`
+ *
  * @since  1.0.0
  * @access public
  * @param  string  $class
@@ -22,8 +25,9 @@ spl_autoload_register( function( $class ) {
 	}
 
 	$file = strtolower(
-		// Remove the namespace and replace underscores with hyphens.
-		str_replace( [ $namespace, '_' ], [ '', '-' ], $class )
+		// Remove the namespace, replace underscores with hyphens,
+		// and replace backslashes with forward slashes.
+		str_replace( [ $namespace, '_', '\\' ], [ '', '-', '/' ], $class )
 	);
 
 	$file = get_parent_theme_file_path( "app/class-{$file}.php" );

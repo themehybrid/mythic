@@ -2,7 +2,14 @@
 
 namespace ABC;
 
-// Single instance of our app.
+/**
+ * The single instance of the app. Use this function for quickly working
+ * with data.  Returns an instance of the `App` class.
+ *
+ * @since  1.0.0
+ * @access public
+ * @return object
+ */
 function app() {
 
 	static $app = null;
@@ -11,19 +18,36 @@ function app() {
 
 		$dir = trailingslashit( get_parent_theme_file_path() );
 
-		$app = new App( require_once( $dir . 'config/theme.php' ) );
+		$app = new App();
 
-		$app->container = new Container();
+		$app->add( 'wrapper', new Wrapper() );
 
-		$app->container->add( 'wrapper', new Wrapper() );
+		$app->config = [
+			'theme' => new Registry( $dir . 'config/theme.php' ),
+			'view'  => new Registry( $dir . 'config/view.php'  )
+		];
 
-		$app->config['view'] = require_once( $dir . 'config/view.php' );
+		// Copy some theme config over as the app properties.
+		$app->dir       = $app->config['theme']['dir'];
+		$app->uri       = $app->config['theme']['uri'];
+		$app->namespace = $app->config['theme']['namespace'];
 	}
 
 	return $app;
 }
 
+// Load the app.
 app();
 
-require_once( app()->dir . 'app/functions-setup.php' );
-require_once( app()->dir . 'app/functions-template.php' );
+// Load functions files.
+array_map(
+	function( $file ) {
+		require_once( get_parent_theme_file_path( "app/{$file}.php" ) );
+	},
+	// Add file names of files to auto-load from the `/app` folder.
+	// Classes are auto-loaded, so we only need this for functions-files.
+	[
+		'functions-setup',
+		'functions-template'
+	]
+);

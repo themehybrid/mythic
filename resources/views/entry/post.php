@@ -1,6 +1,6 @@
 <article class="entry">
 
-	<?php if ( is_singular( get_the_ID() ) ) : ?>
+	<?php if ( is_single( get_the_ID() ) ) : ?>
 
 		<header class="entry__header">
 			<h1 class="entry__title"><?php single_post_title() ?></h1>

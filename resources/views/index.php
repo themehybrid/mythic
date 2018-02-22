@@ -1,9 +1,13 @@
-<?php namespace ABC; ?>
+<?php namespace ABC;
 
-<?php render_view( 'header', get_template_base() ) ?>
+// Load header template.
+render_view( 'header', get_template_base() );
 
-<?php render_view( 'content', get_template_base() ) ?>
+// Load content template.
+render_view( 'content', get_template_base() );
 
-<?php render_view( 'sidebar', 'primary', [ 'name' => 'primary' ] ) ?>
+// Load sidebar template.
+render_view( 'sidebar', 'primary', [ 'name' => 'primary' ] );
 
-<?php render_view( 'footer', get_template_base() ) ?>
+// Load footer template.
+render_view( 'footer', get_template_base() );
