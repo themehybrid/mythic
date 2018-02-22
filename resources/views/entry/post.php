@@ -27,7 +27,7 @@
 	<?php else : ?>
 
 		<header class="entry__header">
-			<h2 class="entry__title"><a href="<?php the_permalink() ?>"><?php the_title() ?></h2>
+			<h2 class="entry__title"><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h2>
 
 			<div class="entry__byline">
 				<?php hybrid_post_author( array( 'wrap' => '<span class="entry__author">%2$s</span>' ) ) ?>
