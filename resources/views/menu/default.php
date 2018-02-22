@@ -1,4 +1,3 @@
-hello
 <?php if ( has_nav_menu( $data->name ) ) : ?>
 
 	<nav <?php hybrid_attr( 'menu', $data->name, array( 'class' => 'menu menu--primary' ) ) ?>>
