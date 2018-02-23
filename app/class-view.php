@@ -1,6 +1,23 @@
 <?php
 /**
- * The primary view class for handling the output of templates within the theme.
+ * View class.
+ *
+ * This file maintains the `View` class.  It's used for setting up and rendering
+ * theme template files.  Views are a bit like a suped-up version of the core
+ * WordPress `get_template_part()` function.  However, it allows you to build a
+ * hierarchy of potential templates as well as pass in any arbitrary data to your
+ * templates for use.
+ *
+ * Every effort has been made to make this compliant with WordPress.org theme
+ * directory guidelines by utilizing the core `locate_template()` function as
+ * well as providing compatible action hooks with `get_template_part()` and
+ * other `get_*()` functions for templates.
+ *
+ * @package   ABC
+ * @author    Justin Tadlock <justintadlock@gmail.com>
+ * @copyright Copyright (c) 2018, Justin Tadlock
+ * @link      https://themehybrid.com/themes/abc
+ * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
 namespace ABC;
@@ -135,6 +152,9 @@ class View {
 	 */
 	public function render() {
 
+		// Compatibility with core WP's template parts.
+		$this->template_part_compat();
+
 		// Locate the template.
 		$this->locate();
 
@@ -166,5 +186,33 @@ class View {
 		ob_start();
 		$this->render();
 		return ob_get_clean();
+	}
+
+	/**
+	 * Fires the core WP action hooks for template parts.
+	 *
+	 * Note that WP refers to `$name` and `$slug` differently than we do.
+	 * They're the opposite of what we use in our function.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return void
+	 */
+	protected function template_part_compat() {
+
+		// The slug is a string in WP and we have an array. So, we're
+		// just going to use the first item of the array in this case.
+		$slug = $this->slugs ? reset( $this->slugs ) : null;
+
+		// Compat with `get_header|footer|sidebar()`.
+		if ( in_array( $this->name, [ 'header', 'footer', 'sidebar' ] ) ) {
+
+			do_action( "get_{$this->name}", $slug );
+
+		// Compat with `get_template_part()`.
+		} else {
+
+			do_action( "get_template_part_{$this->name}", $this->name, $slug );
+		}
 	}
 }
