@@ -23,8 +23,8 @@ function app() {
 		$app->add( 'wrapper', new Wrapper() );
 
 		$app->config = [
-			'theme' => new Registry( $dir . 'config/theme.php' ),
-			'view'  => new Registry( $dir . 'config/view.php'  )
+			'theme' => new Registry( require_once( $dir . 'config/theme.php' ) ),
+			'view'  => new Registry( require_once( $dir . 'config/view.php'  ) )
 		];
 
 		// Copy some theme config over as the app properties.
