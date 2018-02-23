@@ -8,6 +8,12 @@
 
 			<?php render_view( 'entry', get_post_type() ) ?>
 
+			<?php if ( is_singular() ) : ?>
+
+				<?php comments_template( '/resources/views/partials/comments.php' ) ?>
+
+			<?php endif ?>
+
 		<?php endwhile ?>
 
 	<?php endif ?>

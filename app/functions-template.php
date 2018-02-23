@@ -40,3 +40,14 @@ function get_template_base() {
 
 	return app()->get( 'wrapper' )->base;
 }
+
+function get_meta_sep( $sep = '' ) {
+
+	return apply_filters(
+		app()->namespace . '/meta_sep',
+		sprintf(
+			'<span class="sep">%s</span>',
+			$sep ? $sep : _x( '&middot;', 'meta separator' )
+		)
+	);
+}
