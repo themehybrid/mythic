@@ -99,6 +99,16 @@ class Registry implements \ArrayAccess {
 		return $this->collection;
 	}
 
+	/**
+	 * Magic method when trying to set a property. Assume the property
+	 * is part of the collection and register it.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @param  string  $name
+	 * @param  mixed   $value
+	 * @return void
+	 */
 	public function __set( $name, $value ) {
 		$this->register( $name, $value );
 	}
