@@ -1,4 +1,30 @@
 <?php
+/**
+ * Query template wrapper class.
+ *
+ * This is a wrapper for the queried template in core WordPress. This is
+ * the top-level template loaded.  This wrapper looks for templates in
+ * the `/resources/views/content` folder by default.  This is the "content"
+ * of the page and represents the "base" template.  The wrapper template
+ * (or what might be called the "layout" template) is located in the
+ * `/resources/views` folder.  The wrapper template becomes the top-level
+ * template on output.
+ *
+ * This allows theme authors to build the wrapping HTML once without having
+ * to repeat common code while building unique content templates when they
+ * need to build something custom.  The content templates utilize the normal
+ * template hierarchy.
+ *
+ * It should be noted that plugins that filter `template_include` to overwrite
+ * the final template should be respected.  In those cases, the wrapper will
+ * attempt to bail and let the plugin do its own thing.
+ *
+ * @package   ABC
+ * @author    Justin Tadlock <justintadlock@gmail.com>
+ * @copyright Copyright (c) 2018, Justin Tadlock
+ * @link      https://themehybrid.com/themes/abc
+ * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+ */
 
 namespace ABC;
 
@@ -19,10 +45,10 @@ class Wrapper {
 	 *
 	 * @link   https://developer.wordpress.org/reference/hooks/type_template_hierarchy/
 	 * @since  1.0.0
-	 * @access public
+	 * @access protected
 	 * @var    array
 	 */
-	public $types = [
+	protected $types = [
 		'index',
 		'404',
 		'archive',
@@ -101,16 +127,19 @@ class Wrapper {
 	 */
 	public function template_include( $template ) {
 
-		if ( ! is_string( $template ) )
+		// If the template is not a string at this point, it either
+		// doesn't exist or a plugin is telling us it's doing
+		// something custom.
+		if ( ! is_string( $template ) ) {
+
 			return $template;
+		}
 
 		// Strip the template and stylesheet directory from the file name.
 		$file = ltrim( str_replace( [ get_template_directory(), get_stylesheet_directory() ], '', $template ), '/' );
 
-		$needle = 'resources/views/content';
-
 		// Check that our template is a content template from the theme.
-		if ( '' != $needle && 0 === strpos( $file, $needle ) ) {
+		if ( 0 === strpos( $file, 'resources/views/content' ) ) {
 
 			// Get the file basename and remove the `.php` file extension to get the base.
 			$this->base = substr( basename( $template ), 0, -4 );
@@ -118,6 +147,7 @@ class Wrapper {
 			// Build a hierarchy of wrapper templates.
 			$templates = [ "{$this->base}.php" ];
 
+			// Always fall back to `index.php`.
 			if ( 'index' !== $this->base ) {
 
 				$templates[] = 'index.php';

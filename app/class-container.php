@@ -1,4 +1,17 @@
 <?php
+/**
+ * Container class.
+ *
+ * This file maintains the `Container` class, which handles storing
+ * objects for later use.  It's primarily designed for handling
+ * single instances to avoid globals or singletons.
+ *
+ * @package   ABC
+ * @author    Justin Tadlock <justintadlock@gmail.com>
+ * @copyright Copyright (c) 2018, Justin Tadlock
+ * @link      https://themehybrid.com/themes/abc
+ * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+ */
 
 namespace ABC;
 
@@ -28,7 +41,7 @@ class Container {
 	 * @param  object  $concrete
 	 * @return void
 	 */
-	public function add( $alias, $concrete = null ) {
+	public function add( $alias, $concrete = null, $share = false ) {
 
 		$this->definitions[ $alias ] = is_null( $concrete ) ? $alias : $concrete;
 	}

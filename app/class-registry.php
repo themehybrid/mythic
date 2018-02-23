@@ -1,4 +1,18 @@
 <?php
+/**
+ * Registry class.
+ *
+ * This file houses the `Registry` class, which is a class used for storing
+ * collections of data.  Generally speaking, it was built for storing an
+ * array of key/value pairs.  Values can be any type of value.  Keys should
+ * be named rather than numeric if you need easy access.
+ *
+ * @package   ABC
+ * @author    Justin Tadlock <justintadlock@gmail.com>
+ * @copyright Copyright (c) 2018, Justin Tadlock
+ * @link      https://themehybrid.com/themes/abc
+ * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+ */
 
 namespace ABC;
 
@@ -110,34 +124,99 @@ class Registry implements \ArrayAccess {
 	 * @return void
 	 */
 	public function __set( $name, $value ) {
+
 		$this->register( $name, $value );
 	}
 
+	/**
+	 * Magic method when trying to unset a property.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @param  string  $name
+	 * @return void
+	 */
 	public function __unset( $name ) {
+
 		$this->unregister( $name );
 	}
 
+	/**
+	 * Magic method when trying to check if a property exists.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @param  string  $name
+	 * @return bool
+	 */
 	public function __isset( $name ) {
+
 		return $this->exists( $name );
 	}
 
+	/**
+	 * Magic method when trying to get a property.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @param  string  $name
+	 * @return mixed
+	 */
 	public function __get( $name ) {
+
 		return $this->get( $name );
 	}
 
+	/**
+	 * Sets a property via `ArrayAccess`.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @param  string  $name
+	 * @param  mixed   $value
+	 * @return void
+	 */
 	public function offsetSet( $name, $value ) {
+
 		$this->register( $name, $value );
 	}
 
+	/**
+	 * Unsets a property via `ArrayAccess`.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @param  string  $name
+	 * @return void
+	 */
 	public function offsetUnset( $name ) {
+
 		$this->unregister( $name );
 	}
 
+	/**
+	 * Checks if a property exists via `ArrayAccess`.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @param  string  $name
+	 * @return bool
+	 */
 	public function offsetExists( $name ) {
+
 		return $this->exists( $name );
 	}
 
+	/**
+	 * Returns a property via `ArrayAccess`.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @param  string  $name
+	 * @return mixed
+	 */
 	public function offsetGet( $name ) {
+
 		return $this->get( $name );
 	}
 }
