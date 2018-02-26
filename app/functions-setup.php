@@ -141,7 +141,7 @@ add_action( 'wp_enqueue_scripts', function() {
 
 	wp_enqueue_script(
 		app()->namespace . '/app',
-		config( 'theme' )->uri . 'resources/dist/js/app.min.js',
+		config( 'theme' )->uri . 'resources/dist/scripts/app.min.js',
 		null,
 		config( 'theme' )->version,
 		true
@@ -149,7 +149,7 @@ add_action( 'wp_enqueue_scripts', function() {
 
 	wp_enqueue_style(
 		app()->namespace . '/screen',
-		config( 'theme' )->uri . 'resources/dist/css/screen.min.css',
+		config( 'theme' )->uri . 'resources/dist/styles/screen.min.css',
 		null,
 		config( 'theme' )->version
 	);

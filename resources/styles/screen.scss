@@ -1,0 +1,63 @@
+/**
+ * This is the primary stylesheet. We don't actually write any styles here.
+ * Instead, we import all of our styles from partials within the sub-folders.
+ * This file is set up based on the Inverted Triangle CSS (ITCSS) system,
+ * which gets more specific as we drill down each layer.  This keeps your
+ * style code lean and organized.
+ *
+ * The bulk of your code should be within the `/components` folder.  By
+ * default, we follow the Block-Element-Modifier (BEM) system in our HTML.
+ * Each "block" is a "component" in our CSS.
+ */
+
+// Settings.
+//
+// Settings handle the configuration and don't output CSS. This is a good
+// place to define things like variables.
+
+@import 'settings/index';
+
+// Tools.
+//
+// These are used throughout the code but don't output CSS on their own.
+// Things like mixins and extensions go here.
+
+@import 'tools/index';
+
+// Generic.
+//
+// This is the first point that real CSS is output. Resets, normalization,
+// fonts, etc. are best handled here. These are the base styles that other
+// styles will build upon.
+
+@import 'generic/index';
+
+// Elements.
+//
+// Elements are (or should be) class-less designs for the base
+// HTML elements.
+
+@import 'elements/index';
+
+// Components.
+//
+// Components make up the bulk of the actual theme design.  Nearly
+// every piece of the design is some type of component, whether it's
+// a one-off or reusable block of code.
+
+@import 'components/index';
+
+// Vendor.
+//
+// Vendor files handle code for specific plugins and third-party
+// scripts that would overwrite earlier styles.
+
+@import 'vendor/index';
+
+// Utilities.
+//
+// Utilities are helper classes and overrides.  This gets loaded last.
+// If necessary, this is the only place where `!important` rules should
+// go, but only if necessary.
+
+@import 'utilities/index';
