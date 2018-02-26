@@ -22,7 +22,7 @@ namespace ABC;
  * @since  1.0.0
  * @access public
  */
-class Registry implements \ArrayAccess {
+class Collection implements \ArrayAccess {
 
 	/**
 	 * Array of items in the collection.
@@ -31,19 +31,19 @@ class Registry implements \ArrayAccess {
 	 * @access protected
 	 * @var    array
 	 */
-	protected $collection = [];
+	protected $items = [];
 
 	/**
 	 * Constructor method.
 	 *
 	 * @since  1.0.0
 	 * @access public
-	 * @param  array  $collection
+	 * @param  array  $items
 	 * @return void
 	 */
-	public function __construct( $collection = [] ) {
+	public function __construct( $items = [] ) {
 
-		$this->collection = $collection;
+		$this->items = $items;
 	}
 
 	/**
@@ -55,37 +55,37 @@ class Registry implements \ArrayAccess {
 	 * @param  mixed   $value
 	 * @return void
 	 */
-	public function register( $name, $value ) {
+	public function add( $name, $value ) {
 
-		if ( ! $this->exists( $name ) )
-			$this->collection[ $name ] = $value;
+		if ( ! $this->has( $name ) )
+			$this->items[ $name ] = $value;
 	}
 
 	/**
-	 * Unregisters an item.
+	 * Unadds an item.
 	 *
 	 * @since  1.0.0
 	 * @access public
 	 * @param  string  $name
 	 * @return void
 	 */
-	public function unregister( $name ) {
+	public function remove( $name ) {
 
-		if ( $this->exists( $name ) )
-			unset( $this->collection[ $name ] );
+		if ( $this->has( $name ) )
+			unset( $this->items[ $name ] );
 	}
 
 	/**
-	 * Checks if an item exists.
+	 * Checks if an item has.
 	 *
 	 * @since  1.0.0
 	 * @access public
 	 * @param  string  $name
 	 * @return bool
 	 */
-	public function exists( $name ) {
+	public function has( $name ) {
 
-		return isset( $this->collection[ $name ] );
+		return isset( $this->items[ $name ] );
 	}
 
 	/**
@@ -98,7 +98,7 @@ class Registry implements \ArrayAccess {
 	 */
 	public function get( $name ) {
 
-		return $this->exists( $name ) ? $this->collection[ $name ] : false;
+		return $this->has( $name ) ? $this->items[ $name ] : false;
 	}
 
 	/**
@@ -108,14 +108,14 @@ class Registry implements \ArrayAccess {
 	 * @access public
 	 * @return array
 	 */
-	public function get_collection() {
+	public function get_items() {
 
-		return $this->collection;
+		return $this->items;
 	}
 
 	/**
 	 * Magic method when trying to set a property. Assume the property
-	 * is part of the collection and register it.
+	 * is part of the collection and add it.
 	 *
 	 * @since  1.0.0
 	 * @access public
@@ -125,7 +125,7 @@ class Registry implements \ArrayAccess {
 	 */
 	public function __set( $name, $value ) {
 
-		$this->register( $name, $value );
+		$this->add( $name, $value );
 	}
 
 	/**
@@ -138,11 +138,11 @@ class Registry implements \ArrayAccess {
 	 */
 	public function __unset( $name ) {
 
-		$this->unregister( $name );
+		$this->remove( $name );
 	}
 
 	/**
-	 * Magic method when trying to check if a property exists.
+	 * Magic method when trying to check if a property has.
 	 *
 	 * @since  1.0.0
 	 * @access public
@@ -151,7 +151,7 @@ class Registry implements \ArrayAccess {
 	 */
 	public function __isset( $name ) {
 
-		return $this->exists( $name );
+		return $this->has( $name );
 	}
 
 	/**
@@ -178,7 +178,7 @@ class Registry implements \ArrayAccess {
 	 */
 	public function offsetSet( $name, $value ) {
 
-		$this->register( $name, $value );
+		$this->add( $name, $value );
 	}
 
 	/**
@@ -191,11 +191,11 @@ class Registry implements \ArrayAccess {
 	 */
 	public function offsetUnset( $name ) {
 
-		$this->unregister( $name );
+		$this->remove( $name );
 	}
 
 	/**
-	 * Checks if a property exists via `ArrayAccess`.
+	 * Checks if a property has via `ArrayAccess`.
 	 *
 	 * @since  1.0.0
 	 * @access public
@@ -204,7 +204,7 @@ class Registry implements \ArrayAccess {
 	 */
 	public function offsetExists( $name ) {
 
-		return $this->exists( $name );
+		return $this->has( $name );
 	}
 
 	/**

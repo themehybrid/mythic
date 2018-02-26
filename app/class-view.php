@@ -79,7 +79,7 @@ class View {
 	 * @param  object  $data
 	 * @return object
 	 */
-	public function __construct( $name, $slugs = [], Registry $data = null ) {
+	public function __construct( $name, $slugs = [], Collection $data = null ) {
 
 		$this->name  = $name;
 		$this->slugs = (array) apply_filters( app()->namespace . "/view_slugs_{$this->name}", $slugs );
@@ -164,9 +164,9 @@ class View {
 			${ config( 'view' )->name } = $this->data;
 
 			// Extract the data into individual variables if set.
-			if ( config( 'view' )->extract && is_object( $this->data ) ) {
+			if ( config( 'view' )->extract && $this->data instanceof Collection ) {
 
-				extract( $this->data->get_collection() );
+				extract( $this->data->get_items() );
 			}
 
 			// Load the template.

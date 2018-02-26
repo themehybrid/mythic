@@ -28,11 +28,11 @@ app()->add( 'wrapper', function( $container ) {
 
 // Add configuration.
 app()->add( 'config.theme', function() {
-	return new Registry( require_once( get_parent_theme_file_path( 'config/theme.php' ) ) );
+	return new Collection( require_once( get_parent_theme_file_path( 'config/theme.php' ) ) );
 } );
 
 app()->add( 'config.view', function() {
-	return new Registry( require_once( get_parent_theme_file_path( 'config/view.php' ) ) );
+	return new Collection( require_once( get_parent_theme_file_path( 'config/view.php' ) ) );
 } );
 
 // Use the theme namespace as the overall app namespace.

@@ -25,7 +25,7 @@ namespace ABC;
  */
 function get_view( $name, $slugs = [], $data = [] ) {
 
-	return new View( $name, $slugs, new Registry( $data ) );
+	return new View( $name, $slugs, new Collection( $data ) );
 }
 
 /**
