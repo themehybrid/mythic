@@ -1,10 +1,24 @@
 <?php
+/**
+ * App bootstrap.
+ *
+ * This file bootstraps the theme.  It sets up the single, one-true instance
+ * of the app, which can be accessed via the `app()` function.  The file is
+ * used to configure any "global" configuration and load any functions-files
+ * that are needed for the theme.
+ *
+ * @package   ABC
+ * @author    Justin Tadlock <justintadlock@gmail.com>
+ * @copyright Copyright (c) 2018, Justin Tadlock
+ * @link      https://themehybrid.com/themes/abc
+ * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+ */
 
 namespace ABC;
 
 /**
  * The single instance of the app. Use this function for quickly working
- * with data.  Returns an instance of the `App` class.
+ * with data.  Returns an instance of the `Container` class.
  *
  * @since  1.0.0
  * @access public
@@ -23,15 +37,18 @@ function app() {
 
 // Add our theme wrapper.
 app()->add( 'wrapper', function( $container ) {
+
 	return new Wrapper();
 } );
 
 // Add configuration.
-app()->add( 'config.theme', function() {
+app()->add( 'config.theme', function( $container ) {
+
 	return new Collection( require_once( get_parent_theme_file_path( 'config/theme.php' ) ) );
 } );
 
 app()->add( 'config.view', function() {
+
 	return new Collection( require_once( get_parent_theme_file_path( 'config/view.php' ) ) );
 } );
 

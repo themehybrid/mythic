@@ -5,9 +5,9 @@
  * This file holds basic theme setup functions executed on appropriate hooks with
  * some opinionated priorities based on theme dev, particularly working with child
  * theme devs/users, over the years.  I've also decided to use anonymous functions
- * (closures) to keep these from being easily unhooked.  WordPress has an appropriate
- * API for unregistering, removing, or modifying all of the things in this file.
- * Those APIs should be used instead of attempting to use `remove_action()`.
+ * to keep these from being easily unhooked.  WordPress has an appropriate API for
+ * unregistering, removing, or modifying all of the things in this file.  Those APIs
+ * should be used instead of attempting to use `remove_action()`.
  *
  * @package    ABC
  * @subpackage Includes
@@ -17,7 +17,7 @@
  * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
- namespace ABC;
+namespace ABC;
 
 /**
  * Set up theme support.  This is where calls to `add_theme_support()` happen.
@@ -28,7 +28,13 @@
  */
 add_action( 'after_setup_theme', function() {
 
+	// Add title tag support.
+	// @link https://developer.wordpress.org/reference/functions/add_theme_support/#title-tag
 	add_theme_support( 'title-tag' );
+
+	// Add selective refresh for widgets.
+	// @link https://developer.wordpress.org/reference/functions/add_theme_support/#customize-selective-refresh-widgets
+	add_theme_support( 'customize-selective-refresh-widgets' );
 
 }, 5 );
 
@@ -38,6 +44,7 @@ add_action( 'after_setup_theme', function() {
  * is so that child themes can more easily overwrite this feature.  Note that
  * overwriting the background should be done *before* rather than after.
  *
+ * @link   https://developer.wordpress.org/reference/functions/add_theme_support/#custom-background
  * @since  1.0.0
  * @access public
  * @return void
@@ -54,6 +61,7 @@ add_action( 'after_setup_theme', function() {
  * is so that child themes can more easily overwrite this feature.  Note that
  * overwriting the header should be done *before* rather than after.
  *
+ * @link   https://developer.wordpress.org/reference/functions/add_theme_support/#custom-header
  * @since  1.0.0
  * @access public
  * @return void
@@ -67,6 +75,7 @@ add_action( 'after_setup_theme', function() {
 /**
  * Register menus.
  *
+ * @link   https://developer.wordpress.org/reference/functions/register_nav_menus/
  * @since  1.0.0
  * @access public
  * @return void
@@ -100,6 +109,7 @@ add_action( 'init', function() {
 /**
  * Register sidebars.
  *
+ * @link   https://developer.wordpress.org/reference/functions/register_sidebar/
  * @since  1.0.0
  * @access public
  * @return void
@@ -131,17 +141,17 @@ add_action( 'wp_enqueue_scripts', function() {
 
 	wp_enqueue_script(
 		app()->namespace . '/app',
-		app()->uri . 'resources/dist/js/app.min.js',
+		config( 'theme' )->uri . 'resources/dist/js/app.min.js',
 		null,
-		app()->version,
+		config( 'theme' )->version,
 		true
 	);
 
 	wp_enqueue_style(
 		app()->namespace . '/screen',
-		app()->uri . 'resources/dist/css/screen.min.css',
+		config( 'theme' )->uri . 'resources/dist/css/screen.min.css',
 		null,
-		app()->version
+		config( 'theme' )->version
 	);
 
 }, 5 );

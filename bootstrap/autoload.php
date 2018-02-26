@@ -1,15 +1,26 @@
 <?php
+/**
+ * Class autoloader.
+ *
+ * This file holds the autoloader.  Change it as you see fit for naming
+ * your classes and class files.
+ *
+ * @package   ABC
+ * @author    Justin Tadlock <justintadlock@gmail.com>
+ * @copyright Copyright (c) 2018, Justin Tadlock
+ * @link      https://themehybrid.com/themes/abc
+ * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+ */
 
 namespace ABC;
 
 /**
  * Autoloader for the theme.  Looks in the `/app` folder for classes.
  * File names are prefixed with `class-` and are a lowercased version
- * of the class name.  Classes with an underscore in the name are
- * hyphenated in the file name.
+ * of the class name.  Classes are broken up by uppercase letter.
  *
- * `ABC\My_Class`       = `/app/class-my-class.php`
- * `ABC\Admin\My_Class` = `/app/admin/class-my-class.php`
+ * `ABC\MyClass`       = `/app/class-my-class.php`
+ * `ABC\Admin\MyClass` = `/app/admin/class-my-class.php`
  *
  * @since  1.0.0
  * @access public
