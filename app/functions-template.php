@@ -123,6 +123,19 @@ function config( $name ) {
 }
 
 /**
+ * Wrapper function for the `Collection` class.
+ *
+ * @since  1.0.0
+ * @access public
+ * @param  array   $items
+ * @return object
+ */
+function collect( $items = [] ) {
+
+	return new Collection( $items );
+}
+
+/**
  * Returns the metadata separator.
  *
  * @since  1.0.0

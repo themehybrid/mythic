@@ -25,7 +25,7 @@ namespace ABC;
 class Collection extends \ArrayObject {
 
 	/**
-	 * Register an item.
+	 * Add an item.
 	 *
 	 * @since  1.0.0
 	 * @access public
@@ -39,7 +39,7 @@ class Collection extends \ArrayObject {
 	}
 
 	/**
-	 * Unadds an item.
+	 * Removes an item.
 	 *
 	 * @since  1.0.0
 	 * @access public
@@ -52,7 +52,7 @@ class Collection extends \ArrayObject {
 	}
 
 	/**
-	 * Checks if an item has.
+	 * Checks if an item exists.
 	 *
 	 * @since  1.0.0
 	 * @access public
@@ -78,7 +78,7 @@ class Collection extends \ArrayObject {
 	}
 
 	/**
-	 * Returns the entire collection.
+	 * Returns the collection of items.
 	 *
 	 * @since  1.0.0
 	 * @access public
@@ -142,5 +142,4 @@ class Collection extends \ArrayObject {
 
 		return $this->offSetGet( $name );
 	}
-
 }
