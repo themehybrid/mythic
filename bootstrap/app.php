@@ -15,29 +15,31 @@ function app() {
 	static $app = null;
 
 	if ( is_null( $app ) ) {
-
-		$dir = trailingslashit( get_parent_theme_file_path() );
-
-		$app = new App();
-
-		$app->add( 'wrapper', new Wrapper() );
-
-		$app->config = [
-			'theme' => new Registry( require_once( $dir . 'config/theme.php' ) ),
-			'view'  => new Registry( require_once( $dir . 'config/view.php'  ) )
-		];
-
-		// Copy some theme config over as the app properties.
-		$app->dir       = $app->config['theme']['dir'];
-		$app->uri       = $app->config['theme']['uri'];
-		$app->namespace = $app->config['theme']['namespace'];
+		$app = new Container();
 	}
 
 	return $app;
 }
 
-// Load the app.
-app();
+// Add our theme wrapper.
+app()->add( 'wrapper', function( $container ) {
+	return new Wrapper();
+} );
+
+// Add configuration.
+app()->add( 'config.theme', function() {
+	return new Registry( require_once( get_parent_theme_file_path( 'config/theme.php' ) ) );
+} );
+
+app()->add( 'config.view', function() {
+	return new Registry( require_once( get_parent_theme_file_path( 'config/view.php' ) ) );
+} );
+
+// Use the theme namespace as the overall app namespace.
+app()->add( 'namespace', app()->get( 'config.theme' )->namespace );
+
+// Resolve theme wrapper.
+app()->get( 'wrapper' );
 
 // Load functions files.
 array_map(
@@ -51,3 +53,6 @@ array_map(
 		'functions-template'
 	]
 );
+
+// Runs after the app has been bootstrapped.
+do_action( app()->namespace . '/app_bootstrapped', app() );

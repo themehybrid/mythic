@@ -1,5 +1,6 @@
 {
     "require": {
-	"justintadlock/hybrid-core": "^4.0"
+	"justintadlock/hybrid-core": "^4.0",
+        "psr/container": "^1.0"
     }
 }

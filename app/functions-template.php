@@ -25,7 +25,7 @@ namespace ABC;
  */
 function get_view( $name, $slugs = [], $data = [] ) {
 
-	return new View( $name, $slugs, $data );
+	return new View( $name, $slugs, new Registry( $data ) );
 }
 
 /**
@@ -107,6 +107,19 @@ function filter_templates( $templates ) {
 function get_template_base() {
 
 	return app()->get( 'wrapper' )->base;
+}
+
+/**
+ * Returns a configuration object.
+ *
+ * @since  1.0.0
+ * @access public
+ * @param  string  $name
+ * @return object
+ */
+function config( $name ) {
+
+	return app()->get( "config.{$name}" );
 }
 
 /**

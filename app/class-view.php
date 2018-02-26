@@ -76,14 +76,14 @@ class View {
 	 * @access public
 	 * @param  string  $name
 	 * @param  array   $slugs
-	 * @param  array   $data
+	 * @param  object  $data
 	 * @return object
 	 */
-	public function __construct( $name, $slugs = [], $data = [] ) {
+	public function __construct( $name, $slugs = [], Registry $data = null ) {
 
 		$this->name  = $name;
 		$this->slugs = (array) apply_filters( app()->namespace . "/view_slugs_{$this->name}", $slugs );
-		$this->data  = (array) apply_filters( app()->namespace . "/view_data_{$this->name}",  $data  );
+		$this->data  = apply_filters( app()->namespace . "/view_data_{$this->name}",  $data  );
 	}
 
 	/**
@@ -161,12 +161,12 @@ class View {
 		if ( $this->template ) {
 
 			// Make `$data` available to the template.
-			${ app()->config['view']['name'] } = (object) $this->data;
+			${ config( 'view' )->name } = $this->data;
 
 			// Extract the data into individual variables if set.
-			if ( app()->config['view']['extract'] ) {
+			if ( config( 'view' )->extract && is_object( $this->data ) ) {
 
-				extract( $this->data );
+				extract( $this->data->get_collection() );
 			}
 
 			// Load the template.
