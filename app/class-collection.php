@@ -1,8 +1,8 @@
 <?php
 /**
- * Registry class.
+ * Collection class.
  *
- * This file houses the `Registry` class, which is a class used for storing
+ * This file houses the `Collection` class, which is a class used for storing
  * collections of data.  Generally speaking, it was built for storing an
  * array of key/value pairs.  Values can be any type of value.  Keys should
  * be named rather than numeric if you need easy access.
@@ -22,29 +22,7 @@ namespace ABC;
  * @since  1.0.0
  * @access public
  */
-class Collection implements \ArrayAccess {
-
-	/**
-	 * Array of items in the collection.
-	 *
-	 * @since  1.0.0
-	 * @access protected
-	 * @var    array
-	 */
-	protected $items = [];
-
-	/**
-	 * Constructor method.
-	 *
-	 * @since  1.0.0
-	 * @access public
-	 * @param  array  $items
-	 * @return void
-	 */
-	public function __construct( $items = [] ) {
-
-		$this->items = $items;
-	}
+class Collection extends \ArrayObject {
 
 	/**
 	 * Register an item.
@@ -57,8 +35,7 @@ class Collection implements \ArrayAccess {
 	 */
 	public function add( $name, $value ) {
 
-		if ( ! $this->has( $name ) )
-			$this->items[ $name ] = $value;
+		$this->offsetSet( $name, $value );
 	}
 
 	/**
@@ -71,8 +48,7 @@ class Collection implements \ArrayAccess {
 	 */
 	public function remove( $name ) {
 
-		if ( $this->has( $name ) )
-			unset( $this->items[ $name ] );
+		$this->offsetUnset( $name );
 	}
 
 	/**
@@ -85,7 +61,7 @@ class Collection implements \ArrayAccess {
 	 */
 	public function has( $name ) {
 
-		return isset( $this->items[ $name ] );
+		return $this->offsetExists( $name );
 	}
 
 	/**
@@ -98,7 +74,7 @@ class Collection implements \ArrayAccess {
 	 */
 	public function get( $name ) {
 
-		return $this->has( $name ) ? $this->items[ $name ] : false;
+		return $this->offsetGet( $name );
 	}
 
 	/**
@@ -110,7 +86,7 @@ class Collection implements \ArrayAccess {
 	 */
 	public function get_items() {
 
-		return $this->items;
+		return $this->getArrayCopy();
 	}
 
 	/**
@@ -125,7 +101,7 @@ class Collection implements \ArrayAccess {
 	 */
 	public function __set( $name, $value ) {
 
-		$this->add( $name, $value );
+		$this->offsetSet( $name, $value );
 	}
 
 	/**
@@ -138,7 +114,7 @@ class Collection implements \ArrayAccess {
 	 */
 	public function __unset( $name ) {
 
-		$this->remove( $name );
+		$this->offsetUnset( $name );
 	}
 
 	/**
@@ -151,7 +127,7 @@ class Collection implements \ArrayAccess {
 	 */
 	public function __isset( $name ) {
 
-		return $this->has( $name );
+		return $this->offsetExists( $name );
 	}
 
 	/**
@@ -164,59 +140,7 @@ class Collection implements \ArrayAccess {
 	 */
 	public function __get( $name ) {
 
-		return $this->get( $name );
+		return $this->offSetGet( $name );
 	}
 
-	/**
-	 * Sets a property via `ArrayAccess`.
-	 *
-	 * @since  1.0.0
-	 * @access public
-	 * @param  string  $name
-	 * @param  mixed   $value
-	 * @return void
-	 */
-	public function offsetSet( $name, $value ) {
-
-		$this->add( $name, $value );
-	}
-
-	/**
-	 * Unsets a property via `ArrayAccess`.
-	 *
-	 * @since  1.0.0
-	 * @access public
-	 * @param  string  $name
-	 * @return void
-	 */
-	public function offsetUnset( $name ) {
-
-		$this->remove( $name );
-	}
-
-	/**
-	 * Checks if a property has via `ArrayAccess`.
-	 *
-	 * @since  1.0.0
-	 * @access public
-	 * @param  string  $name
-	 * @return bool
-	 */
-	public function offsetExists( $name ) {
-
-		return $this->has( $name );
-	}
-
-	/**
-	 * Returns a property via `ArrayAccess`.
-	 *
-	 * @since  1.0.0
-	 * @access public
-	 * @param  string  $name
-	 * @return mixed
-	 */
-	public function offsetGet( $name ) {
-
-		return $this->get( $name );
-	}
 }
