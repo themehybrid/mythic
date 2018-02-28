@@ -61,7 +61,7 @@ spl_autoload_register( function( $class ) {
 	$new_pieces[] = sprintf( 'class-%s.php', array_pop( $new_pieces ) );
 
 	// Join all the pieces together by a forward slash. These are directories.
-	$file = join( '/', $new_pieces );
+	$file = join( DIRECTORY_SEPARATOR, $new_pieces );
 
 	// Get the file from the `/app` folder.
 	$file = get_parent_theme_file_path( "app/{$file}" );
