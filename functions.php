@@ -1,13 +1,20 @@
 <?php
+/**
+ * Theme functions.
+ *
+ * This file is used to load the autoload and bootstrap files necessary
+ * for kick-starting the theme.
+ *
+ * @package   ABC
+ * @author    Justin Tadlock <justintadlock@gmail.com>
+ * @copyright Copyright (c) 2018, Justin Tadlock
+ * @link      https://themehybrid.com/themes/abc
+ * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+ */
 
-namespace ABC;
+// Auto-load any projects via the Composer autoloader.
+require_once( get_parent_theme_file_path( 'vendor/autoload.php' ) );
 
-require_once( trailingslashit( get_template_directory() ) . 'vendor/autoload.php' );
-
-define( 'HYBRID_DIR', trailingslashit( get_parent_theme_file_path( 'vendor/justintadlock/hybrid-core' ) ) );
-define( 'HYBRID_URI', trailingslashit( get_parent_theme_file_uri(  'vendor/justintadlock/hybrid-core' ) ) );
-
-require_once( HYBRID_DIR . 'hybrid.php' );
-
+// Bootstrap the theme.
 require_once( get_parent_theme_file_path( 'bootstrap/autoload.php' ) );
 require_once( get_parent_theme_file_path( 'bootstrap/app.php' ) );

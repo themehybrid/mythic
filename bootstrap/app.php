@@ -16,6 +16,13 @@
 
 namespace ABC;
 
+// Change the Hybrid Core framework directory path and URI.
+define( 'HYBRID_DIR', trailingslashit( get_parent_theme_file_path( 'vendor/justintadlock/hybrid-core' ) ) );
+define( 'HYBRID_URI', trailingslashit( get_parent_theme_file_uri(  'vendor/justintadlock/hybrid-core' ) ) );
+
+// Load Hybrid Core.
+require_once( HYBRID_DIR . 'hybrid.php' );
+
 /**
  * The single instance of the app. Use this function for quickly working
  * with data.  Returns an instance of the `Container` class.
