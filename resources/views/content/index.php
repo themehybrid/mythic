@@ -16,6 +16,16 @@
 
 		<?php endwhile ?>
 
+		<?php if ( hybrid_is_plural() ) : ?>
+
+			<?php the_posts_pagination( [
+				'type'      => 'list',
+				'prev_text' => _x( 'Newer', 'posts navigation' ),
+				'next_text' => _x( 'Older', 'posts navigation' )
+			] ) ?>
+
+		<?php endif ?>
+
 	<?php endif ?>
 
 </main>
