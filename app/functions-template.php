@@ -153,3 +153,17 @@ function get_meta_sep( $sep = '' ) {
 		)
 	);
 }
+
+/**
+ * Outputs the posts pagination.
+ *
+ * @since  1.0.0
+ * @access public
+ * @return void
+ */
+function posts_pagination() {
+
+	$pagination = new Pagination();
+
+	echo $pagination->fetch();
+}

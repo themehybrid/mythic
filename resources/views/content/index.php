@@ -18,11 +18,7 @@
 
 		<?php if ( hybrid_is_plural() ) : ?>
 
-			<?php the_posts_pagination( [
-				'type'      => 'list',
-				'prev_text' => _x( 'Newer', 'posts navigation' ),
-				'next_text' => _x( 'Older', 'posts navigation' )
-			] ) ?>
+			<?php render_view( 'partials', 'posts-pagination' ) ?>
 
 		<?php endif ?>
 
