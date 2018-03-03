@@ -188,8 +188,6 @@ class Pagination {
 	 */
 	private function format_item( $item ) {
 
-		$tag = isset( $item['href'] ) ? 'a' : 'span';
-
 		if ( isset( $item['href'] ) ) {
 
 			$anchor = sprintf(
