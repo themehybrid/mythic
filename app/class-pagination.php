@@ -1,10 +1,27 @@
 <?php
 /**
- * Fork of the `paginate_links()` function in core WP.
+ * Pagination class.
+ *
+ * This is a wrapper for the core WP `paginate_links()` class and is primarily
+ * meant to replace `get_the_posts_pagination()`.  Unfortunately, core doesn't
+ * give theme authors much flexibility for altering the markup and classes.
+ * This class is meant to solve this issue.
+ *
+ * @package   ABC
+ * @author    Justin Tadlock <justintadlock@gmail.com>
+ * @copyright Copyright (c) 2018, Justin Tadlock
+ * @link      https://themehybrid.com/themes/abc
+ * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
 namespace ABC;
 
+/**
+ * Pagination class.
+ *
+ * @since  1.0.0
+ * @access public
+ */
 class Pagination {
 
 	/**
