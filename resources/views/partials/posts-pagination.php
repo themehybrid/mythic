@@ -1,6 +1,8 @@
 <?php namespace ABC; ?>
 
 <?php posts_pagination( [
+	'prev_text'       => __( '&larr; Previous' ),
+	'next_text'       => __( 'Next &rarr;' ),
 	'container_tag'   => 'nav',
 	'container_class' => 'pagination pagination--posts',
 	'list_tag'        => 'ul',

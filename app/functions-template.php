@@ -161,9 +161,9 @@ function get_meta_sep( $sep = '' ) {
  * @access public
  * @return void
  */
-function posts_pagination() {
+function posts_pagination( $args = [] ) {
 
-	$pagination = new Pagination();
+	$pagination = new Pagination( $args );
 
 	echo $pagination->fetch();
 }
