@@ -111,20 +111,35 @@ class Pagination {
 
 		$this->get_items();
 
-		$out = '';
+		$html = '';
 
 		foreach ( $this->items as $item ) {
 
-			$out .= $this->format_item( $item );
+			$html .= $this->format_item( $item );
 		}
 
 		// Format list.
-		$out = sprintf(
+		$html = sprintf(
 			'<%1$s class="%2$s">%3$s</%1$s>',
 			tag_escape( $this->args['list_tag'] ),
 			esc_attr( $this->args['list_class'] ),
-			$out
+			$html
 		);
+
+		return $this->navigation_markup( $html );
+	}
+
+	/**
+	 * Compatibility layer for the core WP `_navigation_markup()` function,
+	 * which is marked as private and not for theme/plugin use. So, we're
+	 * just rolling our own.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @param  string  $links
+	 * @return string
+	 */
+	private function navigation_markup( $links ) {
 
 		// Set up template.
 		$template = sprintf(
@@ -142,7 +157,7 @@ class Pagination {
 			$template,
 			esc_attr( $this->args['container_class'] ),
 			$this->args['screen_reader_text'] ? esc_html( $this->args['screen_reader_text'] ) : esc_html__( 'Posts navigation' ),
-			$out
+			$links
 		);
 	}
 
