@@ -1,13 +1,10 @@
 <?php
-
-namespace ABC;
-
-/*
- |-------------------------------------------------------------------------
- | Render The View.
- |-------------------------------------------------------------------------
- |
- | Uses the engine to render the correct view located in `/resources/views`.
- |
+/**
+ * Index template.
+ *
+ * This template is an absolute fallback template. Ideally, it should not
+ * be loaded.  In the off-chance that it is, we're simply going to load
+ * the default view template.
  */
-render_view( 'index' );
+
+ ABC\render_view( 'index' );
