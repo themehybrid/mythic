@@ -18,7 +18,7 @@
 
 		<?php if ( hybrid_is_plural() ) : ?>
 
-			<?php render_view( 'partials', 'posts-pagination' ) ?>
+			<?php render_view( 'partials', 'pagination-posts' ) ?>
 
 		<?php endif ?>
 

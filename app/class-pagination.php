@@ -56,7 +56,10 @@ class Pagination {
 			'mid_size'           => 1,
 			'screen_reader_text' => '',
 			'container_tag'      => 'nav',
-			'container_class'    => 'pagination pagination--posts',
+			'container_class'    => 'pagination',
+			'title_tag'          => 'h2',
+			'title_class'        => 'pagination__title',
+			'title_text'         => '',
 			'list_tag'           => 'ul',
 			'list_class'         => 'pagination__items',
 			'item_tag'           => 'li',
@@ -128,53 +131,45 @@ class Pagination {
 
 		$this->get_items();
 
-		$html = '';
+		$title = $list = '';
 
-		foreach ( $this->items as $item ) {
+		// If there's title text, format it.
+		if ( $this->args['title_text'] ) {
 
-			$html .= $this->format_item( $item );
+			$title = sprintf(
+				'<%1$s class="%2$s">%3$s</%1$s>',
+				tag_escape( $this->args['title_tag'] ),
+				esc_attr( $this->args['title_class'] ),
+				esc_html( $this->args['title_text'] )
+			);
 		}
 
-		// Format list.
-		$html = sprintf(
+		// Loop through each of the items and format them into a list.
+		foreach ( $this->items as $item ) {
+
+			$list .= $this->format_item( $item );
+		}
+
+		$list = sprintf(
 			'<%1$s class="%2$s">%3$s</%1$s>',
 			tag_escape( $this->args['list_tag'] ),
 			esc_attr( $this->args['list_class'] ),
-			$html
+			$list
 		);
 
-		return $this->navigation_markup( $html );
-	}
-
-	/**
-	 * Compatibility layer for the core WP `_navigation_markup()` function,
-	 * which is marked as private and not for theme/plugin use. So, we're
-	 * just rolling our own.
-	 *
-	 * @since  1.0.0
-	 * @access public
-	 * @param  string  $links
-	 * @return string
-	 */
-	private function navigation_markup( $links ) {
-
-		// Set up template.
+		// Format the HTML output.
 		$template = sprintf(
-			'<%1$s class="%2$s" role="navigation"><h2 class="screen-reader-text">%3$s</h2>%4$s</%1$s>',
+			'<%1$s class="%2$s" role="navigation">%3$s%4$s</%1$s>',
 			tag_escape( $this->args['container_tag'] ),
-			'%1$s',
-			'%2$s',
-			'%3$s'
+			esc_attr( $this->args['container_class'] ),
+			$title,
+			$list
 		);
 
-		// Compat with WP's `navigation_markup_template` filter hook.
-		$template = apply_filters( 'navigation_markup_template', $template, $this->args['container_class'] );
-
-		return sprintf(
+		return apply_filters(
+			app()->namespace . '/pagination',
 			$template,
-			esc_attr( $this->args['container_class'] ),
-			$this->args['screen_reader_text'] ? esc_html( $this->args['screen_reader_text'] ) : esc_html__( 'Posts navigation' ),
-			$links
+			$args
 		);
 	}
 

@@ -18,7 +18,7 @@
 
 		<div class="entry__content">
 			<?php the_content() ?>
-			<?php wp_link_pages() ?>
+			<?php render_view( 'partials', 'pagination-singular' ) ?>
 		</div>
 
 		<footer class="entry__foooter">
