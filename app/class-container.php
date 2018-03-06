@@ -28,7 +28,7 @@ use Psr\Container\ContainerInterface;
 class Container implements ContainerInterface, ArrayAccess {
 
 	/**
-	 * Stored instances of objects.
+	 * Stored definitions of objects.
 	 *
 	 * @since  1.0.0
 	 * @access protected
@@ -54,6 +54,14 @@ class Container implements ContainerInterface, ArrayAccess {
 	 */
 	protected $factories;
 
+	/**
+	 * Set up a new container.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @param  array  $definitions
+	 * @return void
+	 */
 	public function __construct( array $definitions = [] ) {
 
 		$this->factories = new SplObjectStorage();
