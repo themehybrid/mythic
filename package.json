@@ -4,7 +4,11 @@
   "description": "A starter theme for WordPress.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build:styles": "npm run styles:scss && npm run styles:autoprefixer",
+    "build:scripts": "npm run scripts:uglify",
+    "styles:scss": "node-sass --output-style compressed -o resources/dist/styles resources/styles",
+    "styles:autoprefixer": "postcss -u autoprefixer -r resources/dist/styles/*",
+    "scripts:uglify": "make-dir resources/dist/scripts && uglifyjs resources/scripts/*.js -m -o resources/dist/scripts/app.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +19,12 @@
   "bugs": {
     "url": "https://github.com/justintadlock/abc/issues"
   },
-  "homepage": "https://github.com/justintadlock/abc#readme"
+  "homepage": "https://github.com/justintadlock/abc#readme",
+  "devDependencies": {
+    "autoprefixer": "^8.1.0",
+    "make-dir-cli": "^1.0.0",
+    "node-sass": "^4.7.2",
+    "postcss-cli": "^5.0.0",
+    "uglify-js": "^3.3.13"
+  }
 }
