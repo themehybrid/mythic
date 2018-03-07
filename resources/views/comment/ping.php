@@ -1,6 +1,6 @@
 <?php namespace ABC; ?>
 
-<li <?php hybrid_attr( 'comment' ); ?>>
+<li <?php hybrid_attr( 'comment' ) ?>>
 
 	<div class="thread__meta">
 		<span class="thread__author"><?php comment_author_link() ?></span><br />
