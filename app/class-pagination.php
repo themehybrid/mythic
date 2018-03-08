@@ -82,6 +82,10 @@ class Pagination {
 
 		$links = paginate_links( $this->args );
 
+		if ( ! $links ) {
+			return;
+		}
+
 		foreach ( $links as $link ) {
 
 			$item = [ 'type' => 'number' ];
@@ -131,40 +135,43 @@ class Pagination {
 
 		$this->get_items();
 
-		$title = $list = '';
+		$title = $list = $template = '';
 
-		// If there's title text, format it.
-		if ( $this->args['title_text'] ) {
+		if ( $this->items ) {
 
-			$title = sprintf(
+			// If there's title text, format it.
+			if ( $this->args['title_text'] ) {
+
+				$title = sprintf(
+					'<%1$s class="%2$s">%3$s</%1$s>',
+					tag_escape( $this->args['title_tag'] ),
+					esc_attr( $this->args['title_class'] ),
+					esc_html( $this->args['title_text'] )
+				);
+			}
+
+			// Loop through each of the items and format them into a list.
+			foreach ( $this->items as $item ) {
+
+				$list .= $this->format_item( $item );
+			}
+
+			$list = sprintf(
 				'<%1$s class="%2$s">%3$s</%1$s>',
-				tag_escape( $this->args['title_tag'] ),
-				esc_attr( $this->args['title_class'] ),
-				esc_html( $this->args['title_text'] )
+				tag_escape( $this->args['list_tag'] ),
+				esc_attr( $this->args['list_class'] ),
+				$list
+			);
+
+			// Format the HTML output.
+			$template = sprintf(
+				'<%1$s class="%2$s" role="navigation">%3$s%4$s</%1$s>',
+				tag_escape( $this->args['container_tag'] ),
+				esc_attr( $this->args['container_class'] ),
+				$title,
+				$list
 			);
 		}
-
-		// Loop through each of the items and format them into a list.
-		foreach ( $this->items as $item ) {
-
-			$list .= $this->format_item( $item );
-		}
-
-		$list = sprintf(
-			'<%1$s class="%2$s">%3$s</%1$s>',
-			tag_escape( $this->args['list_tag'] ),
-			esc_attr( $this->args['list_class'] ),
-			$list
-		);
-
-		// Format the HTML output.
-		$template = sprintf(
-			'<%1$s class="%2$s" role="navigation">%3$s%4$s</%1$s>',
-			tag_escape( $this->args['container_tag'] ),
-			esc_attr( $this->args['container_class'] ),
-			$title,
-			$list
-		);
 
 		return apply_filters(
 			app()->namespace . '/pagination',
