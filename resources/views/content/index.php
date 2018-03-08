@@ -1,6 +1,6 @@
 <?php namespace ABC; ?>
 
-<main class="site__content">
+<main class="app-main">
 
 	<?php if ( have_posts() ) : ?>
 
