@@ -31,7 +31,13 @@ if ( post_password_required() || ( ! have_comments() && ! comments_open() && ! p
 
 	<?php endif ?>
 
-	<?php render_view( 'partials', 'comments-error' ) ?>
+	<?php if ( ! comments_open() ) : ?>
+
+		<p class="comments-closed">
+			<?php esc_html_e( 'Comments are closed.' ) ?>
+		</p>
+
+	<?php endif ?>
 
 	<?php comment_form( [
 		'class_form'   => 'comment-form',
