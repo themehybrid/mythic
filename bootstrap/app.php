@@ -73,6 +73,7 @@ array_map(
 	// Add file names of files to auto-load from the `/app` folder.
 	// Classes are auto-loaded, so we only need this for functions-files.
 	[
+		'functions-filters',
 		'functions-setup',
 		'functions-template'
 	]

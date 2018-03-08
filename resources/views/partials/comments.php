@@ -39,9 +39,6 @@ if ( post_password_required() || ( ! have_comments() && ! comments_open() && ! p
 
 	<?php endif ?>
 
-	<?php comment_form( [
-		'class_form'   => 'comment-form',
-		'class_submit' => 'comment-form__submit'
-	] ) ?>
+	<?php comment_form() ?>
 
 </section>
