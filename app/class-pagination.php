@@ -169,7 +169,7 @@ class Pagination {
 		return apply_filters(
 			app()->namespace . '/pagination',
 			$template,
-			$args
+			$this->args
 		);
 	}
 
