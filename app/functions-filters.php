@@ -14,6 +14,46 @@
 namespace ABC;
 
 /**
+ * Filters the WP nav menu item CSS classes.
+ *
+ * @since  1.0.0
+ * @access public
+ * @param  array  $classes
+ * @return array
+ */
+add_filter( 'nav_menu_css_class', function( $classes ) {
+
+	$_classes = [ 'menu__item' ];
+
+	foreach ( [ 'item', 'parent', 'ancestor' ] as $type ) {
+
+		if ( in_array( "current-menu-{$type}", $classes ) ) {
+
+			$_classes[] = "menu__item--{$type}";
+		}
+	}
+
+	return $_classes;
+
+}, PHP_INT_MIN );
+
+/**
+ * Filters the WP nav menu link attributes.
+ *
+ * @since  1.0.0
+ * @access public
+ * @param  array  $attr
+ * @return array
+ */
+add_filter( 'nav_menu_link_attributes', function( $attr ) {
+
+	$attr['class'] = 'menu__anchor';
+
+	return $attr;
+
+}, PHP_INT_MIN );
+
+/**
  * Overwrites the HTML classes for the comment form default fields.
  *
  * @since  1.0.0
