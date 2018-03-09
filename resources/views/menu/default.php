@@ -2,7 +2,7 @@
 
 	<nav <?php hybrid_attr( 'menu', $data->name, [ 'class' => 'menu menu--primary' ] ) ?>>
 
-		<h3 class="menu__title"><?= hybrid_get_menu_name( $data->name ) ?></h3>
+		<h3 class="menu__title screen-reader-text"><?= hybrid_get_menu_name( $data->name ) ?></h3>
 
 		<?php wp_nav_menu( [
 			'theme_location' => $data->name,
