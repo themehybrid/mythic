@@ -1,6 +1,6 @@
 <?php if ( has_nav_menu( $data->name ) ) : ?>
 
-	<nav <?php hybrid_attr( 'menu', $data->name, [ 'class' => 'menu menu--primary' ] ) ?>>
+	<nav class="menu menu--<?= esc_attr( $data->name ) ?>">
 
 		<h3 class="menu__title screen-reader-text"><?= hybrid_get_menu_name( $data->name ) ?></h3>
 
