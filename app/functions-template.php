@@ -98,15 +98,15 @@ function filter_templates( $templates ) {
 }
 
 /**
- * Returns the template base from the theme wrapper.
+ * Returns the template hierarchy from the theme wrapper.
  *
  * @since  1.0.0
  * @access public
- * @return string
+ * @return array
  */
-function get_template_base() {
+function get_template_hierarchy() {
 
-	return app()->get( 'wrapper' )->base;
+	return app()->get( 'wrapper' )->hierarchy;
 }
 
 /**

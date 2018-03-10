@@ -2,18 +2,10 @@
 /**
  * Query template wrapper class.
  *
- * This is a wrapper for the queried template in core WordPress. This is
- * the top-level template loaded.  This wrapper looks for templates in
- * the `/resources/views/content` folder by default.  This is the "content"
- * of the page and represents the "base" template.  The wrapper template
- * (or what might be called the "layout" template) is located in the
- * `/resources/views` folder.  The wrapper template becomes the top-level
- * template on output.
- *
- * This allows theme authors to build the wrapping HTML once without having
- * to repeat common code while building unique content templates when they
- * need to build something custom.  The content templates utilize the normal
- * template hierarchy.
+ * This class creates a modular template system by capturing the entire
+ * template hierarchy for the page.  Because this hierarchy is captured,
+ * it can be later retrieved in used in things like template parts,
+ * allowing partial templates to have their own, complete hierarchy.
  *
  * It should be noted that plugins that filter `template_include` to overwrite
  * the final template should be respected.  In those cases, the wrapper will
@@ -29,12 +21,9 @@
 namespace ABC;
 
 /**
- * Theme template wrapper based on Scribu's theme wrappers.
+ * Theme template wrapper based on Koop's modular themes.
  *
- * @link    http://scribu.net/wordpress/theme-wrappers.html
- * @author  Cristi Burcă (scribu)
- * @license Public Domain
- *
+ * @link    https://core.trac.wordpress.org/ticket/12877
  * @since  1.0.0
  * @access public
  */
@@ -69,14 +58,25 @@ class Wrapper {
 	];
 
 	/**
-	 * Base name of template that is found via `locate_template()` without
-	 * the `.php` extension.
+	 * Copy of the located template found when running through
+	 * the template hierarchy.
 	 *
 	 * @since  1.0.0
 	 * @access public
 	 * @var    string
 	 */
-	public $base = 'index';
+	public $located = '';
+
+	/**
+	 * An array of the entire template hierarchy for the current
+	 * page view. This hierarchy does not have the `.php` file
+	 * name extension.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @var    array
+	 */
+	public $hierarchy = [];
 
 	/**
 	 * Adds filters on WP's template system.
@@ -90,6 +90,8 @@ class Wrapper {
 		foreach ( $this->types as $type ) {
 
 			add_filter( "{$type}_template_hierarchy", array( $this, 'template_hierarchy' ), PHP_INT_MAX );
+
+			add_filter( "{$type}_template", array( $this, 'template' ), PHP_INT_MAX );
 		}
 
 		add_filter( 'template_include', array( $this, 'template_include' ), PHP_INT_MAX );
@@ -97,7 +99,7 @@ class Wrapper {
 
 	/**
 	 * Filters the template hierarchy for each type of template and looks
-	 * templates within `resources/views/content`.
+	 * templates within `resources/views`.
 	 *
 	 * @since  1.0.0
 	 * @access public
@@ -105,20 +107,49 @@ class Wrapper {
 	 */
 	public function template_hierarchy( $templates ) {
 
-		return str_replace(
-			'resources/views',
-			'resources/views/content',
-			filter_templates( $templates )
+		// Merge the current template's hierarchy with the
+		// overall hierarchy array.
+		$this->hierarchy = array_merge(
+			$this->hierarchy,
+			array_map( function( $template ) {
+
+				// Strip extension from file name.
+				return substr(
+					$template,
+					0,
+					strlen( $template ) - strlen( strrchr( $template, '.' ) )
+				);
+
+			}, $templates )
 		);
+
+		return filter_templates( $templates );
 	}
 
 	/**
-	 * Filters on `template_include` to load a "wrapper" or "layout" template.
-	 * At this point, WordPress has already located the appropriate template to
-	 * load. Given that we filtered the template type hierarchies earlier, we
-	 * want to check that the found template is in our content templates folder.
-	 * If so, we'll load a wrapper.  Otherwise, we assume that a plugin is doing
-	 * something custom and let them do their thing.
+	 * Filters the template for each type of template in the hierarchy.
+	 * If `$template` exists, it means we've located a template. So,
+	 * we're going to store that template for later use and return an
+	 * empty string so that the template hierarchy continues processing.
+	 * That way, we can capture the entire hierarchy.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @param  string  $template
+	 * @return string
+	 */
+	public function template( $template ) {
+
+		if ( ! $this->located && $template ) {
+			$this->located = $template;
+		}
+
+		return '';
+	}
+
+	/**
+	 * Filter on `template_include` to make sure we fall back to our
+	 * located template from earlier.
 	 *
 	 * @since  1.0.0
 	 * @access public
@@ -135,28 +166,8 @@ class Wrapper {
 			return $template;
 		}
 
-		// Strip the template and stylesheet directory from the file name.
-		$file = ltrim( str_replace( [ get_template_directory(), get_stylesheet_directory() ], '', $template ), '/' );
-
-		// Check that our template is a content template from the theme.
-		if ( 0 === strpos( $file, 'resources/views/content' ) ) {
-
-			// Get the file basename and remove the `.php` file extension to get the base.
-			$this->base = substr( basename( $template ), 0, -4 );
-
-			// Build a hierarchy of wrapper templates.
-			$templates = [ "{$this->base}.php" ];
-
-			// Always fall back to `index.php`.
-			if ( 'index' !== $this->base ) {
-
-				$templates[] = 'index.php';
-			}
-
-			// Return the located template.
-			return locate_template( $templates );
-		}
-
-		return $template;
+		// If there's a template, return it. Otherwise, return our
+		// located template from earlier.
+		return $template ?: $this->located;
 	}
 }
