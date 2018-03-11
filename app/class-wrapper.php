@@ -23,7 +23,7 @@ namespace ABC;
 /**
  * Theme template wrapper based on Koop's modular themes.
  *
- * @link    https://core.trac.wordpress.org/ticket/12877
+ * @link   https://core.trac.wordpress.org/ticket/12877
  * @since  1.0.0
  * @access public
  */

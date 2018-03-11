@@ -204,7 +204,7 @@ function singular_pagination( $args = [] ) {
 	$base      = trailingslashit( $url_parts[0] ) . '%_%';
 
 	$format  = $wp_rewrite->using_index_permalinks() && ! strpos( $base, 'index.php' ) ? 'index.php/' : '';
-	$format .= $wp_rewrite->using_permalinks() ? user_trailingslashit( '/%#%' ) : '?page=%#%';
+	$format .= $wp_rewrite->using_permalinks() ? user_trailingslashit( '%#%' ) : '?page=%#%';
 
 	$args = (array) $args + [
 		'base'    => $base,
