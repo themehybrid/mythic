@@ -1,9 +1,6 @@
-<?php
-namespace ABC;
-
-if ( post_password_required() || ( ! have_comments() && ! comments_open() && ! pings_open() ) )
+<?php if ( post_password_required() || ( ! have_comments() && ! comments_open() && ! pings_open() ) ) {
 	return;
-?>
+} ?>
 
 <section id="comments" class="comments-template">
 
@@ -13,16 +10,16 @@ if ( post_password_required() || ( ! have_comments() && ! comments_open() && ! p
 
 			<h2 id="comments-number" class="thread__title"><?php comments_number() ?></h2>
 
-			<?php render_view( 'partials', 'comments-nav' ) ?>
+			<?php Hybrid\render_view( 'partials', 'comments-nav' ) ?>
 
 			<ol class="thread__items">
 
 				<?php wp_list_comments( [
 					'style'        => 'ol',
 					'callback'     => function( $comment ) {
-						render_view( 'comment', [ get_comment_type( $comment ) ], [ 'comment' => $comment ] );
+						Hybrid\render_view( 'comment', [ get_comment_type( $comment ) ], [ 'comment' => $comment ] );
 					},
-					'end-callback' => 'hybrid_comments_end_callback'
+					'end-callback' => 'Hybrid\comments_end_callback'
 				] ) ?>
 
 			</ol>

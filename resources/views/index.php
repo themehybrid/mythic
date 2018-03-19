@@ -1,13 +1,13 @@
-<?php namespace ABC;
+<?php
 
-// Load header template.
-render_view( 'header', get_template_hierarchy() );
+// Load header/* template.
+Hybrid\render_view( 'header', ABC\get_template_hierarchy() );
 
-// Load content template.
-render_view( 'content', get_template_hierarchy() );
+// Load content/* template.
+Hybrid\render_view( 'content', ABC\get_template_hierarchy() );
 
-// Load sidebar template.
-render_view( 'sidebar', 'primary', [ 'name' => 'primary' ] );
+// Load sidebar/* template.
+Hybrid\render_view( 'sidebar', 'primary', [ 'name' => 'primary' ] );
 
-// Load footer template.
-render_view( 'footer', get_template_hierarchy() );
+// Load footer/* template.
+Hybrid\render_view( 'footer', ABC\get_template_hierarchy() );

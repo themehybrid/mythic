@@ -16,12 +16,8 @@
 
 namespace ABC;
 
-// Change the Hybrid Core framework directory path and URI.
-define( 'HYBRID_DIR', trailingslashit( get_parent_theme_file_path( 'vendor/justintadlock/hybrid-core' ) ) );
-define( 'HYBRID_URI', trailingslashit( get_parent_theme_file_uri(  'vendor/justintadlock/hybrid-core' ) ) );
-
-// Load Hybrid Core.
-require_once( HYBRID_DIR . 'hybrid.php' );
+use Hybrid\Container;
+use Hybrid\Collection;
 
 /**
  * The single instance of the app. Use this function for quickly working
@@ -42,21 +38,16 @@ function app() {
 	return $app;
 }
 
-// Add our theme wrapper.
-app()->add( 'wrapper', function( $container ) {
-
-	return new Wrapper();
-} );
-
 // Add configuration.
-app()->add( 'config.theme', function( $container ) {
+app()->add( 'config.theme', function() {
 
 	return new Collection( require_once( get_parent_theme_file_path( 'config/theme.php' ) ) );
 } );
 
-app()->add( 'config.view', function() {
+// Add our theme wrapper.
+app()->add( 'wrapper', function() {
 
-	return new Collection( require_once( get_parent_theme_file_path( 'config/view.php' ) ) );
+	return new Wrapper();
 } );
 
 // Use the theme namespace as the overall app namespace.

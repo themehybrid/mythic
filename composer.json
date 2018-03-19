@@ -1,6 +1,20 @@
 {
-    "require": {
-	"justintadlock/hybrid-core": "^4.0",
-        "psr/container": "^1.0"
-    }
+	"name"        : "justintadlock/abc",
+        "type"        : "wordpress-theme",
+	"description" : "A WordPress starter theme.",
+	"keywords"    : ["wordpress"],
+	"homepage"    : "https://themehybrid.com/themes/abc",
+	"license"     : "GPL-2.0-or-later",
+	"authors"     : [
+		{
+			"name"    : "Justin Tadlock",
+			"email"   : "justintadlock@gmail.com",
+			"homepage": "http://justintadlock.com"
+		}
+	],
+        "require": {
+                "php" : ">=5.6",
+                "composer/installers" : "~1.0",
+                "justintadlock/hybrid-core" : "5.0.x-dev"
+        }
 }

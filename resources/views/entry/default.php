@@ -1,4 +1,4 @@
-<article <?php hybrid_attr( 'entry' ) ?>>
+<article <?php Hybrid\attr( 'entry' ) ?>>
 
 	<?php if ( get_the_ID() === get_queried_object_id() ) : ?>
 

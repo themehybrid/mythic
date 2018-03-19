@@ -1,12 +1,10 @@
-<?php namespace ABC; ?>
-
 <main class="app-main">
 
 	<?php if ( have_posts() ) : ?>
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
-			<?php render_view( 'entry', get_post_type() ) ?>
+			<?php Hybrid\render_view( 'entry', Hybrid\get_post_hierarchy() ) ?>
 
 			<?php if ( is_singular() ) : ?>
 
@@ -16,9 +14,9 @@
 
 		<?php endwhile ?>
 
-		<?php if ( hybrid_is_plural() ) : ?>
+		<?php if ( Hybrid\is_plural() ) : ?>
 
-			<?php render_view( 'partials', 'pagination-posts' ) ?>
+			<?php Hybrid\render_view( 'partials', 'pagination-posts' ) ?>
 
 		<?php endif ?>
 

@@ -5,7 +5,7 @@
 <?php wp_head() ?>
 </head>
 
-<body <?php hybrid_attr( 'body' ) ?>>
+<body <?php Hybrid\attr( 'body' ) ?>>
 
 <div class="app">
 
@@ -16,7 +16,7 @@
 			<div class="app-header__description"><?php bloginfo( 'description' ) ?></div>
 		</div>
 
-		<?php ABC\render_view( 'menu', 'primary', [ 'name' => 'primary' ] ) ?>
+		<?php Hybrid\render_view( 'menu', 'primary', [ 'name' => 'primary' ] ) ?>
 
 	</header>
 

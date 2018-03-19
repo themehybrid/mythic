@@ -1,6 +1,4 @@
-<?php namespace ABC; ?>
-
-<article <?php hybrid_attr( 'entry' ) ?>>
+<article <?php Hybrid\attr( 'entry' ) ?>>
 
 	<?php if ( is_single( get_the_ID() ) ) : ?>
 
@@ -8,22 +6,20 @@
 			<h1 class="entry__title"><?php single_post_title() ?></h1>
 
 			<div class="entry__byline">
-				<?php hybrid_post_author( [ 'wrap' => '<span class="entry__author">%2$s</span>' ] ) ?>
-				<?= get_meta_sep() ?>
-				<time class="entry__published"><?= get_the_date() ?></time>
-				<?= get_meta_sep() ?>
-				<?php comments_popup_link( false, false, false, 'entry__comments-link' ) ?>
+				<?php Hybrid\post_author() ?>
+				<?php Hybrid\post_date( [ 'before' => ABC\get_meta_sep() ] ) ?>
+				<?php Hybrid\post_comments( [ 'before' => ABC\get_meta_sep() ] ) ?>
 			</div>
 		</header>
 
 		<div class="entry__content">
 			<?php the_content() ?>
-			<?php render_view( 'partials', 'pagination-singular' ) ?>
+			<?php Hybrid\render_view( 'partials', 'pagination-singular' ) ?>
 		</div>
 
 		<footer class="entry__foooter">
-			<?php hybrid_post_terms( [ 'taxonomy' => 'category' ] ) ?>
-			<?php hybrid_post_terms( [ 'taxonomy' => 'post_tag', 'before' => get_meta_sep() ] ) ?>
+			<?php Hybrid\post_terms( [ 'taxonomy' => 'category' ] ) ?>
+			<?php Hybrid\post_terms( [ 'taxonomy' => 'post_tag', 'before' => ABC\get_meta_sep() ] ) ?>
 		</footer>
 
 	<?php else : ?>
@@ -32,11 +28,9 @@
 			<h2 class="entry__title"><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h2>
 
 			<div class="entry__byline">
-				<?php hybrid_post_author( [ 'wrap' => '<span class="entry__author">%2$s</span>' ] ) ?>
-				<?= get_meta_sep() ?>
-				<time class="entry__published"><?= get_the_date() ?></time>
-				<?= get_meta_sep() ?>
-				<?php comments_popup_link( false, false, false, 'entry__comments-link' ) ?>
+				<?php Hybrid\post_author() ?>
+				<?php Hybrid\post_date( [ 'before' => ABC\get_meta_sep() ] ) ?>
+				<?php Hybrid\post_comments( [ 'before' => ABC\get_meta_sep() ] ) ?>
 			</div>
 		</header>
 
