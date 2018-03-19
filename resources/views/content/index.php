@@ -1,5 +1,7 @@
 <main class="app-main">
 
+	<?php Hybrid\render_view( 'partials', 'archive-header' ) ?>
+
 	<?php if ( have_posts() ) : ?>
 
 		<?php while ( have_posts() ) : the_post(); ?>
