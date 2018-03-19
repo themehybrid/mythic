@@ -4,21 +4,11 @@
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
-			<?php Hybrid\render_view( 'entry', Hybrid\get_post_hierarchy() ) ?>
-
-			<?php if ( is_singular() ) : ?>
-
-				<?php comments_template( '/resources/views/partials/comments.php' ) ?>
-
-			<?php endif ?>
+			<?php Hybrid\render_view( 'entry/archive', Hybrid\get_post_hierarchy() ) ?>
 
 		<?php endwhile ?>
 
-		<?php if ( Hybrid\is_plural() ) : ?>
-
-			<?php Hybrid\render_view( 'partials', 'pagination-posts' ) ?>
-
-		<?php endif ?>
+		<?php Hybrid\render_view( 'partials', 'pagination-posts' ) ?>
 
 	<?php endif ?>
 
