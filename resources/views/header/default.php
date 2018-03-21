@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html <?php language_attributes( 'html' ) ?>>
+<html <?php Hybrid\attr( 'html' ) ?>>
 
 <head>
 <?php wp_head() ?>
