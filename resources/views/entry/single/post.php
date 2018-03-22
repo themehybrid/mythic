@@ -15,7 +15,7 @@
 		<?php Hybrid\render_view( 'partials', 'pagination-singular' ) ?>
 	</div>
 
-	<footer class="entry__foooter">
+	<footer class="entry__footer">
 		<?php Hybrid\post_terms( [ 'taxonomy' => 'category' ] ) ?>
 		<?php Hybrid\post_terms( [ 'taxonomy' => 'post_tag', 'before' => ABC\get_meta_sep() ] ) ?>
 	</footer>
