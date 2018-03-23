@@ -44,17 +44,8 @@ app()->add( 'config.theme', function() {
 	return new Collection( require_once( get_parent_theme_file_path( 'config/theme.php' ) ) );
 } );
 
-// Add our theme wrapper.
-app()->add( 'wrapper', function() {
-
-	return new Wrapper();
-} );
-
 // Use the theme namespace as the overall app namespace.
 app()->add( 'namespace', app()->get( 'config.theme' )->namespace );
-
-// Resolve theme wrapper.
-app()->get( 'wrapper' );
 
 // Load functions files.
 array_map(
