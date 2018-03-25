@@ -2,17 +2,17 @@
 	return;
 } ?>
 
-<section id="comments" class="comments-template">
+<section class="comments-template">
 
-	<?php if ( have_comments() ) : ?>
+	<div id="comments" class="comments">
 
-		<div class="thread thread--comments">
+		<?php if ( have_comments() ) : ?>
 
-			<h2 id="comments-number" class="thread__title"><?php comments_number() ?></h2>
+			<h2 class="comments__title"><?php comments_number() ?></h2>
 
 			<?php Hybrid\render_view( 'partials', 'comments-nav' ) ?>
 
-			<ol class="thread__items">
+			<ol class="comments__list">
 
 				<?php wp_list_comments( [
 					'style'        => 'ol',
@@ -26,17 +26,17 @@
 
 			</ol>
 
-		</div>
+		<?php endif ?>
 
-	<?php endif ?>
+		<?php if ( ! comments_open() ) : ?>
 
-	<?php if ( ! comments_open() ) : ?>
+			<p class="comments__closed">
+				<?php esc_html_e( 'Comments are closed.' ) ?>
+			</p>
 
-		<p class="comments-closed">
-			<?php esc_html_e( 'Comments are closed.' ) ?>
-		</p>
+		<?php endif ?>
 
-	<?php endif ?>
+	</div>
 
 	<?php comment_form() ?>
 
