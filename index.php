@@ -7,4 +7,4 @@
  * the default view template.
  */
 
- ABC\render_view( 'index' );
+ Hybrid\render_view( 'index' );
