@@ -17,9 +17,11 @@
 				<?php wp_list_comments( [
 					'style'        => 'ol',
 					'callback'     => function( $comment ) {
-						Hybrid\render_view( 'comment', [ get_comment_type( $comment ) ], [ 'comment' => $comment ] );
+						Hybrid\render_view( 'comment', Hybrid\get_comment_hierarchy(), [ 'comment' => $comment ] );
 					},
-					'end-callback' => 'Hybrid\comments_end_callback'
+					'end-callback' => function() {
+						echo '</li>';
+					}
 				] ) ?>
 
 			</ol>
