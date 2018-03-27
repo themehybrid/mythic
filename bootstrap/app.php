@@ -39,7 +39,7 @@ function app() {
 }
 
 // Add configuration.
-app()->add( 'config.theme', function() {
+app()->singleton( 'config.theme', function() {
 
 	return new Collection( require_once( get_parent_theme_file_path( 'config/theme.php' ) ) );
 } );
