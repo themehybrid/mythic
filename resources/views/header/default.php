@@ -19,5 +19,3 @@
 		<?php Hybrid\render_view( 'menu', 'primary', [ 'name' => 'primary' ] ) ?>
 
 	</header>
-
-	<div class="app-content">

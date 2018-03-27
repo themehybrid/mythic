@@ -1,15 +1,19 @@
-<main class="app-main">
+<div class="app-content">
 
-	<div class="entry entry--error">
+	<main class="app-main">
 
-		<h1 class="entry__title"><?php esc_html_e( 'Whoah, partner!' ) ?></h1>
+		<div class="entry entry--error">
 
-		<div class="entry__content">
-			<p><?php esc_html_e( 'It looks like you stumbled upon a page that does not exist. Perhaps rolling the dice with a search might help.' ) ?></p>
+			<h1 class="entry__title"><?php esc_html_e( 'Whoah, partner!' ) ?></h1>
 
-			<?php get_search_form() ?>
+			<div class="entry__content">
+				<p><?php esc_html_e( 'It looks like you stumbled upon a page that does not exist. Perhaps rolling the dice with a search might help.' ) ?></p>
+
+				<?php get_search_form() ?>
+			</div>
+
 		</div>
 
-	</div>
+	</main>
 
-</main>
+</div>

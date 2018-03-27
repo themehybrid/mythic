@@ -1,17 +1,23 @@
-<main class="app-main">
+<div class="app-content">
 
-	<?php Hybrid\render_view( 'partials', 'archive-header' ) ?>
+	<main class="app-main">
 
-	<?php if ( have_posts() ) : ?>
+		<?php Hybrid\render_view( 'partials', 'archive-header' ) ?>
 
-		<?php while ( have_posts() ) : the_post(); ?>
+		<?php if ( have_posts() ) : ?>
 
-			<?php Hybrid\render_view( 'entry/archive', Hybrid\get_post_hierarchy() ) ?>
+			<?php while ( have_posts() ) : the_post(); ?>
 
-		<?php endwhile ?>
+				<?php Hybrid\render_view( 'entry/archive', Hybrid\get_post_hierarchy() ) ?>
 
-		<?php Hybrid\render_view( 'partials', 'pagination-posts' ) ?>
+			<?php endwhile ?>
 
-	<?php endif ?>
+			<?php Hybrid\render_view( 'partials', 'pagination-posts' ) ?>
 
-</main>
+		<?php endif ?>
+
+	</main>
+
+	<?php Hybrid\render_view( 'sidebar', 'primary', [ 'name' => 'primary' ] ) ?>
+
+</div>

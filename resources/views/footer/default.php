@@ -1,5 +1,3 @@
-	</div><!-- .app-content -->
-
 	<footer class="app-footer">
 
 		<p class="app-footer__credit">

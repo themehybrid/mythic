@@ -1,15 +1,21 @@
-<main class="app-main">
+<div class="app-content">
 
-	<?php if ( have_posts() ) : ?>
+	<main class="app-main">
 
-		<?php while ( have_posts() ) : the_post(); ?>
+		<?php if ( have_posts() ) : ?>
 
-			<?php Hybrid\render_view( 'entry/single', Hybrid\get_post_hierarchy() ) ?>
+			<?php while ( have_posts() ) : the_post(); ?>
 
-			<?php comments_template( '/resources/views/partials/comments.php' ) ?>
+				<?php Hybrid\render_view( 'entry/single', Hybrid\get_post_hierarchy() ) ?>
 
-		<?php endwhile ?>
+				<?php comments_template( '/resources/views/partials/comments.php' ) ?>
 
-	<?php endif ?>
+			<?php endwhile ?>
 
-</main>
+		<?php endif ?>
+
+	</main>
+
+	<?php Hybrid\render_view( 'sidebar', 'primary', [ 'name' => 'primary' ] ) ?>
+
+</div>
