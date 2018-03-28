@@ -1,6 +1,6 @@
 <div class="app-content">
 
-	<main class="app-main">
+	<main id="main" class="app-main">
 
 		<?php if ( have_posts() ) : ?>
 
