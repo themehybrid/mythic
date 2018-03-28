@@ -12,8 +12,8 @@
 	<header class="app-header">
 
 		<div class="app-header__branding">
-			<h1 class="app-header__title"><a href="<?= esc_url( home_url() ) ?>"><?php bloginfo( 'name' ) ?></a></h1>
-			<div class="app-header__description"><?php bloginfo( 'description' ) ?></div>
+			<?php Hybrid\site_title( '', [ 'class' => 'app-header__title' ] ) ?>
+			<?php Hybrid\site_description( '', [ 'class' => 'app-header__description' ] ) ?>
 		</div>
 
 		<?php Hybrid\render_view( 'menu', 'primary', [ 'name' => 'primary' ] ) ?>
