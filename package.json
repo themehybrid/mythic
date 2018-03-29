@@ -6,9 +6,9 @@
   "scripts": {
     "build:styles": "npm run styles:scss && npm run styles:autoprefixer",
     "build:scripts": "npm run scripts:uglify",
-    "styles:scss": "node-sass --output-style compressed -o resources/styles public/styles",
+    "styles:scss": "node-sass --output-style compressed -o resources/styles dist/styles",
     "styles:autoprefixer": "postcss -u autoprefixer -r resources/styles/*",
-    "scripts:uglify": "make-dir public/scripts && uglifyjs resources/scripts/*.js -m -o public/scripts/app.js"
+    "scripts:uglify": "make-dir dist/scripts && uglifyjs resources/scripts/*.js -m -o dist/scripts/app.js"
   },
   "repository": {
     "type": "git",

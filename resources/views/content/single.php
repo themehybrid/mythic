@@ -8,7 +8,7 @@
 
 				<?php Hybrid\render_view( 'entry/single', Hybrid\get_post_hierarchy() ) ?>
 
-				<?php comments_template( '/public/views/partials/comments.php' ) ?>
+				<?php comments_template( '/resources/views/partials/comments.php' ) ?>
 
 			<?php endwhile ?>
 
