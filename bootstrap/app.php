@@ -16,36 +16,7 @@
 
 namespace ABC;
 
-use Hybrid\Container;
-use Hybrid\Collection;
-
-/**
- * The single instance of the app. Use this function for quickly working
- * with data.  Returns an instance of the `Container` class.
- *
- * @since  1.0.0
- * @access public
- * @return object
- */
-function app() {
-
-	static $app = null;
-
-	if ( is_null( $app ) ) {
-		$app = new Container();
-	}
-
-	return $app;
-}
-
-// Add configuration.
-app()->singleton( 'config.theme', function() {
-
-	return new Collection( require_once( get_parent_theme_file_path( 'config/theme.php' ) ) );
-} );
-
-// Use the theme namespace as the overall app namespace.
-app()->add( 'namespace', app()->get( 'config.theme' )->namespace );
+use function Hybrid\app;
 
 // Load functions files.
 array_map(
@@ -61,4 +32,4 @@ array_map(
 );
 
 // Runs after the app has been bootstrapped.
-do_action( app()->namespace . '/app_bootstrapped', app() );
+do_action( 'abc/bootstrapped', app() );

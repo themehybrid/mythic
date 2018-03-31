@@ -14,19 +14,6 @@
 namespace ABC;
 
 /**
- * Returns a configuration object.
- *
- * @since  1.0.0
- * @access public
- * @param  string  $name
- * @return object
- */
-function config( $name ) {
-
-	return app()->get( "config.{$name}" );
-}
-
-/**
  * Returns the metadata separator.
  *
  * @since  1.0.0
@@ -37,7 +24,7 @@ function config( $name ) {
 function get_meta_sep( $sep = '' ) {
 
 	return apply_filters(
-		app()->namespace . '/meta_sep',
+		'abc/meta_sep',
 		sprintf(
 			' <span class="sep">%s</span> ',
 			$sep ? $sep : esc_html_x( '&middot;', 'meta separator' )

@@ -103,7 +103,7 @@ add_action( 'init', function() {
 
 	// Register custom image sizes.
 	// @link https://developer.wordpress.org/reference/functions/add_image_size/
-	add_image_size( app()->namespace . '/medium', 750, 422, true );
+	add_image_size( 'abc/medium', 750, 422, true );
 }, 5 );
 
 /**
@@ -139,19 +139,21 @@ add_action( 'widgets_init', function() {
  */
 add_action( 'wp_enqueue_scripts', function() {
 
+	$version = wp_get_theme( get_template() )->get( 'Version' );
+
 	wp_enqueue_script(
-		app()->namespace . '/app',
-		config( 'theme' )->uri . 'resources/dist/scripts/app.js',
+		'abc-app',
+		get_parent_theme_file_uri( 'dist/scripts/app.js' ),
 		null,
-		config( 'theme' )->version,
+		$version,
 		true
 	);
 
 	wp_enqueue_style(
-		app()->namespace . '/screen',
-		config( 'theme' )->uri . 'resources/dist/styles/screen.css',
+		'abc-screen',
+		get_parent_theme_file_uri( 'dist/styles/screen.css' ),
 		null,
-		config( 'theme' )->version
+		$version
 	);
 
 }, 5 );
