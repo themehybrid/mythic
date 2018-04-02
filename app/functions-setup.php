@@ -2,12 +2,13 @@
 /**
  * Theme setup functions.
  *
- * This file holds basic theme setup functions executed on appropriate hooks with
- * some opinionated priorities based on theme dev, particularly working with child
- * theme devs/users, over the years.  I've also decided to use anonymous functions
- * to keep these from being easily unhooked.  WordPress has an appropriate API for
- * unregistering, removing, or modifying all of the things in this file.  Those APIs
- * should be used instead of attempting to use `remove_action()`.
+ * This file holds basic theme setup functions executed on appropriate hooks
+ * with some opinionated priorities based on theme dev, particularly working
+ * with child theme devs/users, over the years. I've also decided to use
+ * anonymous functions to keep these from being easily unhooked. WordPress has
+ * an appropriate API for unregistering, removing, or modifying all of the
+ * things in this file. Those APIs should be used instead of attempting to use
+ * `remove_action()`.
  *
  * @package    ABC
  * @subpackage Includes
@@ -22,20 +23,42 @@ namespace ABC;
 /**
  * Set up theme support.  This is where calls to `add_theme_support()` happen.
  *
+ * @link   https://developer.wordpress.org/reference/functions/add_theme_support/
  * @since  1.0.0
  * @access public
  * @return void
  */
 add_action( 'after_setup_theme', function() {
 
-	// Add title tag support.
+	// Automatically add the `<title>` tag.
 	// @link https://developer.wordpress.org/reference/functions/add_theme_support/#title-tag
 	add_theme_support( 'title-tag' );
+
+	// Automatically add feed links to `<head>`.
+	// @link https://developer.wordpress.org/reference/functions/add_theme_support/#feed-links
+	add_theme_support( 'automatic-feed-links' );
+
+	// Outputs HTML5 markup for core features.
+	// @link https://developer.wordpress.org/reference/functions/add_theme_support/#html5
+	add_theme_support( 'html5', [ 'caption', 'comment-form', 'comment-list', 'gallery', 'search-form' ] );
+
+	// Adds featured image support.
+	// @link https://developer.wordpress.org/reference/functions/add_theme_support/#post-thumbnails
+	add_theme_support( 'post-thumbnails' );
 
 	// Add selective refresh for widgets.
 	// @link https://developer.wordpress.org/reference/functions/add_theme_support/#customize-selective-refresh-widgets
 	add_theme_support( 'customize-selective-refresh-widgets' );
 
+	// Add custom logo support.
+	// @link https://developer.wordpress.org/reference/functions/add_theme_support/#custom-logo
+	add_theme_support( 'custom-logo', [
+		'width'       => null,
+		'height'      => null,
+		'flex-width'  => null,
+		'flex-height' => false,
+		'header-text' => ''
+	] );
 }, 5 );
 
 /**
@@ -51,7 +74,19 @@ add_action( 'after_setup_theme', function() {
  */
 add_action( 'after_setup_theme', function() {
 
-	add_theme_support( 'custom-background' );
+	add_theme_support( 'custom-background', [
+		'default-image'          => '',
+		'default-preset'         => 'default',
+		'default-position-x'     => 'left',
+		'default-position-y'     => 'top',
+		'default-size'           => 'auto',
+		'default-repeat'         => 'repeat',
+		'default-attachment'     => 'scroll',
+		'default-color'          => '',
+		'wp-head-callback'       => '_custom_background_cb',
+		'admin-head-callback'    => '',
+		'admin-preview-callback' => '',
+	] );
 
 }, 15 );
 
@@ -68,7 +103,22 @@ add_action( 'after_setup_theme', function() {
  */
 add_action( 'after_setup_theme', function() {
 
-	add_theme_support( 'custom-header' );
+	add_theme_support( 'custom-header', [
+		'default-image'          => '',
+		'random-default'         => false,
+		'width'                  => 0,
+		'height'                 => 0,
+		'flex-height'            => false,
+		'flex-width'             => false,
+		'default-text-color'     => '',
+		'header-text'            => true,
+		'uploads'                => true,
+		'wp-head-callback'       => '',
+		'admin-head-callback'    => '',
+		'admin-preview-callback' => '',
+		'video'                  => false,
+		'video-active-callback'  => 'is_front_page',
+	] );
 
 }, 15 );
 
@@ -89,8 +139,13 @@ add_action( 'init', function() {
 }, 5 );
 
 /**
- * Register image sizes.
+ * Register image sizes. Even if adding no custom image sizes or not adding
+ * "thumbnails," it's still important to call `set_post_thumbnail_size()` so
+ * that plugins that utilize the `post-thumbnail` size will have a properly-sized
+ * thumbnail that matches the theme design.
  *
+ * @link   https://developer.wordpress.org/reference/functions/set_post_thumbnail_size/
+ * @link   https://developer.wordpress.org/reference/functions/add_image_size/
  * @since  1.0.0
  * @access public
  * @return void
@@ -98,18 +153,18 @@ add_action( 'init', function() {
 add_action( 'init', function() {
 
 	// Set the `post-thumbnail` size.
-	// @link https://developer.wordpress.org/reference/functions/set_post_thumbnail_size/
 	set_post_thumbnail_size( 178, 100, true );
 
 	// Register custom image sizes.
-	// @link https://developer.wordpress.org/reference/functions/add_image_size/
-	add_image_size( 'abc/medium', 750, 422, true );
+	add_image_size( 'abc-medium', 750, 422, true );
+
 }, 5 );
 
 /**
  * Register sidebars.
  *
  * @link   https://developer.wordpress.org/reference/functions/register_sidebar/
+ * @link   https://developer.wordpress.org/reference/functions/register_sidebars/
  * @since  1.0.0
  * @access public
  * @return void
@@ -133,6 +188,8 @@ add_action( 'widgets_init', function() {
 /**
  * Enqueue scripts/styles.
  *
+ * @link   https://developer.wordpress.org/reference/functions/wp_enqueue_script/
+ * @link   https://developer.wordpress.org/reference/functions/wp_enqueue_style/
  * @since  1.0.0
  * @access public
  * @return void
