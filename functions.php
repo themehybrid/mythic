@@ -20,4 +20,4 @@ if ( file_exists( get_parent_theme_file_path( 'vendor/autoload.php' ) ) ) {
 }
 
 // Bootstrap the theme.
-require_once( get_parent_theme_file_path( 'bootstrap/app.php' ) );
+require_once( get_parent_theme_file_path( 'app/bootstrap-theme.php' ) );
