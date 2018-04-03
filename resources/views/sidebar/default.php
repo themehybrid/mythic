@@ -1,6 +1,6 @@
 <?php if ( is_active_sidebar( $data->name ) ) : ?>
 
-	<aside class="sidebar sidebar--<?= esc_attr( $data->name ) ?>">
+	<aside <?php Hybrid\attr( 'sidebar', $data->name ) ?>>
 
 		<h3 class="sidebar__title screen-reader-text"><?= Hybrid\get_sidebar_name( $data->name ) ?></h3>
 
