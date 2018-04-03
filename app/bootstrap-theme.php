@@ -16,7 +16,7 @@
 
 namespace ABC;
 
-use function Hybrid\app;
+//use function Hybrid\app;
 
 // Load functions files.
 array_map(
@@ -32,4 +32,4 @@ array_map(
 );
 
 // Runs after the app has been bootstrapped.
-do_action( 'abc/bootstrapped', app() );
+//do_action( 'abc/bootstrapped', app() );
