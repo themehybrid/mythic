@@ -1,9 +1,9 @@
 /**
- * Primary script.
+ * Primary front-end script.
  *
  * Primary JavaScript file. Any includes or anything imported should
  * be filtered through this file and eventually saved back into the
- * `/resources/dist/js/app.min.js` file.
+ * `/dist/scripts/app.js` file.
  *
  * @package   ABC
  * @author    Justin Tadlock <justintadlock@gmail.com>

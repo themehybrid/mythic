@@ -164,7 +164,7 @@ class Customize {
 
                 wp_enqueue_script(
                         'abc-customize-preview',
-                        get_parent_theme_file_uri( 'resources/scripts/customize-preview/custom-header.js' ),
+                        get_parent_theme_file_uri( 'dist/scripts/customize-preview.js' ),
                         [ 'customize-preview' ],
                         $version,
                         true

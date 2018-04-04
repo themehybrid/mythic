@@ -5,10 +5,12 @@
   "main": "index.js",
   "scripts": {
     "build:styles": "npm run styles:scss && npm run styles:autoprefixer",
-    "build:scripts": "npm run scripts:uglify",
+    "build:scripts": "npm run scripts:app && npm run scripts:customize-controls && npm run scripts:customize-preview",
     "styles:scss": "node-sass --output-style compressed -o resources/styles dist/styles",
     "styles:autoprefixer": "postcss -u autoprefixer -r resources/styles/*",
-    "scripts:uglify": "make-dir dist/scripts && uglifyjs resources/scripts/*.js -m -o dist/scripts/app.js"
+    "scripts:app": "webpack --module-bind 'js=babel-loader' ./resources/scripts/app/index.js --output ./dist/scripts/app.js --mode production",
+    "scripts:customize-controls": "webpack --module-bind 'js=babel-loader' ./resources/scripts/customize-controls/index.js --output ./dist/scripts/customize-controls.js --mode production",
+    "scripts:customize-preview": "webpack --module-bind 'js=babel-loader' ./resources/scripts/customize-preview/index.js --output ./dist/scripts/customize-preview.js --mode production"
   },
   "repository": {
     "type": "git",
@@ -25,6 +27,7 @@
     "make-dir-cli": "^1.0.0",
     "node-sass": "^4.7.2",
     "postcss-cli": "^5.0.0",
-    "uglify-js": "^3.3.13"
+    "webpack": "^4.5.0",
+    "webpack-cli": "^2.0.13"
   }
 }
