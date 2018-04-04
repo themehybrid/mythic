@@ -29,5 +29,17 @@
     "postcss-cli": "^5.0.0",
     "webpack": "^4.5.0",
     "webpack-cli": "^2.0.13"
-  }
+  },
+  "browserslist": [
+        "> 1%",
+        "ie >= 11",
+        "last 1 Android versions",
+        "last 1 ChromeAndroid versions",
+        "last 2 Chrome versions",
+        "last 2 Firefox versions",
+        "last 2 Safari versions",
+        "last 2 iOS versions",
+        "last 2 Edge versions",
+        "last 2 Opera versions"
+    ]
 }
