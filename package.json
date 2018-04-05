@@ -6,9 +6,8 @@
   "scripts": {
     "build" : "npm-run-all --parallel build:*",
     "build:scripts" : "webpack --mode production --config ./resources/build/scripts.js",
-    "build:styles": "npm-run-all --parallel styles:*",
-    "styles:scss": "node-sass --output-style compressed -o resources/styles dist/styles",
-    "styles:autoprefixer": "postcss -u autoprefixer -r resources/styles/*"
+    "build:styles": "npm-run-all --sequential styles:*",
+    "styles:scss": "node-sass --output-style compressed resources/styles -o dist/styles"
    },
   "repository": {
     "type": "git",
