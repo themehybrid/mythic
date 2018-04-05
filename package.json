@@ -4,8 +4,8 @@
   "description": "A starter theme for WordPress.",
   "main": "index.js",
   "scripts": {
-    "build:styles": "npm run styles:scss && npm run styles:autoprefixer",
-    "build:scripts": "npm run scripts:app && npm run scripts:customize-controls && npm run scripts:customize-preview",
+    "build:styles": "npm-run-all --parallel styles:*",
+    "build:scripts": "npm-run-all --parallel scripts:*",
     "styles:scss": "node-sass --output-style compressed -o resources/styles dist/styles",
     "styles:autoprefixer": "postcss -u autoprefixer -r resources/styles/*",
     "scripts:app": "webpack --module-bind 'js=babel-loader' ./resources/scripts/app/index.js --output ./dist/scripts/app.js --mode production",
@@ -23,23 +23,43 @@
   },
   "homepage": "https://github.com/justintadlock/abc#readme",
   "devDependencies": {
-    "autoprefixer": "^8.1.0",
+    "@babel/cli": "^7.0.0-beta.44",
+    "@babel/core": "^7.0.0-beta.44",
+    "@babel/plugin-transform-runtime": "^7.0.0-beta.44",
+    "@babel/preset-env": "^7.0.0-beta.44",
+    "autoprefixer": "^8.2.0",
+    "babel-loader": "^8.0.0-beta.2",
+    "browserslist": "^3.2.4",
     "make-dir-cli": "^1.0.0",
-    "node-sass": "^4.7.2",
+    "npm-run-all": "^4.1.2",
+    "node-sass": "^4.8.3",
     "postcss-cli": "^5.0.0",
     "webpack": "^4.5.0",
-    "webpack-cli": "^2.0.13"
+    "webpack-cli": "^2.0.14"
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/env",
+        {
+          "modules": false
+        }
+      ]
+    ],
+    "plugins": [
+      "@babel/plugin-transform-runtime"
+    ]
   },
   "browserslist": [
-        "> 1%",
-        "ie >= 11",
-        "last 1 Android versions",
-        "last 1 ChromeAndroid versions",
-        "last 2 Chrome versions",
-        "last 2 Firefox versions",
-        "last 2 Safari versions",
-        "last 2 iOS versions",
-        "last 2 Edge versions",
-        "last 2 Opera versions"
-    ]
+    "> 1%",
+    "ie >= 11",
+    "last 1 Android versions",
+    "last 1 ChromeAndroid versions",
+    "last 2 Chrome versions",
+    "last 2 Firefox versions",
+    "last 2 Safari versions",
+    "last 2 iOS versions",
+    "last 2 Edge versions",
+    "last 2 Opera versions"
+  ]
 }
