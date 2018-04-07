@@ -49,7 +49,7 @@ array_map(
 	},
 	[
 		'functions-setup',
-		'functions-template'
+		'template-general'
 	]
 );
 
