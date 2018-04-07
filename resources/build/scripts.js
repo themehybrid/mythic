@@ -2,12 +2,12 @@
  * Webpack file for JavaScript assets.
  */
 
+// Import scripts configuration.
+const { scripts } = require( './config' );
+
 // Import modules.
 const config = require( './config' );
 const path   = require( 'path' );
-
-// Scripts config.
-const scripts = config.scripts;
 
 // Export our module for Webpack.
 module.exports = {

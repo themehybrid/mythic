@@ -2,13 +2,12 @@
  * Webpack file for stylesheet assets.
  */
 
+ // Import styles configuration.
+ const { styles } = require( './config' );
+
 // Import modules
-const config            = require( './config' );
 const path              = require( 'path' );
 const ExtractTextPlugin = require( 'extract-text-webpack-plugin');
-
-// Styles config.
-const styles = config.styles;
 
 // Export our module for Webpack.
 module.exports = {
