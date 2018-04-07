@@ -8,59 +8,74 @@
 // Import modules.
 const path = require( 'path' );
 
-// Export the settings.
+// Export the configuration module.
+//
+// @todo Once node natively supports ES6+ `import` and `export`, wrap each object
+// into its own module.
 module.exports = {
 
-        // Paths to the folders in our projects. These shouldn't be changed
-        // unless you're changing the directory structure of where the theme
-        // stores its assets.
-        paths : {
-                // Project root path. This points to the theme root.
-                root   : path.resolve( __dirname, '../../' ),
+        // Common configuration module.
+        common : {
+                root : path.resolve( __dirname, '../../' ),
+        },
 
-                // Input paths. These are the paths to our uncompiled resources
-                // that we use in development.
-                input  : {
-                        scripts : path.resolve( __dirname, '../../resources/scripts' ),
-                        styles  : path.resolve( __dirname, '../../resources/styles'  ),
+        // JavaScript configuration. This is imported into the `scripts.js` build
+        // file and used to bundle all of your theme's JavaScript.
+        scripts : {
+
+                // The entry point (input) Webpack will use to create your output.
+                // These are your JavaScript files for the theme. Add any
+                // additional files to the object below.
+                // @link https://webpack.js.org/concepts/#entry
+                entry : {
+                        'app'                : './resources/scripts/app/index.js',
+                        'customize-controls' : './resources/scripts/customize-controls/index.js',
+                        'customize-preview'  : './resources/scripts/customize-preview/index.js'
                 },
 
-                // Output paths. These are the paths to our compiled resources
-                // that we use in production.
+                // The output is where you want your bundled JavaScript files to
+                // appear. The `path` is the folder where all your files will be
+                // output. The `filename` is the key from the `entry` object.
+                // @link https://webpack.js.org/concepts/#output
                 output : {
-                        scripts : path.resolve( __dirname, '../../dist/scripts' ),
-                        styles  : path.resolve( __dirname, '../../dist/styles'  )
+                        path     : path.resolve( __dirname, '../../dist/scripts' ),
+                        filename : '[name].js'
+                },
+
+                // Custom settings for JavaScript handling.
+                settings : {
+                        sourceMaps : false
                 }
         },
 
-        // Configure your scripts. You can make modifications to this object to
-        // point to additional scripts or to remove those that you don't need.
-        scripts : {
-                'app'                : './resources/scripts/app/index.js',
-                'customize-controls' : './resources/scripts/customize-controls/index.js',
-                'customize-preview'  : './resources/scripts/customize-preview/index.js'
-        },
-
-        // Configure your styles. You can make modifications to this object to
-        // point to additional styles or to remove those that you don't need.
+        // Stylesheet configuration. This is imported into the `styles.js` build
+        // file and used to bundle all of your theme's stylesheets.
         styles : {
-                'screen' : './resources/styles/screen.scss'
-        },
 
-        // How the filenames should look on output. This should probably be left
-        // to the settings below unless you want to use a different structure,
-        // such as `[name].min.[ext]`, for example.
-        filenames : {
-                scripts : '[name].js',
-                styles  : '[name].css'
-        },
+                // The entry point (input) Webpack will use to create your output.
+                // These are your stylesheet files for the theme. Add any
+                // additional files to the object below.
+                // @link https://webpack.js.org/concepts/#entry
+                entry : {
+                        'screen' : './resources/styles/screen.scss'
+                },
 
-        // Custom settings.
-        settings : {
-                sourceMaps   : false,
-                styleLint    : {},
-                autoprefixer : {
-                        browsers : [ 'last 2 versions', '> 1%' ],
+                // The output is where you want your bundled stylesheet files to
+                // appear. The `path` is the folder where all your files will be
+                // output. The `filename` is the key from the `entry` object.
+                // @link https://webpack.js.org/concepts/#output
+                output : {
+                        path     : path.resolve( __dirname, '../../dist/styles' ),
+                        filename : '[name].css'
+                },
+
+                // Custom settings for stylesheet handling.
+                settings : {
+                        sourceMaps   : false,
+                        styleLint    : {},
+                        autoprefixer : {
+                                browsers : [ 'last 2 versions', '> 1%' ],
+                        }
                 }
         }
 };

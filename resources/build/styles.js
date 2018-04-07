@@ -2,27 +2,31 @@
  * Webpack file for stylesheet assets.
  */
 
-// Import modules.
+// Import modules
 const config            = require( './config' );
 const path              = require( 'path' );
 const ExtractTextPlugin = require( 'extract-text-webpack-plugin');
 
+// Styles config.
+const styles = config.styles;
+
+// Export our module for Webpack.
 module.exports = {
 
         mode : 'production',
 
-        entry : config.styles,
+        entry : styles.entry,
 
         output : {
-                path     : config.paths.output.styles,
-                filename : config.filenames.styles
+                path     : styles.output.path,
+                filename : styles.output.filename
         },
 
         module : {
                 rules : [
                         {
-                                test: /\.scss$/,
-                                use : ExtractTextPlugin.extract( {
+                                test : /\.s[ac]ss$/,
+                                use  : ExtractTextPlugin.extract( {
                                         use: [
                                                 { loader : 'css-loader' },
                                                 { loader : 'postcss-loader' },
@@ -34,6 +38,6 @@ module.exports = {
         },
 
         plugins : [
-                new ExtractTextPlugin( config.filenames.styles )
+                new ExtractTextPlugin( styles.output.filename )
         ]
 };

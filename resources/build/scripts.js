@@ -5,17 +5,20 @@
 // Import modules.
 const config = require( './config' );
 const path   = require( 'path' );
-const clean  = require( 'clean-webpack-plugin' );
 
+// Scripts config.
+const scripts = config.scripts;
+
+// Export our module for Webpack.
 module.exports = {
 
         mode : 'production',
 
-        entry : config.scripts,
+        entry : scripts.entry,
 
         output : {
-                path     : config.paths.output.scripts,
-                filename : config.filenames.scripts
+                path     : scripts.output.path,
+                filename : scripts.output.filename
         },
 
         module : {
@@ -33,9 +36,5 @@ module.exports = {
                 ]
         },
 
-        plugins : [
-                new clean( config.paths.output.scripts, {
-                        root : config.paths.root
-                } )
-        ]
+        plugins : []
 };
