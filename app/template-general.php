@@ -1,8 +1,9 @@
 <?php
 /**
- * Template functions.
+ * General template tags.
  *
- * This file holds functions related to templates.
+ * This file holds general template tags for the theme. Template tags are PHP
+ * functions meant for use within theme templates.
  *
  * @package   ABC
  * @author    Justin Tadlock <justintadlock@gmail.com>

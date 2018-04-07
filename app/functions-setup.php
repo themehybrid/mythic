@@ -59,6 +59,7 @@ add_action( 'after_setup_theme', function() {
 		'flex-height' => false,
 		'header-text' => ''
 	] );
+
 }, 5 );
 
 /**
