@@ -2,9 +2,10 @@
 /**
  * Index template.
  *
- * This template is an absolute fallback template. Ideally, it should not
- * be loaded.  In the off-chance that it is, we're simply going to load
- * the default view template.
+ * This template should never be loaded on a site unless a plugin is doing
+ * something that it shouldn't be doing or something weird is going on. We're
+ * leaving the below code as an absolue fallback in case this file is loaded.
+ * All it does is correctly load up our `resources/views/index.php` template.
  */
 
- Hybrid\render_view( 'index' );
+Hybrid\render_view( 'index' );
