@@ -54,9 +54,4 @@ array_map(
 );
 
 # Registers a single instance of our `Customize` class with the container.
-app()->singleton( 'abc/customize', function() {
-        return new Customize();
-} );
-
-# Resolves the single customize instance.
-app()->get( 'abc/customize' );
+app()->instance( 'abc/customize', new Customize() );
