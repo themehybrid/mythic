@@ -6,8 +6,7 @@
 const { scripts } = require( './config' );
 
 // Import modules.
-const config = require( './config' );
-const path   = require( 'path' );
+const path = require( 'path' );
 
 // Export our module for Webpack.
 module.exports = {
