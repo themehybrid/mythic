@@ -1,12 +1,8 @@
-/**
- * Webpack file for stylesheet assets.
- */
+// Import scripts configuration.
+const config = require( './config' );
 
- // Import styles configuration.
- const { styles } = require( './config' );
-
-// Import modules
-const path              = require( 'path' );
+// Import modules.
+const path  = require( 'path' );
 const ExtractTextPlugin = require( 'extract-text-webpack-plugin');
 
 // Export our module for Webpack.
@@ -14,15 +10,25 @@ module.exports = {
 
         mode : 'production',
 
-        entry : styles.entry,
+        entry : config.entry,
 
         output : {
-                path     : styles.output.path,
-                filename : styles.output.filename
+                path     : config.output.path,
+                filename : config.output.filename
         },
 
         module : {
                 rules : [
+                        {
+                                test    : /\.js$/,
+                                exclude : /node_modules/,
+                                use     : {
+                                        loader  : 'babel-loader',
+                                        options : {
+                                                presets: [ '@babel/preset-env' ]
+                                        }
+                                },
+                        },
                         {
                                 test : /\.s[ac]ss$/,
                                 use  : ExtractTextPlugin.extract( {
@@ -37,6 +43,6 @@ module.exports = {
         },
 
         plugins : [
-                new ExtractTextPlugin( styles.output.filename )
+                new ExtractTextPlugin( config.output.filename )
         ]
 };

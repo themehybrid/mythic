@@ -4,9 +4,7 @@
   "description": "A starter theme for WordPress.",
   "main": "index.js",
   "scripts": {
-    "build": "npm-run-all --parallel build:*",
-    "build:scripts": "webpack --mode production --config ./resources/build/scripts.js",
-    "build:styles": "webpack --mode production --config ./resources/build/styles.js"
+    "build": "webpack --mode production --config ./resources/build/index.js"
   },
   "repository": {
     "type": "git",
