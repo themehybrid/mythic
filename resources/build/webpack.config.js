@@ -72,7 +72,7 @@ module.exports = env => {
                                 // Styles.
                                 {
                                         test    : /\.s[ac]ss$/,
-                                        include : config.paths.sass,
+                                        include : config.paths.styles,
                                         use     : [
                                                 MiniCssExtractPlugin.loader,
                                                 {
