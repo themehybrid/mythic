@@ -110,7 +110,7 @@ The `/dist` folder is for holding our compiled assets for distribution. These fi
 The `/resources` folder is where much of the magic of theme development will happen.  This is essentially the stuff that you will be editing the vast majority of the time when creating a theme.
 
 * `build` - Build scripts. We're using Webpack for this.
-* `fonts` - Gont files.
+* `fonts` - Font files.
 * `img` - PNG, JPG, and most other image files.
 * `lang` - POT and any other MO or PO language files.
 * `scripts` - JavaScript files.
