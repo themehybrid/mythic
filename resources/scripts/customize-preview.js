@@ -12,4 +12,4 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-import './custom-header.js';
+import { customHeader } from './customize-preview/custom-header';

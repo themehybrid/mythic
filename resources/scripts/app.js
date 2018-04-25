@@ -22,5 +22,6 @@
  */
 (function () {
 
-	// Do stuff.
+        console.log( 'Testing the resources/scripts/app.js file.' );
+
 })();

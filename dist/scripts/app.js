@@ -11,4 +11,4 @@
  * @copyright Copyright (c) 2018, Justin Tadlock
  * @link      https://themehybrid.com/themes/abc
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
- */}});
+ */console.log("Testing the resources/scripts/app.js file.")}});
