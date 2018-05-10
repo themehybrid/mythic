@@ -4,7 +4,7 @@
 		<h1 class="entry__title"><?php single_post_title() ?></h1>
 	</header>
 
-	<?php Hybrid\attachment() ?>
+	<?php Hybrid\post_media( [ 'type' => 'video' ] ) ?>
 
 	<div class="entry__content">
 		<?php the_content() ?>
