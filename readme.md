@@ -1,6 +1,6 @@
 # ABC - A starter theme for WordPress
 
-ABC (temporary name) is a starter theme project that's currently under active development.  
+ABC (temporary name) is a starter theme project that's currently under active development.
 
 The theme's primary goal is to offer a modern development experience for WordPress theme authors while sticking as close to possible to WordPress standards as we can.  Sometimes those things don't always mesh well.  This theme aims to balance that.
 
@@ -109,7 +109,6 @@ The `/dist` folder is for holding our compiled assets for distribution. These fi
 
 The `/resources` folder is where much of the magic of theme development will happen.  This is essentially the stuff that you will be editing the vast majority of the time when creating a theme.
 
-* `build` - Build scripts. We're using Webpack for this.
 * `fonts` - Font files.
 * `img` - PNG, JPG, and most other image files.
 * `lang` - POT and any other MO or PO language files.
@@ -117,3 +116,55 @@ The `/resources` folder is where much of the magic of theme development will hap
 * `styles` - SCSS/CSS files.
 * `svg` - SVG files.
 * `views` - The template files for the theme.
+
+## Build Process
+
+This theme utilizes [Laravel Mix](https://laravel.com/docs/5.6/mix) for most of the build process with the theme.
+
+Laravel Mix is a layer built on top of Webpack that makes defining your build process much easier than attempting to write out a custom `webpack.config.js` configuration file.  It simplifies most of the complexity while still allowing you to define custom Webpack config options for more advanced uses.
+
+You may configure the build process to your liking by editing `webpack.mix.js`.
+
+The following is a list of commands you can run from the command line:
+
+```
+npm run dev
+```
+
+Processes all of your assets for a development environment.
+
+```
+npm run watch
+```
+
+Watches for changes to any files and rebuilds for a development environment.
+
+```
+npm run hot
+```
+
+Watches for changes to files and syncs with the browser using BrowserSync.
+
+```
+npm run build
+```
+
+Processes all of your assets for a production environment.
+
+```
+npm run lint
+```
+
+Lint both JavaScript and SCSS files.
+
+```
+npm run lint:styles
+```
+
+Lint SCSS files.
+
+```
+npm run lint:scripts
+```
+
+Lint JavaScript files.
