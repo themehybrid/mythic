@@ -33,9 +33,9 @@ mix.sass( 'resources/styles/screen.scss', 'styles', sassConfig ).sourceMaps().op
 
 // Generate a manifest file for cache busting.
 // Append a unique hash for production only assets.
-//if(mix.inProduction()) {
-//	mix.version();
-//}
+if( mix.inProduction() ) {
+	mix.version();
+}
 
 // Add our own Webpack config options.
 // Here we are using CopyWebpackPlugin rather than the `.copy` mix method
