@@ -84,8 +84,8 @@ The root theme folder has several files, some of which shouldn't be edited.
 * `functions.php` - Functions file first called by WordPress to bootstrap the theme.
 * `index.php` - Unused fallback template that's required in WP's system.
 * `package-lock.json` - Used by NPM to lock dependencies (don't edit).
-* `postcss.config.js` - Used by PostCSS for compiling modern CSS.
 * `style.css` - Needed by WP to know this is a theme. We use this for configuration, essentially.
+* `webpack.mix.js` - Handles the Laravel Mix configuration.
 * `yarn.lock` - Used by Yarn to lock dependencies (don't edit).
 
 ### /app
@@ -128,43 +128,20 @@ You may configure the build process to your liking by editing `webpack.mix.js`.
 The following is a list of commands you can run from the command line:
 
 ```
+# Processes all of your assets for a development environment.
 npm run dev
-```
 
-Processes all of your assets for a development environment.
-
-```
+# Watches for changes to any files and rebuilds for a development environment.
 npm run watch
-```
 
-Watches for changes to any files and rebuilds for a development environment.
-
-```
+# Watches for changes to files and syncs with the browser using BrowserSync.
 npm run hot
-```
 
-Watches for changes to files and syncs with the browser using BrowserSync.
-
-```
+# Processes all of your assets for a production environment.
 npm run build
-```
 
-Processes all of your assets for a production environment.
-
-```
+# Lint JavaScript and/or SCSS files.
 npm run lint
-```
-
-Lint both JavaScript and SCSS files.
-
-```
 npm run lint:styles
-```
-
-Lint SCSS files.
-
-```
 npm run lint:scripts
 ```
-
-Lint JavaScript files.
