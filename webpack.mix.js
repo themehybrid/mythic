@@ -21,57 +21,73 @@ const ImageminPlugin    = require( 'imagemin-webpack-plugin' ).default;
 const CopyWebpackPlugin = require( 'copy-webpack-plugin' );
 const imageminMozjpeg   = require( 'imagemin-mozjpeg' );
 
-// Set the BrowserSync proxy URL.
-const browserSyncUrl = 'theme-development.localhost';
-
-// SASS and CSS configuration.
-var sassConfig = {
-	outputStyle : 'expanded',
-	indentType  : 'tab',
-	indentWidth : 1
-};
-
-var cssConfig = {
-	postCss        : [ require( 'postcss-preset-env' )() ],
-	processCssUrls : false
-};
-
 // Sets the path to the generated assets. By default, this is the `/dist` folder
 // in the theme. If doing something custom, make sure to change this everywhere.
 mix.setPublicPath( 'dist' );
 
-// Compile JavaScript.
-mix.js( 'resources/scripts/app.js',                'scripts' ).sourceMaps();
-mix.js( 'resources/scripts/customize-controls.js', 'scripts' ).sourceMaps();
-mix.js( 'resources/scripts/customize-preview.js',  'scripts' ).sourceMaps();
+// Set Laravel Mix options.
+//
+// @link https://laravel.com/docs/5.6/mix#postcss
+// @link https://laravel.com/docs/5.6/mix#url-processing
+mix.options( {
+	postCss        : [ require( 'postcss-preset-env' )() ],
+	processCssUrls : false
+} );
 
-// Compile SASS/CSS.
-mix.sass( 'resources/styles/screen.scss', 'styles', sassConfig ).sourceMaps().options( cssConfig );
+// Builds sources maps for assets.
+//
+// @link https://laravel.com/docs/5.6/mix#css-source-maps
+mix.sourceMaps();
 
-// Generate a manifest file for cache busting.
-// Append a unique hash for production only assets.
+// Versioning and cache busting. Append a unique hash for production assets.
+//
+// @link https://laravel.com/docs/5.6/mix#versioning-and-cache-busting
 if ( mix.inProduction() ) {
 	mix.version();
 }
+
+// Compile JavaScript.
+//
+// @link https://laravel.com/docs/5.6/mix#working-with-scripts
+mix.js( 'resources/scripts/app.js',                'scripts' )
+   .js( 'resources/scripts/customize-controls.js', 'scripts' )
+   .js( 'resources/scripts/customize-preview.js',  'scripts' )
+
+// Compile SASS and CSS.
+//
+// @link https://laravel.com/docs/5.6/mix#working-with-stylesheets
+// @link https://laravel.com/docs/5.6/mix#sass
+// @link https://github.com/sass/node-sass#options
+
+// Sass configuration.
+var sassConfig = {
+	outputStyle : 'expanded',
+	indentType  : 'tab',
+	indentWidth : 8
+};
+
+// Compile SASS/CSS.
+mix.sass( 'resources/styles/screen.scss', 'styles', sassConfig );
 
 // Add custom Webpack configuration.
 //
 // Laravel Mix doesn't currently have a built-in method for minimizing images,
 // so we're going to use the `CopyWebpackPlugin` instead of `.copy()` for
 // processing and copying our images over to their distribution folder.
+//
+// @link https://laravel.com/docs/5.6/mix#custom-webpack-configuration
 mix.webpackConfig( {
-
 	stats       : 'minimal',
-	performance : { hints: false },
-	// Prevent certain dependencies being included in bundles.
-	// @link https://webpack.js.org/configuration/externals/#externals
+	performance : { hints  : false    },
 	externals   : { jquery : 'jQuery' },
 	plugins     : [
+		// @link https://github.com/webpack-contrib/copy-webpack-plugin
 		new CopyWebpackPlugin( [
 			{ from : 'resources/img',   to : 'img' },
 			{ from : 'resources/svg',   to : 'svg' },
 			{ from : 'resources/fonts', to : 'fonts' }
 		] ),
+		// @link https://github.com/Klathmon/imagemin-webpack-plugin
 		new ImageminPlugin( {
 			test     : /\.(jpe?g|png|gif|svg)$/i,
 			disable  : process.env.NODE_ENV !== 'production',
@@ -88,20 +104,22 @@ mix.webpackConfig( {
 					{ removeViewBox : false }
 				]
 			},
-			plugins : [ imageminMozjpeg( { quality : 75 } ) ]
+			plugins : [
+				// @link https://github.com/imagemin/imagemin-mozjpeg
+				imageminMozjpeg( { quality : 75 } )
+			]
 		} )
 	]
 } );
 
 // Monitor files for changes and inject your changes into the browser.
+//
+// @link https://laravel.com/docs/5.6/mix#browsersync-reloading
 mix.browserSync( {
-	proxy : browserSyncUrl,
+	proxy : 'theme-development.localhost',
 	files : [
 		"**/*.{jpg,jpeg,png,gif,svg,eot,ttf,woff,woff2}",
 		"resources/views/**/*.php",
 		"app/**/*.php"
 	]
 } );
-
-// Disable processing asset URLs in Sass files.
-mix.options( { processCssUrls : false } );
