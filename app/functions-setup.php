@@ -201,7 +201,7 @@ add_action( 'wp_enqueue_scripts', function() {
 
 	wp_enqueue_script(
 		'abc-app',
-		get_parent_theme_file_uri( 'dist/scripts/app.js' ),
+		asset( 'scripts/app.js' ),
 		null,
 		$version,
 		true
@@ -209,7 +209,7 @@ add_action( 'wp_enqueue_scripts', function() {
 
 	wp_enqueue_style(
 		'abc-screen',
-		get_parent_theme_file_uri( 'dist/styles/screen.css' ),
+		asset( 'styles/screen.css' ),
 		null,
 		$version
 	);
