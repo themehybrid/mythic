@@ -30,6 +30,7 @@
 		"imagemin-mozjpeg": "^6.0.0",
 		"imagemin-webpack-plugin": "^2.1.5",
 		"laravel-mix": "^2.1.0",
+		"node-wp-i18n": "^1.1.1",
 		"postcss-preset-env": "^5.1.0"
 	}
 }
