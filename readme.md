@@ -144,4 +144,9 @@ npm run build
 npm run lint
 npm run lint:styles
 npm run lint:scripts
+
+# Auto-adds a textdomain and/or creates a POT file.
+npm run i18n
+npm run i18n:textdomain
+npm run i18n:pot
 ```
