@@ -15,7 +15,7 @@
 		"lint:styles": "stylelint './resources/styles/**/*.scss' --syntax scss",
 		"lint:scripts": "eslint './resources/scripts/**/*.js'",
 		"i18n": "npm run i18n:textdomain && npm run i18n:pot",
-		"i18n:textdomain": "npx wpi18n addtextdomain --glob-pattern=./!(vendor)/**/*.php",
+		"i18n:textdomain": "npx wpi18n addtextdomain --exclude=vendor,node_modules",
 		"i18n:pot": "npx wpi18n makepot"
 	},
 	"repository": {
@@ -33,7 +33,7 @@
 		"imagemin-mozjpeg": "^6.0.0",
 		"imagemin-webpack-plugin": "^2.1.5",
 		"laravel-mix": "^2.1.0",
-		"node-wp-i18n": "^1.1.1",
+		"node-wp-i18n": "github:cedaro/node-wp-i18n#develop",
 		"postcss-preset-env": "^5.1.0"
 	}
 }

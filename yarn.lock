@@ -5255,9 +5255,9 @@ node-status-codes@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/node-status-codes/-/node-status-codes-1.0.0.tgz#5ae5541d024645d32a58fcddc9ceecea7ae3ac2f"
 
-node-wp-i18n@^1.1.1:
+"node-wp-i18n@github:cedaro/node-wp-i18n#develop":
   version "1.1.1"
-  resolved "https://registry.yarnpkg.com/node-wp-i18n/-/node-wp-i18n-1.1.1.tgz#38377abcef776552617d6a86f6af8dab98d7fafb"
+  resolved "https://codeload.github.com/cedaro/node-wp-i18n/tar.gz/b7c99966463ea9ff1a443c722607a3573996e2c0"
   dependencies:
     bluebird "^3.4.1"
     gettext-parser "^1.2.0"
