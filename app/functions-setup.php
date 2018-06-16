@@ -197,21 +197,8 @@ add_action( 'widgets_init', function() {
  */
 add_action( 'wp_enqueue_scripts', function() {
 
-	$version = wp_get_theme( get_template() )->get( 'Version' );
+	wp_enqueue_script( 'abc-app', asset( 'scripts/app.js' ), null, false, true );
 
-	wp_enqueue_script(
-		'abc-app',
-		asset( 'scripts/app.js' ),
-		null,
-		$version,
-		true
-	);
-
-	wp_enqueue_style(
-		'abc-screen',
-		asset( 'styles/screen.css' ),
-		null,
-		$version
-	);
+	wp_enqueue_style( 'abc-screen', asset( 'styles/screen.css' ), null );
 
 }, 5 );

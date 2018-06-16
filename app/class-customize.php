@@ -160,13 +160,11 @@ class Customize {
          */
         public function previewEnqueue() {
 
-                $version = wp_get_theme( get_template() )->get( 'Version' );
-
                 wp_enqueue_script(
                         'abc-customize-preview',
                         asset( 'scripts/customize-preview.js' ),
                         [ 'customize-preview' ],
-                        $version,
+                        false,
                         true
                 );
         }
