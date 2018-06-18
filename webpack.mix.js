@@ -116,7 +116,8 @@ mix.webpackConfig( {
 //
 // @link https://laravel.com/docs/5.6/mix#browsersync-reloading
 mix.browserSync( {
-	proxy : 'theme-development.localhost',
+	proxy : 'localhost',
+	port  : 8080,
 	files : [
 		"**/*.{jpg,jpeg,png,gif,svg,eot,ttf,woff,woff2}",
 		"resources/views/**/*.php",
