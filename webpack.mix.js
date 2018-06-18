@@ -63,7 +63,7 @@ mix.js( 'resources/scripts/app.js',                'scripts' )
 var sassConfig = {
 	outputStyle : 'expanded',
 	indentType  : 'tab',
-	indentWidth : 8
+	indentWidth : 1
 };
 
 // Compile SASS/CSS.
