@@ -39,12 +39,12 @@ mix.options( {
 // @link https://laravel.com/docs/5.6/mix#css-source-maps
 mix.sourceMaps();
 
-// Versioning and cache busting. Append a unique hash for production assets.
+// Versioning and cache busting. Append a unique hash for production assets. If
+// you only want versioned assets in production, do a conditional check for
+// `mix.inProduction()`.
 //
 // @link https://laravel.com/docs/5.6/mix#versioning-and-cache-busting
-if ( mix.inProduction() ) {
-	mix.version();
-}
+mix.version();
 
 // Compile JavaScript.
 //

@@ -19,7 +19,7 @@ use function Hybrid\app;
 /**
  * Helper function for outputting an asset URL in the theme. This integrates
  * with Laravel Mix for handling cache busting. If used when you enqueue a script
- * or style, it'll append an ID to the file name in a production build.
+ * or style, it'll append an ID to the filename.
  *
  * @link   https://laravel.com/docs/5.6/mix#versioning-and-cache-busting
  * @since  1.0.0
