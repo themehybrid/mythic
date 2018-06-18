@@ -76,8 +76,10 @@ mix.sass( 'resources/styles/screen.scss', 'styles', sassConfig );
 // processing and copying our images over to their distribution folder.
 //
 // @link https://laravel.com/docs/5.6/mix#custom-webpack-configuration
+// @link https://webpack.js.org/configuration/
 mix.webpackConfig( {
 	stats       : 'minimal',
+	devtool     : mix.inProduction() ? false : 'source-map',
 	performance : { hints  : false    },
 	externals   : { jquery : 'jQuery' },
 	plugins     : [
