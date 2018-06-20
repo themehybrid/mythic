@@ -187,7 +187,7 @@ add_action( 'widgets_init', function() {
 }, 5 );
 
 /**
- * Enqueue scripts/styles.
+ * Enqueue scripts/styles for the front end.
  *
  * @link   https://developer.wordpress.org/reference/functions/wp_enqueue_script/
  * @link   https://developer.wordpress.org/reference/functions/wp_enqueue_style/
@@ -200,5 +200,18 @@ add_action( 'wp_enqueue_scripts', function() {
 	wp_enqueue_script( 'abc-app', asset( 'scripts/app.js' ), null, false, true );
 
 	wp_enqueue_style( 'abc-screen', asset( 'styles/screen.css' ), null );
+
+}, 5 );
+
+/**
+ * Enqueue scripts/styles for the editor.
+ *
+ * @since  1.0.0
+ * @access public
+ * @return void
+ */
+add_action( 'enqueue_block_editor_assets', function() {
+
+	wp_enqueue_style( 'abc-editor', asset( 'styles/editor.css' ), null );
 
 }, 5 );

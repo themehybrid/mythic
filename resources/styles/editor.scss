@@ -1,0 +1,55 @@
+/**
+ * Editor stylesheet.
+ *
+ * This is the primary editor stylesheet. It is used for the WordPress 5.0+
+ * (Gutenberg) editor and is not intended for older versions of the WordPress
+ * edit screen.
+ */
+
+// Settings.
+//
+// Settings handle the configuration and don't output CSS. This is a good
+// place to define things like variables.
+
+@import 'settings/index';
+
+// Tools.
+//
+// These are used throughout the code but don't output CSS on their own.
+// Things like mixins and extensions go here.
+
+@import 'tools/index';
+
+// Generic.
+//
+// This is the first point that real CSS is output. Resets, normalization,
+// fonts, etc. are best handled here. These are the base styles that other
+// styles will build upon.
+
+@import 'generic/index';
+
+// Editor styles.
+.edit-post-visual-editor {
+
+	// Elements.
+	//
+	// Elements are (or should be) class-less designs for the base
+	// HTML elements.
+
+	@import 'elements/index';
+
+	// Blocks.
+	//
+	// Blocks are styles for specific editor blocks.
+	//
+
+	// @import 'blocks/index';
+
+	// Utilities.
+	//
+	// Utilities are helper classes and overrides.  This gets loaded last.
+	// If necessary, this is the only place where `!important` rules should
+	// go, but only if necessary.
+
+	@import 'utilities/index';
+}

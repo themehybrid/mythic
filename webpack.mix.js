@@ -51,7 +51,7 @@ mix.version();
 // @link https://laravel.com/docs/5.6/mix#working-with-scripts
 mix.js( 'resources/scripts/app.js',                'scripts' )
    .js( 'resources/scripts/customize-controls.js', 'scripts' )
-   .js( 'resources/scripts/customize-preview.js',  'scripts' )
+   .js( 'resources/scripts/customize-preview.js',  'scripts' );
 
 // Compile SASS and CSS.
 //
@@ -67,7 +67,8 @@ var sassConfig = {
 };
 
 // Compile SASS/CSS.
-mix.sass( 'resources/styles/screen.scss', 'styles', sassConfig );
+mix.sass( 'resources/styles/screen.scss', 'styles', sassConfig )
+   .sass( 'resources/styles/editor.scss', 'styles', sassConfig );
 
 // Add custom Webpack configuration.
 //
