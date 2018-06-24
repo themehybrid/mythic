@@ -1,7 +1,7 @@
 <li <?php Hybrid\attr( 'comment' ) ?>>
 
 	<header class="comment__meta">
-		<?= get_avatar( $data->comment, $data->args['avatar_size'], '', '', [ 'class' => 'comment__avatar' ] ) ?>
+		<?php echo get_avatar( $data->comment, $data->args['avatar_size'], '', '', [ 'class' => 'comment__avatar' ] ) ?>
 
 		<span class="comment__author"><?php comment_author_link() ?></span>
 		<br />
