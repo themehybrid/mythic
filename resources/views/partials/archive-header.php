@@ -1,17 +1,17 @@
 <?php if ( ! is_front_page() ) : ?>
 
-        <div class="archive-header">
+	<div class="archive-header">
 
-                <h1 class="archive-header__title"><?php the_archive_title() ?></h1>
+		<h1 class="archive-header__title"><?php the_archive_title() ?></h1>
 
-                <?php if ( ! is_paged() && get_the_archive_description() ) : ?>
+		<?php if ( ! is_paged() && get_the_archive_description() ) : ?>
 
-                        <div class="archive-header__description">
-                                <?php the_archive_description() ?>
-                        </div>
+			<div class="archive-header__description">
+				<?php the_archive_description() ?>
+			</div>
 
-                <?php endif ?>
+		<?php endif ?>
 
-        </div>
+	</div>
 
 <?php endif ?>

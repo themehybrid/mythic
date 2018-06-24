@@ -20,7 +20,7 @@ use function Hybrid\autoload;
 # file exists in case someone's using Composer to load their dependencies in
 # a different directory.
 if ( file_exists( get_parent_theme_file_path( 'vendor/autoload.php' ) ) ) {
-        require_once( get_parent_theme_file_path( 'vendor/autoload.php' ) );
+	require_once( get_parent_theme_file_path( 'vendor/autoload.php' ) );
 }
 
 # Bootstrap the theme.
@@ -35,10 +35,10 @@ if ( file_exists( get_parent_theme_file_path( 'vendor/autoload.php' ) ) ) {
 # the autoloader in Composer.
 spl_autoload_register( function( $class ) {
 
-        autoload( $class, [
-                'namespace' => __NAMESPACE__,
-                'path'      => get_parent_theme_file_path( 'app' )
-        ] );
+	autoload( $class, [
+		'namespace' => __NAMESPACE__,
+		'path'      => get_parent_theme_file_path( 'app' )
+	] );
 } );
 
 # Load any functions-files from the `/app` folder that are needed. Add additional
