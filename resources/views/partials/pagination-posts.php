@@ -4,4 +4,4 @@
 	'title_text'      => __( 'Posts Navigation' ),
 	'container_class' => 'pagination pagination--posts',
 	'title_class'     => 'pagination__title screen-reader-text'
-] ) ?>
+] );

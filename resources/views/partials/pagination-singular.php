@@ -3,4 +3,4 @@
 	'prev_next'       => false,
 	'title_text'      => __( 'Pages:' ),
 	'container_class' => 'pagination pagination--singular',
-] ) ?>
+] );
