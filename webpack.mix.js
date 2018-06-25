@@ -1,10 +1,9 @@
 /**
  * Laravel Mix configuration file.
  *
- * This file stores all the configuration for using Laravel Mix as our primary
- * build tool for the theme. Laravel Mix is a layer built on top of Webpack that
- * simplifies much of the complexity of Webpack's configuration, and is well
- * suited for projects like WordPress themes.
+ * Laravel Mix is a layer built on top of WordPress that simplifies much of the
+ * complexity of building out a Webpack configuration file. Use this file to
+ * configure how your assets are handled in the build process.
  *
  * @link https://laravel.com/docs/5.6/mix
  *
@@ -21,43 +20,56 @@ const ImageminPlugin    = require( 'imagemin-webpack-plugin' ).default;
 const CopyWebpackPlugin = require( 'copy-webpack-plugin' );
 const imageminMozjpeg   = require( 'imagemin-mozjpeg' );
 
-// Sets the path to the generated assets. By default, this is the `/dist` folder
-// in the theme. If doing something custom, make sure to change this everywhere.
+/*
+ * Sets the path to the generated assets. By default, this is the `/dist` folder
+ * in the theme. If doing something custom, make sure to change this everywhere.
+ */
 mix.setPublicPath( 'dist' );
 
-// Set Laravel Mix options.
-//
-// @link https://laravel.com/docs/5.6/mix#postcss
-// @link https://laravel.com/docs/5.6/mix#url-processing
+/*
+ * Set Laravel Mix options.
+ *
+ * @link https://laravel.com/docs/5.6/mix#postcss
+ * @link https://laravel.com/docs/5.6/mix#url-processing
+ */
 mix.options( {
 	postCss        : [ require( 'postcss-preset-env' )() ],
 	processCssUrls : false
 } );
 
-// Builds sources maps for assets.
-//
-// @link https://laravel.com/docs/5.6/mix#css-source-maps
+/*
+ * Builds sources maps for assets.
+ *
+ * @link https://laravel.com/docs/5.6/mix#css-source-maps
+ */
 mix.sourceMaps();
 
-// Versioning and cache busting. Append a unique hash for production assets. If
-// you only want versioned assets in production, do a conditional check for
-// `mix.inProduction()`.
-//
-// @link https://laravel.com/docs/5.6/mix#versioning-and-cache-busting
+/*
+ * Versioning and cache busting. Append a unique hash for production assets. If
+ * you only want versioned assets in production, do a conditional check for
+ * `mix.inProduction()`.
+ *
+ * @link https://laravel.com/docs/5.6/mix#versioning-and-cache-busting
+ */
 mix.version();
 
-// Compile JavaScript.
-//
-// @link https://laravel.com/docs/5.6/mix#working-with-scripts
+/*
+ * Compile JavaScript.
+ *
+ * @link https://laravel.com/docs/5.6/mix#working-with-scripts
+ */
 mix.js( 'resources/scripts/app.js',                'scripts' )
    .js( 'resources/scripts/customize-controls.js', 'scripts' )
    .js( 'resources/scripts/customize-preview.js',  'scripts' );
 
-// Compile SASS and CSS.
-//
-// @link https://laravel.com/docs/5.6/mix#working-with-stylesheets
-// @link https://laravel.com/docs/5.6/mix#sass
-// @link https://github.com/sass/node-sass#options
+/*
+ * Compile CSS. Mix supports Sass, Less, Stylus, and plain CSS, and has functions
+ * for each of them.
+ *
+ * @link https://laravel.com/docs/5.6/mix#working-with-stylesheets
+ * @link https://laravel.com/docs/5.6/mix#sass
+ * @link https://github.com/sass/node-sass#options
+ */
 
 // Sass configuration.
 var sassConfig = {
@@ -70,14 +82,16 @@ var sassConfig = {
 mix.sass( 'resources/styles/screen.scss', 'styles', sassConfig )
    .sass( 'resources/styles/editor.scss', 'styles', sassConfig );
 
-// Add custom Webpack configuration.
-//
-// Laravel Mix doesn't currently have a built-in method for minimizing images,
-// so we're going to use the `CopyWebpackPlugin` instead of `.copy()` for
-// processing and copying our images over to their distribution folder.
-//
-// @link https://laravel.com/docs/5.6/mix#custom-webpack-configuration
-// @link https://webpack.js.org/configuration/
+/*
+ * Add custom Webpack configuration.
+ *
+ * Laravel Mix doesn't currently minimize images while using its `.copy()`
+ * function, so we're using the `CopyWebpackPlugin` for processing and copying
+ * images into the distribution folder.
+ *
+ * @link https://laravel.com/docs/5.6/mix#custom-webpack-configuration
+ * @link https://webpack.js.org/configuration/
+ */
 mix.webpackConfig( {
 	stats       : 'minimal',
 	devtool     : mix.inProduction() ? false : 'source-map',
@@ -86,8 +100,8 @@ mix.webpackConfig( {
 	plugins     : [
 		// @link https://github.com/webpack-contrib/copy-webpack-plugin
 		new CopyWebpackPlugin( [
-			{ from : 'resources/img',   to : 'img' },
-			{ from : 'resources/svg',   to : 'svg' },
+			{ from : 'resources/img',   to : 'img'   },
+			{ from : 'resources/svg',   to : 'svg'   },
 			{ from : 'resources/fonts', to : 'fonts' }
 		] ),
 		// @link https://github.com/Klathmon/imagemin-webpack-plugin
@@ -102,9 +116,9 @@ mix.webpackConfig( {
 			},
 			svgo : {
 				plugins : [
-					{ removeUnknownsAndDefaults : false },
-					{ cleanupIDs : false },
-					{ removeViewBox : false }
+					{ cleanupIDs                : false },
+					{ removeViewBox             : false },
+					{ removeUnknownsAndDefaults : false }
 				]
 			},
 			plugins : [
@@ -115,9 +129,11 @@ mix.webpackConfig( {
 	]
 } );
 
-// Monitor files for changes and inject your changes into the browser.
-//
-// @link https://laravel.com/docs/5.6/mix#browsersync-reloading
+/*
+ * Monitor files for changes and inject your changes into the browser.
+ *
+ * @link https://laravel.com/docs/5.6/mix#browsersync-reloading
+ */
 mix.browserSync( {
 	proxy : 'localhost',
 	port  : 8080,
