@@ -23,6 +23,9 @@ if ( file_exists( get_parent_theme_file_path( 'vendor/autoload.php' ) ) ) {
 	require_once( get_parent_theme_file_path( 'vendor/autoload.php' ) );
 }
 
+# Launch the Hybrid Core framework.
+app();
+
 # Bootstrap the theme.
 #
 # If the theme needs a more robust bootstrapping process, it's recommended to
