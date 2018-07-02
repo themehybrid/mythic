@@ -70,6 +70,19 @@ npm install
 yarn install
 ```
 
+## Optional extensions
+
+While the Hybrid Core framework is required as the foundational layer of the theme, there are additional packages from with the "Hybrid" family that you may install via Composer.
+
+* [Hybrid\Carbon](https://github.com/justintadlock/hybrid-carbon)
+* [Hybrid\Breadcrumbs](https://github.com/justintadlock/hybrid-breadcrumbs) _(not yet available)_
+
+Use the following commands to install these optional packages.
+
+```
+composer require justintadlock/hybrid-carbon
+```
+
 ## Folder structure
 
 _Note: The folder structure is still under development and could change in the future._
