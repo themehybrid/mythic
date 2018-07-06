@@ -75,12 +75,16 @@ yarn install
 While the Hybrid Core framework is required as the foundational layer of the theme, there are additional packages from with the "Hybrid" family that you may install via Composer.
 
 * [Hybrid\Carbon](https://github.com/justintadlock/hybrid-carbon)
-* [Hybrid\Breadcrumbs](https://github.com/justintadlock/hybrid-breadcrumbs) _(not yet available)_
+* [Hybrid\Breadcrumbs](https://github.com/justintadlock/hybrid-breadcrumbs)
 
 Use the following commands to install these optional packages.
 
 ```
+# Installs Hybrid Carbon.
 composer require justintadlock/hybrid-carbon
+
+# Installs Hybrid Breadcrumbs.
+composer require justintadlock/hybrid-breadcrumbs
 ```
 
 ## Folder structure
