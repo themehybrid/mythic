@@ -165,7 +165,7 @@ class Customize implements Bootable {
 			'abc-customize-preview',
 			asset( 'scripts/customize-preview.js' ),
 			[ 'customize-preview' ],
-			false,
+			null,
 			true
 		);
 	}

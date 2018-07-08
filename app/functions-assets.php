@@ -1,8 +1,9 @@
 <?php
 /**
- * Helper functions.
+ * Asset-related functions and filters.
  *
- * This file holds basic helper functions used within the theme.
+ * This file holds some setup actions for scripts and styles as well as a helper
+ * functions for work with assets.
  *
  * @package    ABC
  * @subpackage Includes
@@ -15,6 +16,36 @@
 namespace ABC;
 
 use function Hybrid\app;
+
+/**
+ * Enqueue scripts/styles for the front end.
+ *
+ * @link   https://developer.wordpress.org/reference/functions/wp_enqueue_script/
+ * @link   https://developer.wordpress.org/reference/functions/wp_enqueue_style/
+ * @since  1.0.0
+ * @access public
+ * @return void
+ */
+add_action( 'wp_enqueue_scripts', function() {
+
+	wp_enqueue_script( 'abc-app', asset( 'scripts/app.js' ), null, null, true );
+
+	wp_enqueue_style( 'abc-screen', asset( 'styles/screen.css' ), null, null );
+
+}, 5 );
+
+/**
+ * Enqueue scripts/styles for the editor.
+ *
+ * @since  1.0.0
+ * @access public
+ * @return void
+ */
+add_action( 'enqueue_block_editor_assets', function() {
+
+	wp_enqueue_style( 'abc-editor', asset( 'styles/editor.css' ), null, null );
+
+}, 5 );
 
 /**
  * Helper function for outputting an asset URL in the theme. This integrates

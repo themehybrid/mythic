@@ -51,7 +51,7 @@ array_map(
 		require_once( get_parent_theme_file_path( "app/{$file}.php" ) );
 	},
 	[
-		'functions-helpers',
+		'functions-assets',
 		'functions-setup',
 		'template-general'
 	]
