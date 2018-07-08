@@ -58,4 +58,5 @@ array_map(
 );
 
 # Registers a single instance of our `Customize` class with the container.
-app()->instance( 'abc/customize', new Customize() );
+# Also calls the `boot()` method to fire it's action/filter hooks.
+app()->instance( 'abc/customize', new Customize() )->boot();

@@ -16,6 +16,7 @@
 namespace ABC;
 
 use WP_Customize_Manager;
+use Hybrid\Contracts\Bootable;
 
 /**
  * Handles setting up everything we need for the customizer.
@@ -24,7 +25,7 @@ use WP_Customize_Manager;
  * @since  1.0.0
  * @access public
  */
-class Customize {
+class Customize implements Bootable {
 
 	/**
 	 * Adds actions on the appropriate customize action hooks.
@@ -33,7 +34,7 @@ class Customize {
 	 * @access public
 	 * @return void
 	 */
-	public function __construct() {
+	public function boot() {
 
 		// Register panels, sections, settings, controls, and partials.
 		add_action( 'customize_register', [ $this, 'registerPanels'   ] );
