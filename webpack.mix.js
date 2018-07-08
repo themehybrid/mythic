@@ -97,6 +97,13 @@ mix.webpackConfig( {
 	devtool     : mix.inProduction() ? false : 'source-map',
 	performance : { hints  : false    },
 	externals   : { jquery : 'jQuery' },
+	resolve     : {
+		alias : {
+			// Alias for Hybrid Core assets.
+			// Import from `hybrid/scripts` or `hybrid/styles`.
+			hybrid : path.resolve( __dirname, 'vendor/justintadlock/hybrid-core/src/resources/' )
+		}
+	},
 	plugins     : [
 		// @link https://github.com/webpack-contrib/copy-webpack-plugin
 		new CopyWebpackPlugin( [
