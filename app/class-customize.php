@@ -142,15 +142,29 @@ class Customize implements Bootable {
 
 	/**
 	 * Register or enqueue scripts/styles for the controls that are output
-	 * in the controls frame. Note that if you have scripts/styles that are
-	 * only needed for specific controls, you should register those here and
-	 * enqueue them via the `enqueue()` method of your custom control class.
+	 * in the controls frame.
 	 *
 	 * @since  1.0.0
 	 * @access public
 	 * @return void
 	 */
-	public function controlsEnqueue() {}
+	public function controlsEnqueue() {
+
+		wp_enqueue_script(
+			'abc-customize-controls',
+			asset( 'scripts/customize-controls.js' ),
+			[ 'customize-controls' ],
+			null,
+			true
+		);
+
+		wp_enqueue_style(
+			'abc-customize-controls',
+			asset( 'styles/customize-controls.css' ),
+			[],
+			null
+		);
+	}
 
 	/**
 	 * Register or enqueue scripts/styles for the live preview frame.

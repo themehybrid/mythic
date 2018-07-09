@@ -79,8 +79,9 @@ var sassConfig = {
 };
 
 // Compile SASS/CSS.
-mix.sass( 'resources/styles/screen.scss', 'styles', sassConfig )
-   .sass( 'resources/styles/editor.scss', 'styles', sassConfig );
+mix.sass( 'resources/styles/screen.scss',             'styles', sassConfig )
+   .sass( 'resources/styles/editor.scss',             'styles', sassConfig )
+   .sass( 'resources/styles/customize-controls.scss', 'styles', sassConfig );
 
 /*
  * Add custom Webpack configuration.
