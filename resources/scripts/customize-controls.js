@@ -12,10 +12,10 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
- // Hybrid Core controls.
- //
- // Uncomment any of the below to import scripts for Hybrid Core's built-in
- // controls if your theme is using them.
+// Hybrid Core controls.
+//
+// Uncomment any of the below to import scripts for Hybrid Core's built-in
+// controls if your theme is using them.
 
 // import checkboxMultiple from 'hybrid/scripts/customize-controls/checkbox-multiple.js';
 // import palette          from 'hybrid/scripts/customize-controls/palette.js';
