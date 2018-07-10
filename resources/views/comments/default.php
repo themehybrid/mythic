@@ -10,14 +10,14 @@
 
 			<h2 class="comments__title"><?php comments_number() ?></h2>
 
-			<?php Hybrid\render_view( 'partials', 'pagination-comments' ) ?>
+			<?php Hybrid\View\render( 'partials', 'pagination-comments' ) ?>
 
 			<ol class="comments__list">
 
 				<?php wp_list_comments( [
 					'style'        => 'ol',
 					'callback'     => function( $comment, $args, $depth ) {
-						Hybrid\render_view( 'comment', Hybrid\get_comment_hierarchy(), compact( 'comment', 'args', 'depth' ) );
+						Hybrid\View\render( 'comment', Hybrid\get_comment_hierarchy(), compact( 'comment', 'args', 'depth' ) );
 					},
 					'end-callback' => function() {
 						echo '</li>';

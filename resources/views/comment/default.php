@@ -1,4 +1,4 @@
-<li <?php Hybrid\attr( 'comment' ) ?>>
+<li <?php Hybrid\Attr\render( 'comment' ) ?>>
 
 	<header class="comment__meta">
 		<?php echo get_avatar( $data->comment, $data->args['avatar_size'], '', '', [ 'class' => 'comment__avatar' ] ) ?>

@@ -6,7 +6,7 @@
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php Hybrid\render_view( 'entry/single', Hybrid\get_post_hierarchy() ) ?>
+				<?php Hybrid\View\render( 'entry/single', Hybrid\get_post_hierarchy() ) ?>
 
 				<?php comments_template() ?>
 
@@ -16,6 +16,6 @@
 
 	</main>
 
-	<?php Hybrid\render_view( 'sidebar', 'primary', [ 'name' => 'primary' ] ) ?>
+	<?php Hybrid\View\render( 'sidebar', 'primary', [ 'name' => 'primary' ] ) ?>
 
 </div>

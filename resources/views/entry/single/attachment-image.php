@@ -1,4 +1,4 @@
-<article <?php Hybrid\attr( 'entry' ) ?>>
+<article <?php Hybrid\Attr\render( 'entry' ) ?>>
 
 	<header class="entry__header">
 		<h1 class="entry__title"><?php single_post_title() ?></h1>
@@ -29,7 +29,7 @@
 
 	<div class="entry__content">
 		<?php the_content() ?>
-		<?php Hybrid\render_view( 'partials', 'pagination-singular' ) ?>
+		<?php Hybrid\View\render( 'partials', 'pagination-singular' ) ?>
 	</div>
 
 	<?php $gallery = gallery_shortcode( [
@@ -54,17 +54,17 @@
 		<h3 class="media-meta__title"><?php esc_html_e( 'Image Info' ) ?></h3>
 
 		<ul class="media-meta__items">
-			<?php Hybrid\media_meta( 'dimensions',        [ 'itemtag' => 'li', 'label' => __( 'Dimensions' )    ] ) ?>
-			<?php Hybrid\media_meta( 'created_timestamp', [ 'itemtag' => 'li', 'label' => __( 'Date' )          ] ) ?>
-			<?php Hybrid\media_meta( 'camera',            [ 'itemtag' => 'li', 'label' => __( 'Camera' )        ] ) ?>
-			<?php Hybrid\media_meta( 'aperture',          [ 'itemtag' => 'li', 'label' => __( 'Aperture' )      ] ) ?>
-			<?php Hybrid\media_meta( 'focal_length',      [ 'itemtag' => 'li', 'label' => __( 'Focal Length' )  ] ) ?>
-			<?php Hybrid\media_meta( 'iso',               [ 'itemtag' => 'li', 'label' => __( 'ISO' )           ] ) ?>
-			<?php Hybrid\media_meta( 'shutter_speed',     [ 'itemtag' => 'li', 'label' => __( 'Shutter Speed' ) ] ) ?>
-			<?php Hybrid\media_meta( 'file_name',         [ 'itemtag' => 'li', 'label' => __( 'Name' )          ] ) ?>
-			<?php Hybrid\media_meta( 'mime_type',         [ 'itemtag' => 'li', 'label' => __( 'Mime Type' )     ] ) ?>
-			<?php Hybrid\media_meta( 'file_type',         [ 'itemtag' => 'li', 'label' => __( 'Type' )          ] ) ?>
-			<?php Hybrid\media_meta( 'file_size',         [ 'itemtag' => 'li', 'label' => __( 'Size' )          ] ) ?>
+			<?php Hybrid\MediaMeta\render( 'dimensions',        [ 'itemtag' => 'li', 'label' => __( 'Dimensions' )    ] ) ?>
+			<?php Hybrid\MediaMeta\render( 'created_timestamp', [ 'itemtag' => 'li', 'label' => __( 'Date' )          ] ) ?>
+			<?php Hybrid\MediaMeta\render( 'camera',            [ 'itemtag' => 'li', 'label' => __( 'Camera' )        ] ) ?>
+			<?php Hybrid\MediaMeta\render( 'aperture',          [ 'itemtag' => 'li', 'label' => __( 'Aperture' )      ] ) ?>
+			<?php Hybrid\MediaMeta\render( 'focal_length',      [ 'itemtag' => 'li', 'label' => __( 'Focal Length' )  ] ) ?>
+			<?php Hybrid\MediaMeta\render( 'iso',               [ 'itemtag' => 'li', 'label' => __( 'ISO' )           ] ) ?>
+			<?php Hybrid\MediaMeta\render( 'shutter_speed',     [ 'itemtag' => 'li', 'label' => __( 'Shutter Speed' ) ] ) ?>
+			<?php Hybrid\MediaMeta\render( 'file_name',         [ 'itemtag' => 'li', 'label' => __( 'Name' )          ] ) ?>
+			<?php Hybrid\MediaMeta\render( 'mime_type',         [ 'itemtag' => 'li', 'label' => __( 'Mime Type' )     ] ) ?>
+			<?php Hybrid\MediaMeta\render( 'file_type',         [ 'itemtag' => 'li', 'label' => __( 'Type' )          ] ) ?>
+			<?php Hybrid\MediaMeta\render( 'file_size',         [ 'itemtag' => 'li', 'label' => __( 'Size' )          ] ) ?>
 		</ul>
 
 	</div>

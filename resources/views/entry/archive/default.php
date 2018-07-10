@@ -1,4 +1,4 @@
-<article <?php Hybrid\attr( 'entry' ) ?>>
+<article <?php Hybrid\Attr\render( 'entry' ) ?>>
 
 	<?php the_post_thumbnail( 'abc-medium', [ 'class' => 'entry__image' ] ) ?>
 
