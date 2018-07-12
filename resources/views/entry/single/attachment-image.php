@@ -4,28 +4,11 @@
 		<h1 class="entry__title"><?php single_post_title() ?></h1>
 
 		<div class="entry__byline">
-			<?php printf( esc_html__( 'Sizes: %s' ), Hybrid\get_image_size_links() ) ?>
+			<?php Hybrid\Media\render_image_sizes( [ 'text' => esc_html__( 'Sizes: %s' ) ] ) ?>
 		</div>
 	</header>
 
-	<?php if ( has_excerpt() ) : ?>
-
-		<?php $src = wp_get_attachment_image_src( get_the_ID(), 'full' ); ?>
-
-		<?php echo img_caption_shortcode(
-			[
-				'align'   => 'aligncenter',
-				'width'   => esc_attr( $src[1] ),
-				'caption' => get_the_excerpt()
-			],
-			wp_get_attachment_image( get_the_ID(), 'large', false )
-		) ?>
-
-	<?php else : ?>
-
-		<?php echo wp_get_attachment_image( get_the_ID(), 'large', false, [ 'class' => 'aligncenter' ] ) ?>
-
-	<?php endif ?>
+	<?php echo wp_get_attachment_image( get_the_ID(), 'large', false, [ 'class' => 'aligncenter' ] ) ?>
 
 	<div class="entry__content">
 		<?php the_content() ?>
@@ -37,7 +20,7 @@
 		'numberposts' => 8,
 		'orderby'     => 'rand',
 		'id'          => get_queried_object()->post_parent,
-		'exclude'     => get_the_excerpt()
+		'exclude'     => get_the_ID()
 	] ) ?>
 
 	<?php if ( $gallery ) : ?>
