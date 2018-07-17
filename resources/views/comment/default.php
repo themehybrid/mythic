@@ -11,6 +11,15 @@
 	</header>
 
 	<div class="comment__content">
+
+		<?php if ( '0' == $data->comment->comment_approved ) : ?>
+
+			<p class="comment__moderation">
+				<?php esc_html_e( 'Your comment is awaiting moderation.' ) ?>
+			</p>
+
+		<?php endif ?>
+
 		<?php comment_text() ?>
 	</div>
 
