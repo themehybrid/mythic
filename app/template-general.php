@@ -22,10 +22,10 @@ namespace Mythic;
  * @param  string  $sep
  * @return string
  */
-function get_meta_sep( $sep = '' ) {
+function sep( $sep = '' ) {
 
 	return apply_filters(
-		'mythic/meta_sep',
+		'mythic/sep',
 		sprintf(
 			' <span class="sep">%s</span> ',
 			$sep ? $sep : esc_html_x( '&middot;', 'meta separator' )

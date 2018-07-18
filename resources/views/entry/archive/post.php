@@ -7,8 +7,8 @@
 
 		<div class="entry__byline">
 			<?php Hybrid\Post\render_author() ?>
-			<?php Hybrid\Post\render_date( [ 'before' => Mythic\get_meta_sep() ] ) ?>
-			<?php Hybrid\Post\render_comments_link( [ 'before' => Mythic\get_meta_sep() ] ) ?>
+			<?php Hybrid\Post\render_date( [ 'before' => Mythic\sep() ] ) ?>
+			<?php Hybrid\Post\render_comments_link( [ 'before' => Mythic\sep() ] ) ?>
 		</div>
 	</header>
 
