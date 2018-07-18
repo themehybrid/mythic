@@ -1,6 +1,6 @@
 <article <?php Hybrid\Attr\render( 'entry' ) ?>>
 
-	<?php the_post_thumbnail( 'abc-medium', [ 'class' => 'entry__image' ] ) ?>
+	<?php the_post_thumbnail( 'mythic-medium', [ 'class' => 'entry__image' ] ) ?>
 
 	<header class="entry__header">
 		<h2 class="entry__title"><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h2>

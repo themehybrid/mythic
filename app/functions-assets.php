@@ -5,15 +5,15 @@
  * This file holds some setup actions for scripts and styles as well as a helper
  * functions for work with assets.
  *
- * @package    ABC
+ * @package    Mythic
  * @subpackage Includes
  * @author     Justin Tadlock <justintadlock@gmail.com>
  * @copyright  Copyright (c) 2018, Justin Tadlock
- * @link       https://themehybrid.com/themes/abc
+ * @link       https://themehybrid.com/themes/mythic
  * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace ABC;
+namespace Mythic;
 
 use function Hybrid\app;
 
@@ -28,9 +28,9 @@ use function Hybrid\app;
  */
 add_action( 'wp_enqueue_scripts', function() {
 
-	wp_enqueue_script( 'abc-app', asset( 'scripts/app.js' ), null, null, true );
+	wp_enqueue_script( 'mythic-app', asset( 'scripts/app.js' ), null, null, true );
 
-	wp_enqueue_style( 'abc-screen', asset( 'styles/screen.css' ), null, null );
+	wp_enqueue_style( 'mythic-screen', asset( 'styles/screen.css' ), null, null );
 
 }, 5 );
 
@@ -43,7 +43,7 @@ add_action( 'wp_enqueue_scripts', function() {
  */
 add_action( 'enqueue_block_editor_assets', function() {
 
-	wp_enqueue_style( 'abc-editor', asset( 'styles/editor.css' ), null, null );
+	wp_enqueue_style( 'mythic-editor', asset( 'styles/editor.css' ), null, null );
 
 }, 5 );
 
@@ -88,7 +88,7 @@ function asset( $path ) {
  * @return array|false
  */
 function mix() {
-	$manifest = app( 'abc/mix' );
+	$manifest = app( 'mythic/mix' );
 
 	// If there is no manifest saved yet, let's see if we can find one.
 	if ( ! $manifest ) {
@@ -99,7 +99,7 @@ function mix() {
 			$manifest = json_decode( file_get_contents( $file ), true );
 
 			if ( $manifest ) {
-				app()->add( 'abc/mix', $manifest );
+				app()->add( 'mythic/mix', $manifest );
 			}
 		}
 	}

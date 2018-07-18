@@ -1,6 +1,6 @@
-# ABC - A starter theme for WordPress
+# Mythic - A starter theme for WordPress
 
-ABC (temporary name) is a starter theme project that's currently under active development.
+Mythic (temporary name) is a starter theme project that's currently under active development.
 
 The theme's primary goal is to offer a modern development experience for WordPress theme authors while sticking as close to possible to WordPress standards as we can.  Sometimes those things don't always mesh well.  This theme aims to balance that.
 
@@ -44,7 +44,7 @@ cd theme-name
 
 ### Installing PHP dependencies
 
-ABC has the following dependencies, which must be installed for the theme to work:
+Mythic has the following dependencies, which must be installed for the theme to work:
 
 * [Hybrid Core](https://github.com/justintadlock/hybrid-core).
 
@@ -56,7 +56,7 @@ composer install
 
 ### Installing Node dependencies
 
-ABC has many Node dependencies that it uses for the build process.  To install them, you can either use NPM or Yarn.
+Mythic has many Node dependencies that it uses for the build process.  To install them, you can either use NPM or Yarn.
 
 **NPM command:**
 

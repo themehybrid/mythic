@@ -8,18 +8,18 @@
  * PHP requirement. Only call this file after initially checking that the site
  * doesn't meet either the WP or PHP requirement.
  *
- * @package    ABC
+ * @package    Mythic
  * @subpackage Includes
  * @author     Justin Tadlock <justintadlock@gmail.com>
  * @copyright  Copyright (c) 2018, Justin Tadlock
- * @link       https://themehybrid.com/themes/abc
+ * @link       https://themehybrid.com/themes/mythic
  * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
 # Add actions to fail at certain points in the load process.
-add_action( 'after_switch_theme', 'abc_switch_theme'   );
-add_action( 'load-customize.php', 'abc_load_customize' );
-add_action( 'template_redirect',  'abc_preview'        );
+add_action( 'after_switch_theme', 'mythic_switch_theme'   );
+add_action( 'load-customize.php', 'mythic_load_customize' );
+add_action( 'template_redirect',  'mythic_preview'        );
 
 /**
  * Returns the compatibility messaged based on whether the WP or PHP minimum
@@ -29,12 +29,12 @@ add_action( 'template_redirect',  'abc_preview'        );
  * @access public
  * @return void
  */
-function abc_compat_message() {
+function mythic_compat_message() {
 
 	if ( version_compare( $GLOBALS['wp_version'], '4.9', '<' ) ) {
 
 		return sprintf(
-			__( 'ABC requires at least WordPress version %1$s. You are running version %2$s. Please upgrade and try again.' ),
+			__( 'Mythic requires at least WordPress version %1$s. You are running version %2$s. Please upgrade and try again.' ),
 			'4.9',
 			$GLOBALS['wp_version']
 		);
@@ -42,7 +42,7 @@ function abc_compat_message() {
 	} elseif ( version_compare( PHP_VERSION, '5.6', '<' ) ) {
 
 		return sprintf(
-			__( 'ABC requires at least PHP version %1$s. You are running version %2$s. Please upgrade and try again.' ),
+			__( 'Mythic requires at least PHP version %1$s. You are running version %2$s. Please upgrade and try again.' ),
 			'5.6',
 			PHP_VERSION
 		);
@@ -59,13 +59,13 @@ function abc_compat_message() {
  * @param  string  $old_name
  * @return void
  */
-function abc_switch_theme( $old_name ) {
+function mythic_switch_theme( $old_name ) {
 
 	switch_theme( $old_name ? $old_name : WP_DEFAULT_THEME );
 
 	unset( $_GET['activated'] );
 
-	add_action( 'admin_notices', 'abc_upgrade_notice' );
+	add_action( 'admin_notices', 'mythic_upgrade_notice' );
 }
 
 /**
@@ -75,9 +75,9 @@ function abc_switch_theme( $old_name ) {
  * @access public
  * @return void
  */
-function abc_upgrade_notice() {
+function mythic_upgrade_notice() {
 
-	printf( '<div class="error"><p>%s</p></div>', esc_html( abc_compat_message() ) );
+	printf( '<div class="error"><p>%s</p></div>', esc_html( mythic_compat_message() ) );
 }
 
 /**
@@ -88,9 +88,9 @@ function abc_upgrade_notice() {
  * @param  string  $old_name
  * @return void
  */
-function abc_load_customize() {
+function mythic_load_customize() {
 
-	wp_die( esc_html( abc_compat_message() ), '', array( 'back_link' => true ) );
+	wp_die( esc_html( mythic_compat_message() ), '', array( 'back_link' => true ) );
 }
 
 /**
@@ -100,9 +100,9 @@ function abc_load_customize() {
  * @access public
  * @return void
  */
-function abc_preview() {
+function mythic_preview() {
 
 	if ( isset( $_GET['preview'] ) ) {
-		wp_die( esc_html( abc_compat_message() ) );
+		wp_die( esc_html( mythic_compat_message() ) );
 	}
 }

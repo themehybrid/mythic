@@ -6,14 +6,14 @@
  * Customization API. This is the place to set up all of your theme options for
  * the customizer.
  *
- * @package   ABC
+ * @package   Mythic
  * @author    Justin Tadlock <justintadlock@gmail.com>
  * @copyright Copyright (c) 2018, Justin Tadlock
- * @link      https://themehybrid.com/themes/abc
+ * @link      https://themehybrid.com/themes/mythic
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace ABC;
+namespace Mythic;
 
 use WP_Customize_Manager;
 use Hybrid\Contracts\Bootable;
@@ -151,7 +151,7 @@ class Customize implements Bootable {
 	public function controlsEnqueue() {
 
 		wp_enqueue_script(
-			'abc-customize-controls',
+			'mythic-customize-controls',
 			asset( 'scripts/customize-controls.js' ),
 			[ 'customize-controls' ],
 			null,
@@ -159,7 +159,7 @@ class Customize implements Bootable {
 		);
 
 		wp_enqueue_style(
-			'abc-customize-controls',
+			'mythic-customize-controls',
 			asset( 'styles/customize-controls.css' ),
 			[],
 			null
@@ -176,7 +176,7 @@ class Customize implements Bootable {
 	public function previewEnqueue() {
 
 		wp_enqueue_script(
-			'abc-customize-preview',
+			'mythic-customize-preview',
 			asset( 'scripts/customize-preview.js' ),
 			[ 'customize-preview' ],
 			null,

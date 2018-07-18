@@ -5,8 +5,8 @@
 
 		<div class="entry__byline">
 			<?php Hybrid\Post\render_author() ?>
-			<?php Hybrid\Post\render_date( [ 'before' => ABC\get_meta_sep() ] ) ?>
-			<?php Hybrid\Post\render_comments_link( [ 'before' => ABC\get_meta_sep() ] ) ?>
+			<?php Hybrid\Post\render_date( [ 'before' => Mythic\get_meta_sep() ] ) ?>
+			<?php Hybrid\Post\render_comments_link( [ 'before' => Mythic\get_meta_sep() ] ) ?>
 		</div>
 	</header>
 
@@ -17,7 +17,7 @@
 
 	<footer class="entry__footer">
 		<?php Hybrid\Post\render_terms( [ 'taxonomy' => 'category' ] ) ?>
-		<?php Hybrid\Post\render_terms( [ 'taxonomy' => 'post_tag', 'before' => ABC\get_meta_sep() ] ) ?>
+		<?php Hybrid\Post\render_terms( [ 'taxonomy' => 'post_tag', 'before' => Mythic\get_meta_sep() ] ) ?>
 	</footer>
 
 </article>

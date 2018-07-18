@@ -10,15 +10,15 @@
  * things in this file. Those APIs should be used instead of attempting to use
  * `remove_action()`.
  *
- * @package    ABC
+ * @package    Mythic
  * @subpackage Includes
  * @author     Justin Tadlock <justintadlock@gmail.com>
  * @copyright  Copyright (c) 2018, Justin Tadlock
- * @link       https://themehybrid.com/themes/abc
+ * @link       https://themehybrid.com/themes/mythic
  * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace ABC;
+namespace Mythic;
 
 /**
  * Set up theme support.  This is where calls to `add_theme_support()` happen.
@@ -157,7 +157,7 @@ add_action( 'init', function() {
 	set_post_thumbnail_size( 178, 100, true );
 
 	// Register custom image sizes.
-	add_image_size( 'abc-medium', 750, 422, true );
+	add_image_size( 'mythic-medium', 750, 422, true );
 
 }, 5 );
 

@@ -5,10 +5,10 @@
  * This file is used to create a new application instance and bind items to the
  * container. This is the heart of the application.
  *
- * @package   ABC
+ * @package   Mythic
  * @author    Justin Tadlock <justintadlock@gmail.com>
  * @copyright Copyright (c) 2018, Justin Tadlock
- * @link      https://themehybrid.com/themes/abc
+ * @link      https://themehybrid.com/themes/mythic
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
@@ -20,7 +20,7 @@
 # this directly via the `\Hybrid\app()` function or `\Hybrid\App` static class
 # after the application has booted.
 
-$abc = new \Hybrid\Core\Application();
+$mythic = new \Hybrid\Core\Application();
 
 # ------------------------------------------------------------------------------
 # Add bindings to the container.
@@ -30,7 +30,7 @@ $abc = new \Hybrid\Core\Application();
 # necessary to run the theme.
 
 # Register customize class instance and boot it.
-$abc->instance( 'abc/customize', new \ABC\Customize() )->boot();
+$mythic->instance( 'mythic/customize', new \Mythic\Customize() )->boot();
 
 # ------------------------------------------------------------------------------
 # Perform bootstrap actions.
@@ -40,7 +40,7 @@ $abc->instance( 'abc/customize', new \ABC\Customize() )->boot();
 # bootstrapping process and add their own bindings before the app is booted by
 # passing the application instance to the action callback.
 
-do_action( 'abc/bootstrap', $abc );
+do_action( 'mythic/bootstrap', $mythic );
 
 # ------------------------------------------------------------------------------
 # Bootstrap the application.
@@ -49,4 +49,4 @@ do_action( 'abc/bootstrap', $abc );
 # Calls the application `boot()` method, which launches the application. Pat
 # yourself on the back for a job well done.
 
-$abc->boot();
+$mythic->boot();
