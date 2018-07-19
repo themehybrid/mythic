@@ -3,16 +3,22 @@
 	<header class="comment__meta">
 		<?php echo get_avatar( $data->comment, $data->args['avatar_size'], '', '', [ 'class' => 'comment__avatar' ] ) ?>
 
-		<span class="comment__author"><?php comment_author_link() ?></span>
-		<br />
-		<a href="<?php comment_link() ?>" class="comment__permalink"><time class="comment__published"><?php printf( __( '%s ago' ), human_time_diff( get_comment_time( 'U' ), current_time( 'timestamp' ) ) ) ?></time></a>
-		<?php edit_comment_link( null, Mythic\sep() ) ?>
+		<?php Hybrid\Comment\render_author( [ 'after' => '<br />' ] ) ?>
+		<?php Hybrid\Comment\render_permalink( [
+			'text' => sprintf(
+				// Translators: 1 is the comment date and 2 is the time.
+				esc_html__( '%1$s at %2$s' ),
+				Hybrid\Comment\fetch_date(),
+				Hybrid\Comment\fetch_time()
+			)
+		] ) ?>
+		<?php Hybrid\Comment\render_edit_link( [ 'before' => Mythic\sep() ] ) ?>
 		<?php Hybrid\Comment\render_reply_link( [ 'before' => Mythic\sep() ] ) ?>
 	</header>
 
 	<div class="comment__content">
 
-		<?php if ( '0' == $data->comment->comment_approved ) : ?>
+		<?php if ( ! Hybrid\Comment\is_approved() ) : ?>
 
 			<p class="comment__moderation">
 				<?php esc_html_e( 'Your comment is awaiting moderation.' ) ?>

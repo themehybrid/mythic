@@ -1,9 +1,16 @@
 <li <?php Hybrid\Attr\render( 'comment' ) ?>>
 
 	<div class="comment__meta">
-		<span class="comment__author"><?php comment_author_link() ?></span><br />
-		<a href="<?php comment_link() ?>" class="comment__permalink"><time class="comment__published"><?php printf( __( '%s ago' ), human_time_diff( get_comment_time( 'U' ), current_time( 'timestamp' ) ) ) ?></time></a>
-		<?php edit_comment_link( null, Mythic\sep() ) ?>
+		<?php Hybrid\Comment\render_author( [ 'after' => '<br />' ] ) ?>
+		<?php Hybrid\Comment\render_permalink( [
+			'text' => sprintf(
+				// Translators: 1 is the comment date and 2 is the time.
+				esc_html__( '%1$s at %2$s' ),
+				Hybrid\Comment\fetch_date(),
+				Hybrid\Comment\fetch_time()
+			)
+		] ) ?>
+		<?php Hybrid\Comment\render_edit_link( [ 'before' => Mythic\sep() ] ) ?>
 	</div>
 
 <?php /* No closing </li> is needed.  WordPress will know where to add it. */ ?>
