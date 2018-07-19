@@ -30,6 +30,10 @@ namespace Mythic;
  */
 add_action( 'after_setup_theme', function() {
 
+	// Load theme translations.
+	// @link https://developer.wordpress.org/reference/functions/load_theme_textdomain/
+	load_theme_textdomain( 'mythic', get_parent_theme_file_path( 'resources/lang' ) );
+
 	// Automatically add the `<title>` tag.
 	// @link https://developer.wordpress.org/reference/functions/add_theme_support/#title-tag
 	add_theme_support( 'title-tag' );
