@@ -28,6 +28,11 @@ use function Hybrid\app;
  */
 add_action( 'wp_enqueue_scripts', function() {
 
+	// Load WordPress' comment-reply script where appropriate.
+	if ( is_singular() && get_option( 'thread_comments' ) && comments_open() ) {
+		wp_enqueue_script( 'comment-reply' );
+	}
+
 	wp_enqueue_script( 'mythic-app', asset( 'scripts/app.js' ), null, null, true );
 
 	wp_enqueue_style( 'mythic-screen', asset( 'styles/screen.css' ), null, null );
