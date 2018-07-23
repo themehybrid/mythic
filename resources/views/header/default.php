@@ -18,6 +18,6 @@
 			<?php Hybrid\Site\render_description() ?>
 		</div>
 
-		<?php Hybrid\View\render( 'menu', 'primary', [ 'name' => 'primary' ] ) ?>
+		<?php Hybrid\View\render( 'nav/menu', 'primary', [ 'name' => 'primary' ] ) ?>
 
 	</header>

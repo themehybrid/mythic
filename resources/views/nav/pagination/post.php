@@ -1,4 +1,4 @@
-<?php Hybrid\Pagination\render( 'singular', [
+<?php Hybrid\Pagination\render( 'post', [
 	'show_all'    => true,
 	'prev_next'   => false,
 	'title_text'  => __( 'Pages:' ),

@@ -12,7 +12,7 @@
 
 			<?php endwhile ?>
 
-			<?php Hybrid\View\render( 'partials', 'pagination-posts' ) ?>
+			<?php Hybrid\View\render( 'nav/pagination', 'posts' ) ?>
 
 		<?php endif ?>
 

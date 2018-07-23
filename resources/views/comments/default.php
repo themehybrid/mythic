@@ -10,7 +10,7 @@
 
 			<h2 class="comments__title"><?php comments_number() ?></h2>
 
-			<?php Hybrid\View\render( 'partials', 'pagination-comments' ) ?>
+			<?php Hybrid\View\render( 'nav/pagination', 'comments' ) ?>
 
 			<ol class="comments__list">
 
