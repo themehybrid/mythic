@@ -23,21 +23,21 @@ Themes belong in your `wp-content/themes` folder.  You can directly download and
 
 First, you must switch to the proper folder:
 
-```
+```bash
 # Go to the themes folder.
 cd wp-content/themes
 ```
 
 Then, clone the theme:
 
-```
+```bash
 # Clone the theme.
 git clone -b master git@github.com:justintadlock/abc.git <theme-name>
 ```
 
 After that, you need to make sure that you're in the proper folder to follow the next steps:
 
-```
+```bash
 # Go the <theme-name> folder.
 cd theme-name
 ```
@@ -50,7 +50,7 @@ Mythic has the following dependencies, which must be installed for the theme to 
 
 That's why we need Composer. While still in the command line and at `wp-content/themes/theme-name`, type the following command:
 
-```
+```bash
 composer install
 ```
 
@@ -60,13 +60,13 @@ Mythic has many Node dependencies that it uses for the build process.  To instal
 
 **NPM command:**
 
-```
+```bash
 npm install
 ```
 
 **Yarn command:**
 
-```
+```bash
 yarn install
 ```
 
@@ -79,7 +79,7 @@ While the Hybrid Core framework is required as the foundational layer of the the
 
 Use the following commands to install these optional packages.
 
-```
+```bash
 # Installs Hybrid Carbon.
 composer require justintadlock/hybrid-carbon
 
@@ -109,6 +109,7 @@ The root theme folder has several files, some of which shouldn't be edited.
 
 The `/app` folder is where your _under-the-hood_ PHP lives.  Use this folder for adding custom functions and classes.  My preferred naming system is the following (feel free to do your own thing):
 
+* `bootstrap-{$name}.php` - File holds code for bootstrapping the theme.
 * `class-{$classname}.php` - File holds a single class.
 * `functions-{$group}.php` - File holds a related group of functions.
 * `template-{$group}.php` - File holds a related group of template tags.
@@ -144,7 +145,7 @@ You may configure the build process to your liking by editing `webpack.mix.js`.
 
 The following is a list of commands you can run from the command line:
 
-```
+```bash
 # Processes all of your assets for a development environment.
 npm run dev
 
