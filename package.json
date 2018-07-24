@@ -27,14 +27,14 @@
 		"url": "https://github.com/justintadlock/abc/issues"
 	},
 	"devDependencies": {
-		"browser-sync": "^2.24.4",
+		"browser-sync": "^2.24.6",
 		"browser-sync-webpack-plugin": "2.2.2",
-		"copy-webpack-plugin": "^4.5.1",
+		"copy-webpack-plugin": "^4.5.2",
 		"cross-env": "^5.2.0",
 		"imagemin-mozjpeg": "^6.0.0",
 		"imagemin-webpack-plugin": "^2.1.5",
 		"laravel-mix": "^2.1.0",
 		"node-wp-i18n": "github:cedaro/node-wp-i18n#develop",
-		"postcss-preset-env": "^5.1.0"
+		"postcss-preset-env": "^5.2.3"
 	}
 }
