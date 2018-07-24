@@ -1,9 +1,9 @@
 <?php
 /**
- * General template tags.
+ * Template tags.
  *
- * This file holds general template tags for the theme. Template tags are PHP
- * functions meant for use within theme templates.
+ * This file holds template tags for the theme. Template tags are PHP functions
+ * meant for use within theme templates.
  *
  * @package   Mythic
  * @author    Justin Tadlock <justintadlock@gmail.com>

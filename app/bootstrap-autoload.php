@@ -56,5 +56,5 @@ array_map( function( $file ) {
 }, [
 	'functions-assets',
 	'functions-setup',
-	'template-general'
+	'functions-template'
 ] );
