@@ -13,10 +13,11 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace Mythic;
+namespace Mythic\Customize;
 
 use WP_Customize_Manager;
 use Hybrid\Contracts\Bootable;
+use function Mythic\asset;
 
 /**
  * Handles setting up everything we need for the customizer.

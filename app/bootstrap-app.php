@@ -30,7 +30,7 @@ $mythic = new \Hybrid\Core\Application();
 # necessary to run the theme.
 
 # Register customize class instance and boot it.
-$mythic->instance( 'mythic/customize', new \Mythic\Customize() )->boot();
+$mythic->instance( 'mythic/customize', new \Mythic\Customize\Customize() )->boot();
 
 # ------------------------------------------------------------------------------
 # Perform bootstrap actions.
