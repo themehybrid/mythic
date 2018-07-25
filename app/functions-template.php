@@ -28,7 +28,7 @@ function sep( $sep = '' ) {
 		'mythic/sep',
 		sprintf(
 			' <span class="sep">%s</span> ',
-			$sep ? $sep : esc_html_x( '&middot;', 'meta separator' )
+			$sep ?: esc_html_x( '&middot;', 'meta separator' )
 		)
 	);
 }
