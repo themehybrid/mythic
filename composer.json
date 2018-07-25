@@ -18,7 +18,7 @@
                 "justintadlock/hybrid-core" : "5.0.x-dev"
         },
 	"require-dev": {
-		"wp-coding-standards/wpcs": "^0.14.1",
+		"wp-coding-standards/wpcs": "^1.0.0",
 		"wimg/php-compatibility": "^8.2"
 	}
 }
