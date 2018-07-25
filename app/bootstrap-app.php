@@ -32,6 +32,13 @@ $mythic = new \Hybrid\Core\Application();
 # Register customize class instance and boot it.
 $mythic->instance( 'mythic/customize', new \Mythic\Customize\Customize() )->boot();
 
+# Register the Laravel Mix manifest for cache-busting.
+$mythic->singleton( 'mythic/mix', function() {
+	$file = get_theme_file_path( 'dist/mix-manifest.json' );
+
+	return file_exists( $file ) ? json_decode( file_get_contents( $file ), true ) : null;
+} );
+
 # ------------------------------------------------------------------------------
 # Perform bootstrap actions.
 # ------------------------------------------------------------------------------
