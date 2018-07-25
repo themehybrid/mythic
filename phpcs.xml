@@ -47,7 +47,6 @@
 
 	<!-- Include the WordPress ruleset, with exclusions. -->
 	<rule ref="WordPress">
-		<config name="installed_paths" value="vendor/wp-coding-standards/wpcs" />
 		<!-- Allow short open tags. -->
 		<exclude name="Generic.PHP.DisallowShortOpenTag.EchoFound" />
 	</rule>
