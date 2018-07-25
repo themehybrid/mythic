@@ -10,7 +10,7 @@
 
 	<!--
 	#############################################################################
-	COMMAND LINE ARGUMENTS
+	Command line arguments
 	https://github.com/squizlabs/PHP_CodeSniffer/wiki/Annotated-ruleset.xml
 	#############################################################################
 	-->
@@ -33,12 +33,13 @@
 	<!-- Check all files in this directory and the directories below it. -->
 	<file>.</file>
 
+	<!-- Exclude folders. -->
   	<exclude-pattern>*/vendor/*</exclude-pattern>
 	<exclude-pattern>*/node_modules/*</exclude-pattern>
 
 	<!--
 	#############################################################################
-	USE THE WordPress RULESET
+	Use the WordPress ruleset
 	#############################################################################
 	-->
 
@@ -51,7 +52,7 @@
 
 	<!--
 	#############################################################################
-	SNIFF SPECIFIC CONFIGURATION
+	Sniff specific configuration
 	#############################################################################
 	-->
 
@@ -88,19 +89,21 @@
 	<rule ref="WordPress.Arrays.MultipleStatementAlignment">
 		<properties>
 			<!-- No need to adjust alignment of large arrays when
-      the item with the largest key is removed. -->
+      			 the item with the largest key is removed. -->
 			<property name="exact" value="false"/>
+
 			<!-- Don't align multi-line items if ALL items
-       in the array are multi-line. -->
+       			 in the array are multi-line. -->
 			<property name="alignMultilineItems" value="!=100"/>
+
 			<!-- Array assignment operator should always be on
-       the same line as the array key. -->
+       			 the same line as the array key. -->
 			<property name="ignoreNewlines" value="false"/>
 		</properties>
 	</rule>
 
 	<!-- Verify that everything in the global namespace is prefixed
-   with a theme specific prefix.
+   		 with a theme specific prefix.
 		 Multiple valid prefixes can be provided as a comma-delimited list. -->
 	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
 		<properties>
@@ -110,7 +113,7 @@
 
 	<!--
 	#############################################################################
-	USE THE PHPCompatibility RULESET
+	Use the PHPCompatibility ruleset
 	#############################################################################
 	-->
 
