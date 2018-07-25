@@ -15,7 +15,7 @@
 		"lint": "npm run lint:styles && npm run lint:scripts && npm run lint:php",
 		"lint:styles": "stylelint './resources/styles/**/*.scss' --syntax scss",
 		"lint:scripts": "eslint './resources/scripts/**/*.js'",
-		"lint:php": "./vendor/bin/phpcs .",
+		"lint:php": "cross-env ./vendor/bin/phpcs .",
 		"i18n": "npm run i18n:textdomain && npm run i18n:pot",
 		"i18n:textdomain": "npx wpi18n addtextdomain --exclude=vendor,node_modules",
 		"i18n:pot": "npx wpi18n makepot"
