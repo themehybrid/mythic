@@ -13,8 +13,8 @@
 		"hot": "cross-env NODE_ENV=development webpack-dev-server --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
 		"prod": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
 		"lint": "npm run lint:styles && npm run lint:scripts && npm run lint:php",
-		"lint:styles": "stylelint './resources/styles/**/*.scss' --syntax scss",
-		"lint:scripts": "eslint './resources/scripts/**/*.js'",
+		"lint:styles": "cross-env stylelint './resources/styles/**/*.scss' --syntax scss",
+		"lint:scripts": "cross-env eslint './resources/scripts/**/*.js'",
 		"lint:php": "cross-env ./vendor/bin/phpcs .",
 		"i18n": "npm run i18n:textdomain && npm run i18n:pot",
 		"i18n:textdomain": "npx wpi18n addtextdomain --exclude=vendor,node_modules",
@@ -38,7 +38,7 @@
 		"imagemin-webpack-plugin": "^2.1.5",
 		"laravel-mix": "^2.1.0",
 		"node-wp-i18n": "github:cedaro/node-wp-i18n#develop",
-		"postcss-preset-env": "^5.2.3",
+		"postcss-preset-env": "^5.3.0",
 		"stylelint": "^9.4.0",
 		"stylelint-config-wordpress": "^13.0.0"
 	}
