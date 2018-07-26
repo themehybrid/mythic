@@ -44,14 +44,20 @@ add_action( 'after_setup_theme', function() {
 	// Automatically add feed links to `<head>`.
 	add_theme_support( 'automatic-feed-links' );
 
-	// Outputs HTML5 markup for core features.
-	add_theme_support( 'html5', [ 'caption', 'comment-form', 'comment-list', 'gallery', 'search-form' ] );
-
 	// Adds featured image support.
 	add_theme_support( 'post-thumbnails' );
 
 	// Add selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
+
+	// Outputs HTML5 markup for core features.
+	add_theme_support( 'html5', [
+		'caption',
+		'comment-form',
+		'comment-list',
+		'gallery',
+		'search-form'
+	] );
 
 	// Add custom logo support.
 	add_theme_support( 'custom-logo', [
