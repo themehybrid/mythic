@@ -36,6 +36,8 @@
 		"imagemin-webpack-plugin": "^2.1.5",
 		"laravel-mix": "^2.1.0",
 		"node-wp-i18n": "github:cedaro/node-wp-i18n#develop",
-		"postcss-preset-env": "^5.2.3"
+		"postcss-preset-env": "^5.2.3",
+		"stylelint": "^9.4.0",
+		"stylelint-config-wordpress": "^13.0.0"
 	}
 }
