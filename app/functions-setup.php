@@ -30,6 +30,10 @@ namespace Mythic;
  */
 add_action( 'after_setup_theme', function() {
 
+	// Set content width.
+	// @link https://developer.wordpress.org/themes/basics/theme-functions/#content-width
+	$GLOBALS['content_width'] = 750;
+
 	// Load theme translations.
 	// @link https://developer.wordpress.org/reference/functions/load_theme_textdomain/
 	load_theme_textdomain( 'mythic', get_parent_theme_file_path( 'resources/lang' ) );
