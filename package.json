@@ -5,7 +5,7 @@
 	"author": "Justin Tadlock",
 	"license": "GPL-2.0+",
 	"homepage": "https://github.com/justintadlock/abc#readme",
-	"main": "index.js",
+	"main": "resources/scripts/app.js",
 	"scripts": {
 		"build": "npm run prod && npm run i18n",
 		"dev": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
@@ -32,10 +32,14 @@
 		"browser-sync-webpack-plugin": "2.2.2",
 		"copy-webpack-plugin": "^4.5.2",
 		"cross-env": "^5.2.0",
+		"eslint": "^5.2.0",
+		"eslint-config-wordpress": "^2.0.0",
 		"imagemin-mozjpeg": "^6.0.0",
 		"imagemin-webpack-plugin": "^2.1.5",
 		"laravel-mix": "^2.1.0",
 		"node-wp-i18n": "github:cedaro/node-wp-i18n#develop",
-		"postcss-preset-env": "^5.2.3"
+		"postcss-preset-env": "^5.2.3",
+		"stylelint": "^9.4.0",
+		"stylelint-config-wordpress": "^13.0.0"
 	}
 }
