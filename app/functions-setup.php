@@ -24,6 +24,8 @@ namespace Mythic;
  * Set up theme support.  This is where calls to `add_theme_support()` happen.
  *
  * @link   https://developer.wordpress.org/reference/functions/add_theme_support/
+ * @link   https://developer.wordpress.org/themes/basics/theme-functions/
+ * @link   https://developer.wordpress.org/reference/functions/load_theme_textdomain/
  * @since  1.0.0
  * @access public
  * @return void
@@ -31,35 +33,27 @@ namespace Mythic;
 add_action( 'after_setup_theme', function() {
 
 	// Set content width.
-	// @link https://developer.wordpress.org/themes/basics/theme-functions/#content-width
 	$GLOBALS['content_width'] = 750;
 
 	// Load theme translations.
-	// @link https://developer.wordpress.org/reference/functions/load_theme_textdomain/
 	load_theme_textdomain( 'mythic', get_parent_theme_file_path( 'resources/lang' ) );
 
 	// Automatically add the `<title>` tag.
-	// @link https://developer.wordpress.org/reference/functions/add_theme_support/#title-tag
 	add_theme_support( 'title-tag' );
 
 	// Automatically add feed links to `<head>`.
-	// @link https://developer.wordpress.org/reference/functions/add_theme_support/#feed-links
 	add_theme_support( 'automatic-feed-links' );
 
 	// Outputs HTML5 markup for core features.
-	// @link https://developer.wordpress.org/reference/functions/add_theme_support/#html5
 	add_theme_support( 'html5', [ 'caption', 'comment-form', 'comment-list', 'gallery', 'search-form' ] );
 
 	// Adds featured image support.
-	// @link https://developer.wordpress.org/reference/functions/add_theme_support/#post-thumbnails
 	add_theme_support( 'post-thumbnails' );
 
 	// Add selective refresh for widgets.
-	// @link https://developer.wordpress.org/reference/functions/add_theme_support/#customize-selective-refresh-widgets
 	add_theme_support( 'customize-selective-refresh-widgets' );
 
 	// Add custom logo support.
-	// @link https://developer.wordpress.org/reference/functions/add_theme_support/#custom-logo
 	add_theme_support( 'custom-logo', [
 		'width'       => null,
 		'height'      => null,
