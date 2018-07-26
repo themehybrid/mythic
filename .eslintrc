@@ -1,0 +1,18 @@
+{
+	"extends": "wordpress",
+	"globals": {
+		"_": false,
+		"Backbone": false,
+		"jQuery": false,
+		"JSON": false,
+		"wp": false
+	},
+	"env": {
+		"browser": true,
+		"es6": true,
+		"jquery": true
+	},
+	"parserOptions": {
+        "sourceType": "module"
+    }
+}
