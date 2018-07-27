@@ -26,6 +26,7 @@ namespace Mythic;
  * @link   https://developer.wordpress.org/reference/functions/add_theme_support/
  * @link   https://developer.wordpress.org/themes/basics/theme-functions/
  * @link   https://developer.wordpress.org/reference/functions/load_theme_textdomain/
+ * @link   https://github.com/WordPress/gutenberg/blob/master/docs/extensibility/theme-support.md
  * @since  1.0.0
  * @access public
  * @return void
@@ -50,6 +51,9 @@ add_action( 'after_setup_theme', function() {
 	// Add selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
 
+	// Wide and full alignment.
+	add_theme_support( 'align-wide' );
+
 	// Outputs HTML5 markup for core features.
 	add_theme_support( 'html5', [
 		'caption',
@@ -66,6 +70,58 @@ add_action( 'after_setup_theme', function() {
 		'flex-width'  => null,
 		'flex-height' => false,
 		'header-text' => ''
+	] );
+
+	// Editor color palette.
+	add_theme_support( 'editor-color-palette', [
+		[
+			'name'  => __( 'Strong Magenta' ),
+			'slug'  => 'strong-magenta',
+			'color' => '#a156b4'
+		],
+		[
+			'name'  => __( 'Light Grayish Magenta' ),
+			'slug'  => 'light-grayish-magenta',
+			'color' => '#d0a5db',
+		],
+		[
+			'name'  => __( 'Very Light Gray' ),
+			'slug'  => 'very-light-gray',
+			'color' => '#eee',
+		],
+		[
+			'name'  => __( 'Very Dark Gray' ),
+			'slug'  => 'very-dark-gray',
+			'color' => '#444',
+		]
+	] );
+
+	// Editor block font sizes.
+	add_theme_support( 'editor-font-sizes', [
+		[
+			'name'      => __( 'Small' ),
+			'shortName' => __( 'S' ),
+			'size'      => 12,
+			'slug'      => 'small'
+		],
+		[
+			'name'      => __( 'Regular' ),
+			'shortName' => __( 'M' ),
+			'size'      => 16,
+			'slug'      => 'regular'
+		],
+		[
+			'name'      => __( 'Large' ),
+			'shortName' => __( 'L' ),
+			'size'      => 36,
+			'slug'      => 'large'
+		],
+		[
+			'name'      => __( 'Larger' ),
+			'shortName' => __( 'XL' ),
+			'size'      => 48,
+			'slug'      => 'larger'
+		]
 	] );
 
 }, 5 );
