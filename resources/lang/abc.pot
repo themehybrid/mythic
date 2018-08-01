@@ -209,7 +209,7 @@ msgid "ABC"
 msgstr ""
 
 #. Theme URI of the plugin/theme
-msgid "https://github.com/justintadlock/abc"
+msgid "https://github.com/justintadlock/mythic"
 msgstr ""
 
 #. Description of the plugin/theme

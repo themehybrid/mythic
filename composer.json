@@ -1,9 +1,9 @@
 {
-	"name"        : "justintadlock/abc",
+	"name"        : "justintadlock/mythic",
         "type"        : "wordpress-theme",
 	"description" : "A WordPress starter theme.",
 	"keywords"    : ["wordpress"],
-	"homepage"    : "https://themehybrid.com/themes/abc",
+	"homepage"    : "https://themehybrid.com/themes/mythic",
 	"license"     : "GPL-2.0-or-later",
 	"authors"     : [
 		{

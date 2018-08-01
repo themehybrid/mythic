@@ -32,7 +32,7 @@ Then, clone the theme:
 
 ```bash
 # Clone the theme.
-git clone -b master git@github.com:justintadlock/abc.git <theme-name>
+git clone -b master git@github.com:justintadlock/mythic.git <theme-name>
 ```
 
 After that, you need to make sure that you're in the proper folder to follow the next steps:

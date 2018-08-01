@@ -1,10 +1,10 @@
 {
-	"name": "abc",
+	"name": "mythic",
 	"version": "1.0.0",
 	"description": "A starter theme for WordPress.",
 	"author": "Justin Tadlock",
 	"license": "GPL-2.0+",
-	"homepage": "https://github.com/justintadlock/abc#readme",
+	"homepage": "https://themehybrid.com/themes/mythic",
 	"main": "resources/scripts/app.js",
 	"scripts": {
 		"build": "npm run prod && npm run i18n",
@@ -22,10 +22,10 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/justintadlock/abc.git"
+		"url": "git+https://github.com/justintadlock/mythic.git"
 	},
 	"bugs": {
-		"url": "https://github.com/justintadlock/abc/issues"
+		"url": "https://github.com/justintadlock/mythic/issues"
 	},
 	"devDependencies": {
 		"browser-sync": "^2.24.6",
