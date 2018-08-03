@@ -1,6 +1,6 @@
-# Mythic - A starter theme for WordPress
+# Mythic
 
-Mythic (temporary name) is a starter theme project that's currently under active development.
+Mythic is a starter theme for WordPress.
 
 The theme's primary goal is to offer a modern development experience for WordPress theme authors while sticking as close to possible to WordPress standards as we can.  Sometimes those things don't always mesh well.  This theme aims to balance that.
 
@@ -8,7 +8,7 @@ The theme's primary goal is to offer a modern development experience for WordPre
 
 There's a few requirements in order to develop a new theme or contribute back to the project:
 
-* PHP 5.6+ (preferably 7+)
+* PHP 5.6+ (preferably 7+).
 * [Git](https://git-scm.com/) for version control.
 * [Composer](https://getcomposer.org/) for managing PHP dependencies.
 * [NPM](https://www.npmjs.com/) or [Yarn](https://yarnpkg.com/en/) (your choice) for managing JS dependencies.
