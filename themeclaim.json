@@ -1,0 +1,10 @@
+{
+	"from": {
+		"Name": "Mythic",
+		"Description": "An awesome starter theme for WordPress.",
+		"Uri": "https://themehybrid.com/themes/mythic",
+		"Author": "Justin Tadlock",
+		"AuthorUri": "https://themehybrid.com",
+		"Namespace": "Mythic"
+	}
+}
