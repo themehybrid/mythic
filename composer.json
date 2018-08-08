@@ -1,6 +1,6 @@
 {
 	"name": "justintadlock/mythic",
-    "type": "wordpress-theme",
+	"type": "wordpress-theme",
 	"description": "A WordPress starter theme.",
 	"keywords": ["wordpress"],
 	"homepage": "https://themehybrid.com/themes/mythic",
@@ -22,11 +22,11 @@
 		"wimg/php-compatibility": "^8.2"
 	},
 	"archive": {
-        "exclude": [
+		"exclude": [
 			"themeclaim.json",
 			"composer.json",
 			"!vendor/justintadlock",
 			"!vendor/autoload.php"
 		]
-    }
+	}
 }
