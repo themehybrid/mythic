@@ -7,7 +7,7 @@
  *
  * @link https://laravel.com/docs/5.6/mix
  *
- * @package   ABC
+ * @package   Mythic
  * @author    Justin Tadlock <justintadlock@gmail.com>
  * @copyright Copyright (c) 2018, Justin Tadlock
  * @link      https://themehybrid.com/themes/mythic
