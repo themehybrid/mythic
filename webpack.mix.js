@@ -21,6 +21,52 @@ const CopyWebpackPlugin = require( 'copy-webpack-plugin' );
 const imageminMozjpeg   = require( 'imagemin-mozjpeg' );
 
 /*
+ * Creates a bundle of the production-ready theme with only the files and folders
+ * needed for uploading to a site or zipping. Edit the `files` or `folders`
+ * variables if you need to change something.
+ */
+if ( process.env.bundle ) {
+
+	// Folder name to bundle the files in.
+	let bundlePath = 'mythic';
+
+	// Theme root-level files to include.
+	let files = [
+		'style.css',
+		'functions.php',
+		'index.php',
+		'license.md',
+		'readme.md',
+		'screenshot.png'
+	];
+
+	// Folders to include.
+	let folders = [
+		'app',
+		'dist',
+		'resources/lang',
+	//	'resources/scripts',   // Required for WordPress.org.
+	//	'resources/styles',    // Required for WordPress.org.
+		'resources/views',
+		'vendor'
+	];
+
+	// Loop through the root files and copy them over.
+	for ( var i = 0; i < files.length; i++ ) {
+		mix.copy( files[ i ], bundlePath + '/' + files[ i ] );
+	}
+
+	// Loop through the folders and copy them over.
+	for ( var i = 0; i < folders.length; i++ ) {
+		mix.copyDirectory( folders[ i ], bundlePath + '/' + folders[ i ] );
+	}
+
+	// Bail early because we don't need to do anything else after this point.
+	// Everything else following below is for the build process.
+	return;
+}
+
+/*
  * Sets the development path to assets. By default, this is the `/resources`
  * folder in the theme.
  */

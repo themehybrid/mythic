@@ -12,6 +12,7 @@
 		"watch": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
 		"hot": "cross-env NODE_ENV=development webpack-dev-server --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
 		"prod": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+		"bundle": "cross-env bundle=1 NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js && npx rimraf mix-manifest.json",
 		"lint": "npm run lint:styles && npm run lint:scripts && npm run lint:php",
 		"lint:styles": "cross-env stylelint './resources/styles/**/*.scss' --syntax scss",
 		"lint:scripts": "cross-env eslint './resources/scripts/**/*.js'",
@@ -40,6 +41,7 @@
 		"laravel-mix": "^2.1.0",
 		"node-wp-i18n": "^1.2.0",
 		"postcss-preset-env": "^5.3.0",
+		"rimraf": "^2.6.2",
 		"stylelint": "^9.4.0",
 		"stylelint-config-wordpress": "^13.0.0",
 		"theme-claim": "^0.1.1"
