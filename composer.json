@@ -1,24 +1,32 @@
 {
-	"name"        : "justintadlock/mythic",
-        "type"        : "wordpress-theme",
-	"description" : "A WordPress starter theme.",
-	"keywords"    : ["wordpress"],
-	"homepage"    : "https://themehybrid.com/themes/mythic",
-	"license"     : "GPL-2.0-or-later",
-	"authors"     : [
+	"name": "justintadlock/mythic",
+	"type": "wordpress-theme",
+	"description": "A WordPress starter theme.",
+	"keywords": ["wordpress"],
+	"homepage": "https://themehybrid.com/themes/mythic",
+	"license": "GPL-2.0-or-later",
+	"authors": [
 		{
-			"name"    : "Justin Tadlock",
-			"email"   : "justintadlock@gmail.com",
+			"name": "Justin Tadlock",
+			"email": "justintadlock@gmail.com",
 			"homepage": "http://justintadlock.com"
 		}
 	],
-        "require": {
-                "php" : ">=5.6",
-                "composer/installers" : "~1.0",
-                "justintadlock/hybrid-core" : "5.0.x-dev"
-        },
+	"require": {
+		"php": ">=5.6",
+		"composer/installers": "~1.0",
+		"justintadlock/hybrid-core": "5.0.x-dev"
+	},
 	"require-dev": {
 		"wp-coding-standards/wpcs": "^1.0.0",
 		"wimg/php-compatibility": "^8.2"
+	},
+	"archive": {
+		"exclude": [
+			"themeclaim.json",
+			"composer.json",
+			"!vendor/justintadlock",
+			"!vendor/autoload.php"
+		]
 	}
 }
