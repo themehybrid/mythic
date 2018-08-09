@@ -1,14 +1,14 @@
-<article <?php Hybrid\Attr\render( 'entry' ) ?>>
+<article <?php Hybrid\Attr\display( 'entry' ) ?>>
 
 	<?php the_post_thumbnail( 'mythic-medium', [ 'class' => 'entry__image' ] ) ?>
 
 	<header class="entry__header">
-		<?php Hybrid\Post\render_title() ?>
+		<?php Hybrid\Post\display_title() ?>
 
 		<div class="entry__byline">
-			<?php Hybrid\Post\render_author() ?>
-			<?php Hybrid\Post\render_date( [ 'before' => Mythic\sep() ] ) ?>
-			<?php Hybrid\Post\render_comments_link( [ 'before' => Mythic\sep() ] ) ?>
+			<?php Hybrid\Post\display_author() ?>
+			<?php Hybrid\Post\display_date( [ 'before' => Mythic\sep() ] ) ?>
+			<?php Hybrid\Post\display_comments_link( [ 'before' => Mythic\sep() ] ) ?>
 		</div>
 	</header>
 

@@ -1,9 +1,9 @@
 <?php if ( has_nav_menu( $data->name ) ) : ?>
 
-	<nav <?php Hybrid\Attr\render( 'menu', $data->name ) ?>>
+	<nav <?php Hybrid\Attr\display( 'menu', $data->name ) ?>>
 
 		<h3 class="menu__title screen-reader-text">
-			<?php Hybrid\Menu\render_name( $data->name ) ?>
+			<?php Hybrid\Menu\display_name( $data->name ) ?>
 		</h3>
 
 		<?php wp_nav_menu( [
