@@ -1,6 +1,6 @@
 {
 	"name"        : "justintadlock/mythic",
-        "type"        : "wordpress-theme",
+	"type"        : "wordpress-theme",
 	"description" : "A WordPress starter theme.",
 	"keywords"    : ["wordpress"],
 	"homepage"    : "https://themehybrid.com/themes/mythic",
