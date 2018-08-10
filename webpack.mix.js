@@ -52,12 +52,12 @@ if ( process.env.bundle ) {
 	];
 
 	// Loop through the root files and copy them over.
-	files.forEach(function (file) {
+	files.forEach(file => {
 		mix.copy( file, `${bundlePath}/${file}` );
 	});
 
 	// Loop through the folders and copy them over.
-	folders.forEach(function (folder) {
+	folders.forEach(folder => {
 		mix.copyDirectory( folder, `${bundlePath}/${folder}` );
 	});
 
