@@ -54,7 +54,7 @@ add_action( 'enqueue_block_editor_assets', function() {
 	// wp_deregister_style( 'wp-core-blocks' );
 	// wp_deregister_style( 'wp-core-blocks-theme' );
 
-	// Re-register core block and theme styles when empty string. This is
+	// Re-register core block and theme styles with an empty string. This is
 	// necessary to get styles set up correctly.
 	// wp_register_style( 'wp-core-blocks', '' );
 	// wp_register_style( 'wp-core-blocks-theme', '' );
