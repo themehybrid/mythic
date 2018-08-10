@@ -52,14 +52,14 @@ if ( process.env.bundle ) {
 	];
 
 	// Loop through the root files and copy them over.
-	for ( var i = 0; i < files.length; i++ ) {
-		mix.copy( files[ i ], bundlePath + '/' + files[ i ] );
-	}
+	files.forEach(function (file) {
+		mix.copy( file, `${bundlePath}/${file}` );
+	});
 
 	// Loop through the folders and copy them over.
-	for ( var i = 0; i < folders.length; i++ ) {
-		mix.copyDirectory( folders[ i ], bundlePath + '/' + folders[ i ] );
-	}
+	folders.forEach(function (folder) {
+		mix.copyDirectory( folder, `${bundlePath}/${folder}` );
+	});
 
 	// Bail early because we don't need to do anything else after this point.
 	// Everything else following below is for the build process.
@@ -110,9 +110,9 @@ mix.version();
  *
  * @link https://laravel.com/docs/5.6/mix#working-with-scripts
  */
-mix.js( devPath + '/scripts/app.js',                'scripts' )
-   .js( devPath + '/scripts/customize-controls.js', 'scripts' )
-   .js( devPath + '/scripts/customize-preview.js',  'scripts' );
+mix.js( `${devPath}/scripts/app.js`,                'scripts' )
+   .js( `${devPath}/scripts/customize-controls.js`, 'scripts' )
+   .js( `${devPath}/scripts/customize-preview.js`,  'scripts' );
 
 /*
  * Compile CSS. Mix supports Sass, Less, Stylus, and plain CSS, and has functions
@@ -131,9 +131,9 @@ var sassConfig = {
 };
 
 // Compile SASS/CSS.
-mix.sass( devPath + '/styles/screen.scss',             'styles', sassConfig )
-   .sass( devPath + '/styles/editor.scss',             'styles', sassConfig )
-   .sass( devPath + '/styles/customize-controls.scss', 'styles', sassConfig );
+mix.sass( `${devPath}/styles/screen.scss`,             'styles', sassConfig )
+   .sass( `${devPath}/styles/editor.scss`,             'styles', sassConfig )
+   .sass( `${devPath}/styles/customize-controls.scss`, 'styles', sassConfig );
 
 /*
  * Add custom Webpack configuration.
@@ -160,9 +160,9 @@ mix.webpackConfig( {
 	plugins     : [
 		// @link https://github.com/webpack-contrib/copy-webpack-plugin
 		new CopyWebpackPlugin( [
-			{ from : devPath + '/img',   to : 'img'   },
-			{ from : devPath + '/svg',   to : 'svg'   },
-			{ from : devPath + '/fonts', to : 'fonts' }
+			{ from : `${devPath}/img`,   to : 'img'   },
+			{ from : `${devPath}/svg`,   to : 'svg'   },
+			{ from : `${devPath}/fonts`, to : 'fonts' }
 		] ),
 		// @link https://github.com/Klathmon/imagemin-webpack-plugin
 		new ImageminPlugin( {
@@ -199,7 +199,7 @@ mix.browserSync( {
 	port  : 8080,
 	files : [
 		'**/*.{jpg,jpeg,png,gif,svg,eot,ttf,woff,woff2}',
-		devPath + '/views/**/*.php',
+		`${devPath}/views/**/*.php`,
 		'app/**/*.php'
 	]
 } );
