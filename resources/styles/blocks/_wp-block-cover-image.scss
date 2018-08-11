@@ -1,0 +1,14 @@
+
+.wp-block-cover-image {
+
+	&.has-parallax {}
+
+	&.has-background-dim {
+		&-50 {}
+	}
+
+	&.has-left-content {}
+	&.has-right-content {}
+
+	&-text {}
+}

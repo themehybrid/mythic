@@ -1,0 +1,17 @@
+
+.wp-block-embed {
+
+	&-vimeo {}
+	&-youtube {}
+
+	&.is-type-image {}
+	&.is-type-audio {}
+	&.is-type-rich {} // text, twitter, etc.
+	&.is-type-video {}
+
+	&.is-provider-vimeo {}
+
+	iframe {}
+
+	figcaption {}
+}

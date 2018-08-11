@@ -1,0 +1,11 @@
+
+.wp-block-gallery {
+
+	&.is-cropped {}
+
+	&.columns-1 {}
+	&.columns-2 {}
+	&.columns-3 {}
+
+	.blocks-gallery-item {}
+}
