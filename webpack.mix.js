@@ -22,10 +22,15 @@ const imageminMozjpeg   = require( 'imagemin-mozjpeg' );
 const rimraf            = require( 'rimraf' );
 
 /*
- * Creates a bundle of the production-ready theme with only the files and folders
- * needed for uploading to a site or zipping. Edit the `files` or `folders`
- * variables if you need to change something.
+ * -----------------------------------------------------------------------------
+ * Theme Bundle Process
+ * -----------------------------------------------------------------------------
+ * Creates a bundle of the production-ready theme with only the files and
+ * folders needed for uploading to a site or zipping. Edit the `files` or
+ * `folders` variables if you need to change something.
+ * -----------------------------------------------------------------------------
  */
+
 if ( process.env.bundle ) {
 
 	// Folder name to bundle the files in.
@@ -69,6 +74,16 @@ if ( process.env.bundle ) {
 	// Everything else following below is for the build process.
 	return;
 }
+
+/*
+ * -----------------------------------------------------------------------------
+ * Build Process
+ * -----------------------------------------------------------------------------
+ * The section below handles processing, compiling, transpiling, and combining
+ * all of the theme's assets into their final location. This is the meat of the
+ * build process.
+ * -----------------------------------------------------------------------------
+ */
 
 /*
  * Sets the development path to assets. By default, this is the `/resources`
