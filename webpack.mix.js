@@ -19,6 +19,7 @@ const { mix }           = require( 'laravel-mix' );
 const ImageminPlugin    = require( 'imagemin-webpack-plugin' ).default;
 const CopyWebpackPlugin = require( 'copy-webpack-plugin' );
 const imageminMozjpeg   = require( 'imagemin-mozjpeg' );
+const rimraf            = require( 'rimraf' );
 
 /*
  * Creates a bundle of the production-ready theme with only the files and folders
@@ -50,6 +51,9 @@ if ( process.env.bundle ) {
 		'resources/views',
 		'vendor'
 	];
+
+	// Delete the previous bundle to start clean.
+	rimraf.sync( bundlePath );
 
 	// Loop through the root files and copy them over.
 	files.forEach(file => {
