@@ -56,14 +56,14 @@ if ( process.env.bundle ) {
 	rimraf.sync( bundlePath );
 
 	// Loop through the root files and copy them over.
-	files.forEach(file => {
+	files.forEach( file => {
 		mix.copy( file, `${bundlePath}/${file}` );
-	});
+	} );
 
 	// Loop through the folders and copy them over.
-	folders.forEach(folder => {
+	folders.forEach( folder => {
 		mix.copyDirectory( folder, `${bundlePath}/${folder}` );
-	});
+	} );
 
 	// Bail early because we don't need to do anything else after this point.
 	// Everything else following below is for the build process.
