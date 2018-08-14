@@ -75,24 +75,24 @@ add_action( 'after_setup_theme', function() {
 	// Editor color palette.
 	add_theme_support( 'editor-color-palette', [
 		[
-			'name'  => __( 'Strong Magenta' ),
-			'slug'  => 'strong-magenta',
-			'color' => '#a156b4'
+			'name'  => __( 'Charcoal' ),
+			'slug'  => 'charcoal',
+			'color' => '#282c34'
 		],
 		[
-			'name'  => __( 'Light Grayish Magenta' ),
-			'slug'  => 'light-grayish-magenta',
-			'color' => '#d0a5db',
+			'name'  => __( 'Regent' ),
+			'slug'  => 'regent',
+			'color' => '#8c97a7',
 		],
 		[
-			'name'  => __( 'Very Light Gray' ),
-			'slug'  => 'very-light-gray',
-			'color' => '#eee',
+			'name'  => __( 'Husk' ),
+			'slug'  => 'husk',
+			'color' => '#B9A364',
 		],
 		[
-			'name'  => __( 'Very Dark Gray' ),
-			'slug'  => 'very-dark-gray',
-			'color' => '#444',
+			'name'  => __( 'Red Stage' ),
+			'slug'  => 'red-stage',
+			'color' => '#b15330',
 		]
 	] );
 

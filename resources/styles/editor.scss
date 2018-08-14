@@ -11,14 +11,14 @@
 // Settings handle the configuration and don't output CSS. This is a good
 // place to define things like variables.
 
-@import 'settings/index';
+@import 'settings/colors';
 
 // Tools.
 //
 // These are used throughout the code but don't output CSS on their own.
 // Things like mixins and extensions go here.
 
-@import 'tools/index';
+@import 'tools/functions';
 
 // Generic.
 //
@@ -67,5 +67,5 @@
 	// If necessary, this is the only place where `!important` rules should
 	// go, but only if necessary.
 
-	@import 'utilities/index';
+	@import 'utilities/helpers';
 }

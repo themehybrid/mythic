@@ -1,0 +1,18 @@
+///
+/// Helpers used throughout the theme.
+///
+
+/// Loops through the theme colors and adds utility classes for them. Primarily,
+/// these are the `.has-{$color}-color` and `.has-{$color}-background-color`
+/// classes added via Gutenberg. However, they are useful elsewhere.
+
+@each $color-name, $color-value in block-colors() {
+
+	.has-#{$color-name}-color {
+		color : #{$color-value};
+	}
+
+	.has-#{$color-name}-background-color {
+		background-color : #{$color-value};
+	}
+}

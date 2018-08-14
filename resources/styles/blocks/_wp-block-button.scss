@@ -1,5 +1,21 @@
 
 .wp-block-button {
 
-	&__link {}
+	margin-bottom: 1.5em;
+
+	&__link {
+		border:          none;
+		border-radius:   0;
+		box-shadow:      none;
+		cursor:          pointer;
+		display:         inline-block;
+		font-size:       18px;
+		line-height:     24px;
+		margin:          0;
+		padding:         11px 24px;
+		text-align:      center;
+		text-decoration: none;
+		white-space:     normal;
+		word-break:      break-all;
+	}
 }
