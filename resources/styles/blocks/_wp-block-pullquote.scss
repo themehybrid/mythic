@@ -7,8 +7,16 @@
 ////
 
 .wp-block-pullquote {
+	padding:    3em 0;
+	text-align: center;
 
-	p {}
+	&.alignleft,
+	&.alignright {
+		max-width: content-width() / 2;
+	}
 
-	cite {}
+	cite,
+	footer {
+		position: relative;
+	}
 }

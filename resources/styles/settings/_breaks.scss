@@ -1,0 +1,34 @@
+////
+/// Media query page break settings.
+///
+/// @group  Settings
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://themehybrid.com/themes/mythic
+////
+
+/// Returns an map of page breaks in name-value format.
+///
+/// @since  1.0.0
+/// @access public
+/// @return {map}  Map of page breaks.
+
+@function breaks() {
+
+	@return (
+		medium : 782px,
+		small  : 600px,
+		mobile : 480px
+	);
+}
+
+/// Returns a single page break value by name.
+///
+/// @since  1.0.0
+/// @access public
+/// @param  {string}  $name  Page break name.
+/// @return {string}         Page break value in pixels
+
+@function break( $name ) {
+
+	@return map-get( breaks(), $name );
+}

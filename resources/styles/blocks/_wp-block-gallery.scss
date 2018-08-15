@@ -7,6 +7,11 @@
 ////
 
 .wp-block-gallery {
+	display:         flex;
+	flex-wrap:       wrap;
+	list-style-type: none;
+	padding:         0;
+	margin:          0 -8px 0 -8px;
 
 	&.is-cropped {}
 
@@ -14,5 +19,76 @@
 	&.columns-2 {}
 	&.columns-3 {}
 
-	.blocks-gallery-item {}
+	.blocks-gallery-item {
+		margin:          8px;
+		display:         flex;
+		flex-grow:       1;
+		flex-direction:  column;
+		justify-content: center;
+		position:        relative;
+
+		figure {
+			margin:      0;
+			height:      100%;
+			display:     flex;
+			align-items: flex-end;
+		}
+
+		img {
+			display:   block;
+			max-width: 100%;
+			height:    auto;
+		}
+
+		figcaption {
+			display:    block;
+			width:      100%;
+			padding:    10px;
+			text-align: center;
+
+			img {
+				display: inline;
+			}
+		}
+	}
+
+	&.is-cropped .blocks-gallery-item {
+		a,
+		img {
+			flex:       1;
+			width:      100%;
+			height:     100%;
+			object-fit: cover;
+
+		}
+	}
+
+	// Fallback to 2 columns.
+	.blocks-gallery-item {
+		width: calc( 100% / 2 - 16px );
+	}
+
+	// 1 column.
+	&.columns-1 .blocks-gallery-item {
+		width: calc( 100% / 1 - 16px );
+	}
+
+	// 3-8 columns on larger screens.
+	@media ( min-width: break( small ) ) {
+
+		@for $i from 3 through 8 {
+
+			&.columns-#{ $i } .blocks-gallery-item {
+				width: calc( 100% / #{ $i } - 16px );
+			}
+		}
+	}
+
+	[data-align="left"] &,
+	[data-align="right"] &,
+	&.alignleft,
+	&.alignright {
+		max-width: content-width() / 2;
+		width:     100%;
+	}
 }

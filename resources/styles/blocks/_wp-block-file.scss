@@ -7,6 +7,36 @@
 ////
 
 .wp-block-file {
+	margin-bottom: 1.5em;
 
-	&__button {}
+	&.aligncenter {
+		text-align: center;
+	}
+
+	&.alignright {
+		text-align: right;
+	}
+
+	&__button {
+		background: color( black );
+		color:      color( white );
+		padding:    0.5em 1em;
+	}
+
+	a#{&}__button {
+		text-decoration: none;
+
+		&:hover,
+		&:visited,
+		&:focus,
+		&:active {
+			color:           color( white );
+			opacity:         0.85;
+			text-decoration: none;
+		}
+	}
+
+	* + &__button {
+		margin-left: 0.75em;
+	}
 }

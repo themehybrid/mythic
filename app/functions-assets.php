@@ -28,6 +28,9 @@ use Hybrid\App;
  */
 add_action( 'wp_enqueue_scripts', function() {
 
+	// Disable core block styles.
+	wp_dequeue_style( 'wp-core-blocks' );
+
 	// Load WordPress' comment-reply script where appropriate.
 	if ( is_singular() && get_option( 'thread_comments' ) && comments_open() ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -37,7 +40,7 @@ add_action( 'wp_enqueue_scripts', function() {
 
 	wp_enqueue_style( 'mythic-screen', asset( 'styles/screen.css' ), null, null );
 
-}, 5 );
+} );
 
 /**
  * Enqueue scripts/styles for the editor.
@@ -51,15 +54,15 @@ add_action( 'enqueue_block_editor_assets', function() {
 	wp_enqueue_style( 'mythic-editor', asset( 'styles/editor.css' ), null, null );
 
 	// Unregister core block and theme styles.
-	// wp_deregister_style( 'wp-core-blocks' );
-	// wp_deregister_style( 'wp-core-blocks-theme' );
+	wp_deregister_style( 'wp-core-blocks' );
+	wp_deregister_style( 'wp-core-blocks-theme' );
 
 	// Re-register core block and theme styles with an empty string. This is
 	// necessary to get styles set up correctly.
-	// wp_register_style( 'wp-core-blocks', '' );
-	// wp_register_style( 'wp-core-blocks-theme', '' );
+	wp_register_style( 'wp-core-blocks', '' );
+	wp_register_style( 'wp-core-blocks-theme', '' );
 
-}, 5 );
+} );
 
 /**
  * Helper function for outputting an asset URL in the theme. This integrates

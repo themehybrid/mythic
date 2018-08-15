@@ -7,8 +7,13 @@
 ////
 
 .wp-block-columns {
+	display: flex;
 
-	&.has-2-columns {} // 2-6
+	// Add styles based on the number of columns. Supports 2-6 columns.
+	&.has-2-columns {}
 
-	.wp-block-column {}
+	// Individual columns.
+	.wp-block-column {
+		flex: 1;
+	}
 }

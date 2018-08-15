@@ -1,0 +1,18 @@
+////
+/// Width and height settings.
+///
+/// @group  Settings
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://themehybrid.com/themes/mythic
+////
+
+/// Defines the content width. This should matche the theme's `$content_width`
+/// setting in `app/functions-setup.php`.
+///
+/// @since  1.0.0
+/// @access public
+/// @return {int}  The content width in pixels.
+
+@function content-width() {
+	@return 750;
+}

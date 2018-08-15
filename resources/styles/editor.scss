@@ -15,7 +15,9 @@
 // Settings handle the configuration and don't output CSS. This is a good
 // place to define things like variables.
 
+@import 'settings/breaks';
 @import 'settings/colors';
+@import 'settings/dimensions';
 @import 'settings/fonts';
 
 // Tools.
