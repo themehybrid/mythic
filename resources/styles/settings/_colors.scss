@@ -1,12 +1,66 @@
-///
+////
 /// Set up and define colors.
 ///
+/// @group  Settings
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://themehybrid.com/themes/mythic
+////
 
-// Colors defined in `app/functions-setup.php` for the `editor-color-palette`
-// feature (WP editor).
-$block-colors : (
-	charcoal  : #282c34,
-	regent    : #8c97a7,
-	husk      : #b9a364,
-	red-stage : #b15330
-);
+/// Returns an map of colors in name-value format. This function also merges
+/// with the `block-colors()` map to create a map of all colors.
+///
+/// @since  1.0.0
+/// @access public
+/// @return {map}  Map of defined colors.
+
+@function colors() {
+
+	$colors : (
+		white : #fff,
+		black : #000
+	);
+
+	@return map-merge( $colors, block-colors() );
+}
+
+/// Returns an map of block colors in name-value format. These are the colors
+/// defined via the `editor-color-palette` setting in `app/functions-setup.php`
+/// for the WordPress editor.
+///
+/// @since  1.0.0
+/// @access public
+/// @return {map}  Map of defined colors.
+
+@function block-colors() {
+
+	@return (
+		charcoal  : #282c34,
+		regent    : #8c97a7,
+		husk      : #b9a364,
+		red-stage : #b15330
+	);
+}
+
+/// Returns a single color value by name.
+///
+/// @since  1.0.0
+/// @access public
+/// @param  {string}  $name  Color name.
+/// @return {string}         Color value.
+
+@function color( $name ) {
+
+	@return map-get( colors(), $name );
+}
+
+/// Returns a single block color value by name.
+///
+/// @since  1.0.0
+/// @access public
+/// @param  {string}  $name  Color name.
+/// @return {string}         Color value.
+
+@function block-color( $name ) {
+
+	@return map-get( block-colors(), $name );
+}

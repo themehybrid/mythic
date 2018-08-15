@@ -1,0 +1,34 @@
+////
+/// Set up and define fonts.
+///
+/// @group  Settings
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://themehybrid.com/themes/mythic
+////
+
+/// Returns an array of font families in name-value format.
+///
+/// @since  1.0.0
+/// @access public
+/// @return {map}  Map of defined font families.
+
+@function font-families() {
+
+	@return (
+		primary   : #{Georgia, serif},
+		secondary : #{sans-serif},
+		code      : #{'Source Code Pro', Monaco, Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New", Courier, monospace}
+	);
+}
+
+/// Returns a single color value by name.
+///
+/// @since  1.0.0
+/// @access public
+/// @param  {string}  $name  Font familiy name.
+/// @return {string}         Font family value.
+
+@function font-family( $name ) {
+
+	@return map-get( font-families(), $name );
+}

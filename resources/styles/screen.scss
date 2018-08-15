@@ -1,14 +1,20 @@
-/**
- * This is the primary stylesheet. We don't actually write any styles here.
- * Instead, we import all of our styles from partials within the sub-folders.
- * This file is set up based on the Inverted Triangle CSS (ITCSS) system,
- * which gets more specific as we drill down each layer.  This keeps your
- * style code lean and organized.
- *
- * The bulk of your code should be within the `/components` folder.  By
- * default, we follow the Block-Element-Modifier (BEM) system in our HTML.
- * Each "block" is a "component" in our CSS.
- */
+////
+/// Primary screen stylesheet.
+///
+/// This is the primary stylesheet. We don't actually write any styles here.
+/// Instead, we import all of our styles from partials within the sub-folders.
+/// This file is set up based on the Inverted Triangle CSS (ITCSS) system,
+/// which gets more specific as we drill down each layer.  This keeps your
+/// style code lean and organized.
+///
+/// The bulk of your code should be within the `/components` folder.  By
+/// default, we follow the Block-Element-Modifier (BEM) system in our HTML.
+/// Each "block" is a "component" in our CSS.
+///
+/// @group  Styles
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://themehybrid.com/themes/mythic
+////
 
 // Settings.
 //
@@ -16,6 +22,7 @@
 // place to define things like variables.
 
 @import 'settings/colors';
+@import 'settings/fonts';
 
 // Tools.
 //
@@ -23,6 +30,8 @@
 // Things like mixins and extensions go here.
 
 @import 'tools/functions';
+@import 'tools/mixins';
+@import 'tools/extends';
 
 // Generic.
 //
@@ -45,7 +54,42 @@
 // every piece of the design is some type of component, whether it's
 // a one-off or reusable block of code.
 
-@import 'components/index';
+@import 'components/app';
+@import 'components/app-header';
+@import 'components/app-content';
+@import 'components/app-main';
+@import 'components/app-footer';
+@import 'components/archive-header';
+@import 'components/comments';
+@import 'components/comment';
+@import 'components/entry';
+@import 'components/nav-menu';
+@import 'components/nav-pagination';
+@import 'components/sidebar';
+@import 'components/widget';
+
+// Blocks.
+//
+// Gutenberg editor blocks on the frontend.
+
+@import 'blocks/wp-block-audio';
+@import 'blocks/wp-block-button';
+@import 'blocks/wp-block-categories';
+@import 'blocks/wp-block-code';
+@import 'blocks/wp-block-columns';
+@import 'blocks/wp-block-cover-image';
+@import 'blocks/wp-block-embed';
+@import 'blocks/wp-block-file';
+@import 'blocks/wp-block-gallery';
+@import 'blocks/wp-block-image';
+@import 'blocks/wp-block-latest-posts';
+@import 'blocks/wp-block-preformatted';
+@import 'blocks/wp-block-pullquote';
+@import 'blocks/wp-block-quote';
+@import 'blocks/wp-block-separator';
+@import 'blocks/wp-block-subhead';
+@import 'blocks/wp-block-table';
+@import 'blocks/wp-block-verse';
 
 // Vendor.
 //

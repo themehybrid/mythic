@@ -1,24 +1,7 @@
+////
+/// Custom functions.
 ///
-/// This file contains helper functions for use throughout your `.scss` files.
-///
-
-/// Returns an array of colors in name-value format.
-///
-/// @since  1.0.0
-/// @access public
-/// @return {map}  Map of defined colors.
-
-@function block-colors() {
-	@return $block-colors;
-}
-
-/// Returns a single color value by name.
-///
-/// @since  1.0.0
-/// @access public
-/// @param  {string}  $color  Color name.
-/// @return {string}          Color value.
-
-@function block-color( $color ) {
-	@return map-get( block-colors(), $color );
-}
+/// @group  Tools
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://themehybrid.com/themes/mythic
+////

@@ -1,0 +1,32 @@
+////
+/// Widget component.
+///
+/// @group  Components
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://themehybrid.com/themes/mythic
+////
+
+.widget {
+
+	// Core widgets.
+	&--archives {}
+	&--calendar {}
+	&--categories {}
+	&--custom-html {}
+	&--media-audio {}
+	&--media-gallery {}
+	&--media-image {}
+	&--media-video {}
+	&--meta {}
+	&--nav-menu {}
+	&--pages {}
+	&--recent-comments {}
+	&--recent-posts {}
+	&--rss {}
+	&--text {}
+	&--search {}
+	&--tag-cloud {}
+
+	// Widget titles.
+	&__title {}
+}

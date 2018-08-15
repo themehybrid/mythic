@@ -1,11 +1,15 @@
 ////
-/// Subhead block.
+/// Audio block.
 ///
 /// @group  Blocks
 /// @author Justin Tadlock <justintadlock@gmail.com>
 /// @link   https://themehybrid.com/themes/mythic
 ////
 
-.wp-block-subhead {
+.wp-block-audio {
+	margin: 0;
 
+	audio {
+		width: 100%;
+	}
 }

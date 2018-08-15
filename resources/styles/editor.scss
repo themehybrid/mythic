@@ -1,10 +1,14 @@
-/**
- * Editor stylesheet.
- *
- * This is the primary editor stylesheet. It is used for the WordPress 5.0+
- * (Gutenberg) editor and is not intended for older versions of the WordPress
- * edit screen.
- */
+////
+/// Editor stylesheet.
+///
+/// This is the primary editor stylesheet. It is used for the WordPress 5.0+
+/// (Gutenberg) editor and is not intended for older versions of the WordPress
+/// edit screen.
+///
+/// @group  Styles
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://themehybrid.com/themes/mythic
+////
 
 // Settings.
 //
@@ -12,6 +16,7 @@
 // place to define things like variables.
 
 @import 'settings/colors';
+@import 'settings/fonts';
 
 // Tools.
 //
@@ -19,6 +24,8 @@
 // Things like mixins and extensions go here.
 
 @import 'tools/functions';
+@import 'tools/mixins';
+@import 'tools/extends';
 
 // Generic.
 //
@@ -43,6 +50,7 @@
 	// Blocks are styles for specific editor blocks.
 	//
 
+	@import 'blocks/wp-block-audio';
 	@import 'blocks/wp-block-button';
 	@import 'blocks/wp-block-categories';
 	@import 'blocks/wp-block-code';

@@ -1,0 +1,25 @@
+////
+/// Nav menu component.
+///
+/// @group  Components
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://themehybrid.com/themes/mythic
+////
+
+.menu {
+
+	// Specific nav menus.
+	&--primary {}
+
+	// Menu title.
+	&__title {}
+
+	// Menu items list.
+	&__items {}
+
+	// Individual items.
+	&__item {}
+
+	// Item link.
+	&__anchor {}
+}

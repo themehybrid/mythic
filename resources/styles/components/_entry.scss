@@ -1,0 +1,47 @@
+////
+/// Entry component.
+///
+/// @group  Components
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://themehybrid.com/themes/mythic
+////
+
+.entry {
+
+	// Type of entry/post.
+	&--type-post {}
+
+	&--type-page {}
+
+	// Sticky posts.
+	&.sticky {}
+
+	// Featured image.
+	&__image {}
+
+	// Header wrapper.
+	&__header {}
+
+	// Entry title.
+	&__title {}
+
+	// Full entry content.
+	&__content {}
+
+	// Summary/Excerpt.
+	&__summary {}
+
+	// Meta wrappers.
+	&__byline {}
+
+	&__footer {}
+
+	// Individual metadata items.
+	&__author {}
+
+	&__published {}
+
+	&__comments {}
+
+	&__terms {}
+}

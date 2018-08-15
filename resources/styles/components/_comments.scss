@@ -1,11 +1,14 @@
 ////
-/// Subhead block.
+/// Comments component.
 ///
-/// @group  Blocks
+/// @group  Components
 /// @author Justin Tadlock <justintadlock@gmail.com>
 /// @link   https://themehybrid.com/themes/mythic
 ////
 
-.wp-block-subhead {
+.comments {
 
+	&__title {}
+
+	&__list {}
 }

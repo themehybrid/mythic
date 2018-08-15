@@ -1,11 +1,14 @@
 ////
-/// Subhead block.
+/// Archive header component.
 ///
-/// @group  Blocks
+/// @group  Components
 /// @author Justin Tadlock <justintadlock@gmail.com>
 /// @link   https://themehybrid.com/themes/mythic
 ////
 
-.wp-block-subhead {
+.archive-header {
 
+	&__title {}
+
+	&__description {}
 }
