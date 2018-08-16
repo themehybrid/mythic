@@ -8,7 +8,12 @@
 
 .comments {
 
+	// Header/title for the comments section.
 	&__title {}
 
+	// Comments list wrapper.
 	&__list {}
+
+	// Comments closed message.
+	&__closed {}
 }

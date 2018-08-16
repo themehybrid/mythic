@@ -1,0 +1,24 @@
+////
+/// Gallery (shortcode) component.
+///
+/// @group  Components
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://themehybrid.com/themes/mythic
+////
+
+.gallery {
+
+	@media ( min-width: break-small() ) {
+
+		@for $i from 1 through 10 {
+
+			&-columns-#{ $i } &-item {}
+		}
+	}
+
+	&-icon {
+		img {}
+	}
+
+	&-caption {}
+}

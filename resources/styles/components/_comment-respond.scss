@@ -1,0 +1,36 @@
+////
+/// Comment respond form component.
+///
+/// @group  Components
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://themehybrid.com/themes/mythic
+////
+
+.comment-respond {
+
+	// Header/title for the respond section.
+	&__reply-title {}
+
+	// The comment form.
+	&__form {}
+
+	// Note section at the top of form.
+	&__notes {}
+
+	// Logged-in message at the top of the form.
+	&__logged-in-as {}
+
+	// The wrapping element around individual form fields.
+	&__field {
+
+		&--comment {}
+		&--author {}
+		&--email {}
+		&--url {}
+		&--cookies {}
+		&--submit {}
+	}
+
+	// Comments closed message.
+	&__closed {}
+}

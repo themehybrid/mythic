@@ -8,11 +8,18 @@
 
 .app-header {
 
+	// Wrapper around the title and description.
 	&__branding {}
 
+	// The site title.
 	&__title {}
 
+	// Site title link.
 	&__title-link {}
 
+	// The site description.
 	&__description {}
+
+	// The image output from the `custom-header` feature.
+	&__image {}
 }
