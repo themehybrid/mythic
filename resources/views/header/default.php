@@ -18,6 +18,8 @@
 			<?php Hybrid\Site\display_description() ?>
 		</div>
 
+		<?php Mythic\display_header_image() ?>
+
 		<?php Hybrid\View\display( 'nav/menu', 'primary', [ 'name' => 'primary' ] ) ?>
 
 	</header>
