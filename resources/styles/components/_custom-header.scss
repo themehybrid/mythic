@@ -1,0 +1,29 @@
+////
+/// Custom header component.
+///
+/// This handles the output of `the_custom_header_markup()` from core WP's
+/// `custom-header` feature.
+///
+/// @group  Components
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://themehybrid.com/themes/mythic
+////
+
+.wp-custom-header {
+
+	// Header image.
+	img {}
+
+	// Header video.
+	video {}
+
+	// Video play/pause button.
+	&-video-button {}
+
+	// Specific play/pause classes. Note that the button in core WP will have
+	// the state of what's happening with the video rather than what action
+	// the button performs.  The `*-play` class is applied to the "Pause"
+	// button and the `*-pause` class is applied to the "Play" button.
+	&-video-play {}
+	&-video-pause {}
+}

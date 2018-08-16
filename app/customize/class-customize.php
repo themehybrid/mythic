@@ -87,7 +87,8 @@ class Customize implements Bootable {
 			$manager->get_setting( 'blogname' ),
 			$manager->get_setting( 'blogdescription' ),
 			$manager->get_setting( 'header_textcolor' ),
-			$manager->get_setting( 'header_image' )
+			$manager->get_setting( 'header_image' ),
+			$manager->get_setting( 'header_image_data' )
 		];
 
 		array_walk( $settings, function( &$setting ) {
@@ -139,6 +140,18 @@ class Customize implements Bootable {
 				return get_bloginfo( 'description', 'display' );
 			}
 		] );
+
+		// Selectively refreshes the custom header if it doesn't support
+		// videos. Core WP won't properly refresh output from its own
+		// `the_custom_header_markup()` function unless video is supported.
+		if ( ! current_theme_supports( 'custom-header', 'video' ) ) {
+
+			$manager->selective_refresh->add_partial( 'header_image', [
+				'selector'            => '#wp-custom-header',
+				'render_callback'     => 'the_custom_header_markup',
+				'container_inclusive' => true,
+			] );
+		}
 	}
 
 	/**

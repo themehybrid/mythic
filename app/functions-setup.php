@@ -150,7 +150,7 @@ add_action( 'after_setup_theme', function() {
 		'default-color'          => '',
 		'wp-head-callback'       => '_custom_background_cb',
 		'admin-head-callback'    => '',
-		'admin-preview-callback' => '',
+		'admin-preview-callback' => ''
 	] );
 
 }, 15 );
@@ -171,8 +171,8 @@ add_action( 'after_setup_theme', function() {
 	add_theme_support( 'custom-header', [
 		'default-image'          => '',
 		'random-default'         => false,
-		'width'                  => 0,
-		'height'                 => 0,
+		'width'                  => 750,
+		'height'                 => 422,
 		'flex-height'            => false,
 		'flex-width'             => false,
 		'default-text-color'     => '',
@@ -182,7 +182,7 @@ add_action( 'after_setup_theme', function() {
 		'admin-head-callback'    => '',
 		'admin-preview-callback' => '',
 		'video'                  => false,
-		'video-active-callback'  => 'is_front_page',
+		'video-active-callback'  => 'is_front_page'
 	] );
 
 }, 15 );

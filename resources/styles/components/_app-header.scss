@@ -11,6 +11,12 @@
 	// Wrapper around the title and description.
 	&__branding {}
 
+	// Output from the `custom-logo` feature.
+	&__logo {}
+
+	// Logo link.
+	&__logo-link {}
+
 	// The site title.
 	&__title {}
 
@@ -19,7 +25,4 @@
 
 	// The site description.
 	&__description {}
-
-	// The image output from the `custom-header` feature.
-	&__image {}
 }
