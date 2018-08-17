@@ -29,7 +29,7 @@ use Hybrid\App;
 add_action( 'wp_enqueue_scripts', function() {
 
 	// Disable core block styles.
-	wp_dequeue_style( 'wp-core-blocks' );
+	wp_dequeue_style( 'wp-block-library' );
 
 	// Load WordPress' comment-reply script where appropriate.
 	if ( is_singular() && get_option( 'thread_comments' ) && comments_open() ) {
@@ -54,13 +54,13 @@ add_action( 'enqueue_block_editor_assets', function() {
 	wp_enqueue_style( 'mythic-editor', asset( 'styles/editor.css' ), null, null );
 
 	// Unregister core block and theme styles.
-	wp_deregister_style( 'wp-core-blocks' );
-	wp_deregister_style( 'wp-core-blocks-theme' );
+	wp_deregister_style( 'wp-block-library' );
+	wp_deregister_style( 'wp-block-library-theme' );
 
 	// Re-register core block and theme styles with an empty string. This is
 	// necessary to get styles set up correctly.
-	wp_register_style( 'wp-core-blocks', '' );
-	wp_register_style( 'wp-core-blocks-theme', '' );
+	wp_register_style( 'wp-block-library', '' );
+	wp_register_style( 'wp-block-library-theme', '' );
 
 } );
 
