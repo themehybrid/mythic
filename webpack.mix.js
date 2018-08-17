@@ -51,8 +51,8 @@ if ( process.env.bundle ) {
 		'app',
 		'dist',
 		'resources/lang',
-	//	'resources/scripts',   // Required for WordPress.org.
-	//	'resources/styles',    // Required for WordPress.org.
+	//	'resources/js',      // Required for WordPress.org.
+	//	'resources/scss',    // Required for WordPress.org.
 		'resources/views',
 		'vendor'
 	];
@@ -129,9 +129,9 @@ mix.version();
  *
  * @link https://laravel.com/docs/5.6/mix#working-with-scripts
  */
-mix.js( `${devPath}/scripts/app.js`,                'scripts' )
-   .js( `${devPath}/scripts/customize-controls.js`, 'scripts' )
-   .js( `${devPath}/scripts/customize-preview.js`,  'scripts' );
+mix.js( `${devPath}/js/app.js`,                'js' )
+   .js( `${devPath}/js/customize-controls.js`, 'js' )
+   .js( `${devPath}/js/customize-preview.js`,  'js' );
 
 /*
  * Compile CSS. Mix supports Sass, Less, Stylus, and plain CSS, and has functions
@@ -150,9 +150,9 @@ var sassConfig = {
 };
 
 // Compile SASS/CSS.
-mix.sass( `${devPath}/styles/screen.scss`,             'styles', sassConfig )
-   .sass( `${devPath}/styles/editor.scss`,             'styles', sassConfig )
-   .sass( `${devPath}/styles/customize-controls.scss`, 'styles', sassConfig );
+mix.sass( `${devPath}/scss/screen.scss`,             'css', sassConfig )
+   .sass( `${devPath}/scss/editor.scss`,             'css', sassConfig )
+   .sass( `${devPath}/scss/customize-controls.scss`, 'css', sassConfig );
 
 /*
  * Add custom Webpack configuration.

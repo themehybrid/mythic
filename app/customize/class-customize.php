@@ -166,7 +166,7 @@ class Customize implements Bootable {
 
 		wp_enqueue_script(
 			'mythic-customize-controls',
-			asset( 'scripts/customize-controls.js' ),
+			asset( 'js/customize-controls.js' ),
 			[ 'customize-controls' ],
 			null,
 			true
@@ -174,7 +174,7 @@ class Customize implements Bootable {
 
 		wp_enqueue_style(
 			'mythic-customize-controls',
-			asset( 'styles/customize-controls.css' ),
+			asset( 'css/customize-controls.css' ),
 			[],
 			null
 		);
@@ -191,7 +191,7 @@ class Customize implements Bootable {
 
 		wp_enqueue_script(
 			'mythic-customize-preview',
-			asset( 'scripts/customize-preview.js' ),
+			asset( 'js/customize-preview.js' ),
 			[ 'customize-preview' ],
 			null,
 			true

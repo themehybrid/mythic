@@ -3,7 +3,7 @@
  *
  * Primary JavaScript file. Any includes or anything imported should
  * be filtered through this file and eventually saved back into the
- * `/dist/scripts/app.js` file.
+ * `/dist/js/app.js` file.
  *
  * @package   Mythic
  * @author    Justin Tadlock <justintadlock@gmail.com>
@@ -21,7 +21,5 @@
  * @return void
  */
 (function () {
-
-	console.log( 'Testing the resources/scripts/app.js file.' );
 
 })();

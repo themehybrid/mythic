@@ -36,9 +36,9 @@ add_action( 'wp_enqueue_scripts', function() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-	wp_enqueue_script( 'mythic-app', asset( 'scripts/app.js' ), null, null, true );
+	wp_enqueue_script( 'mythic-app', asset( 'js/app.js' ), null, null, true );
 
-	wp_enqueue_style( 'mythic-screen', asset( 'styles/screen.css' ), null, null );
+	wp_enqueue_style( 'mythic-screen', asset( 'css/screen.css' ), null, null );
 
 } );
 
@@ -51,7 +51,7 @@ add_action( 'wp_enqueue_scripts', function() {
  */
 add_action( 'enqueue_block_editor_assets', function() {
 
-	wp_enqueue_style( 'mythic-editor', asset( 'styles/editor.css' ), null, null );
+	wp_enqueue_style( 'mythic-editor', asset( 'css/editor.css' ), null, null );
 
 	// Unregister core block and theme styles.
 	wp_deregister_style( 'wp-block-library' );

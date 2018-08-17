@@ -3,7 +3,7 @@
  *
  * This file handles the JavaScript for the controls panel in the customizer.
  * Any includes or imports should be handled in this file. The final result gets
- * saved back into `dist/scripts/customize-controls.js`.
+ * saved back into `dist/js/customize-controls.js`.
  *
  * @package   Mythic
  * @author    Justin Tadlock <justintadlock@gmail.com>
