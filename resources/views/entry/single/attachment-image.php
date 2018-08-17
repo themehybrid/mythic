@@ -4,7 +4,10 @@
 		<?php Hybrid\Post\display_title() ?>
 
 		<div class="entry__byline">
-			<?php Hybrid\Media\display_image_sizes( [ 'text' => esc_html__( 'Sizes: %s' ) ] ) ?>
+			<?php Hybrid\Media\display_image_sizes( [
+				// Translators: %s is a list of image size links.
+				'text' => esc_html__( 'Sizes: %s' )
+			] ) ?>
 		</div>
 	</header>
 
