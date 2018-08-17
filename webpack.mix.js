@@ -217,8 +217,9 @@ mix.browserSync( {
 	proxy : 'localhost',
 	port  : 8080,
 	files : [
-		'**/*.{jpg,jpeg,png,gif,svg,eot,ttf,woff,woff2}',
+		'**/*.{css,js,jpg,jpeg,png,gif,svg,eot,ttf,woff,woff2}',
 		`${devPath}/views/**/*.php`,
-		'app/**/*.php'
+		'app/**/*.php',
+		'functions.php'
 	]
 } );
