@@ -172,7 +172,7 @@ mix.webpackConfig( {
 	resolve     : {
 		alias : {
 			// Alias for Hybrid Core assets.
-			// Import from `hybrid/scripts` or `~hybrid/styles`.
+			// Import from `hybrid/js` or `~hybrid/scss`.
 			hybrid : path.resolve( __dirname, 'vendor/justintadlock/hybrid-core/src/resources/' )
 		}
 	},

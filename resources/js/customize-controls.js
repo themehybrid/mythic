@@ -17,8 +17,8 @@
 // Uncomment any of the below to import scripts for Hybrid Core's built-in
 // controls if your theme is using them.
 
-// import checkboxMultiple from 'hybrid/scripts/customize-controls/checkbox-multiple.js';
-// import palette          from 'hybrid/scripts/customize-controls/palette.js';
-// import radioImage       from 'hybrid/scripts/customize-controls/radio-image.js';
-// import selectGroup      from 'hybrid/scripts/customize-controls/select-group.js';
-// import selectMultiple   from 'hybrid/scripts/customize-controls/select-multiple.js';
+// import checkboxMultiple from 'hybrid/js/customize-controls/checkbox-multiple.js';
+// import palette          from 'hybrid/js/customize-controls/palette.js';
+// import radioImage       from 'hybrid/js/customize-controls/radio-image.js';
+// import selectGroup      from 'hybrid/js/customize-controls/select-group.js';
+// import selectMultiple   from 'hybrid/js/customize-controls/select-multiple.js';
