@@ -6,8 +6,8 @@
 			'text' => sprintf(
 				// Translators: 1 is the comment date and 2 is the time.
 				esc_html__( '%1$s at %2$s' ),
-				Hybrid\Comment\fetch_date(),
-				Hybrid\Comment\fetch_time()
+				Hybrid\Comment\render_date(),
+				Hybrid\Comment\render_time()
 			)
 		] ) ?>
 		<?php Hybrid\Comment\display_edit_link( [ 'before' => Mythic\sep() ] ) ?>
