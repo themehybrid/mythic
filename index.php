@@ -8,4 +8,4 @@
  * All it does is correctly load up our `resources/views/index.php` template.
  */
 
-Hybrid\View\render( 'index' );
+Hybrid\View\display( 'index' );
