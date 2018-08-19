@@ -16,8 +16,8 @@
 /yarn.lock            export-ignore
 /resources/fonts      export-ignore
 /resources/img        export-ignore
-/resources/styles     export-ignore
-/resources/scripts    export-ignore
+/resources/js         export-ignore
+/resources/scss       export-ignore
 /resources/svg        export-ignore
 
 # Handle line endings.
