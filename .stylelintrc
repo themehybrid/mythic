@@ -1,3 +1,13 @@
 {
-	"extends": "stylelint-config-wordpress/scss"
+	"extends": "stylelint-config-wordpress/scss",
+	"rules": {
+		"string-quotes": null,
+		"block-no-empty": null,
+		"rule-empty-line-before": null,
+		"declaration-colon-space-after": null,
+		"function-parentheses-space-inside": null,
+		"color-named": null,
+		"declaration-colon-space-before": null,
+		"at-rule-empty-line-before": null
+	}
 }
