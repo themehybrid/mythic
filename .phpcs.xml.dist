@@ -57,11 +57,12 @@
 	#############################################################################
 	-->
 
-	<!-- Verify that the text_domain is set to the desired text-domain.
-		 Multiple valid text domains can be provided as a comma-delimited list. -->
 	<rule ref="WordPress.WP.I18n">
 		<properties>
-			<property name="text_domain" type="array" value="mythic"/>
+			<property name="text_domain" type="array">
+				<element name="mythic"/>
+				<element name="hybrid-core"/>
+			</property>
 		</properties>
 	</rule>
 
@@ -103,12 +104,13 @@
 		</properties>
 	</rule>
 
-	<!-- Verify that everything in the global namespace is prefixed
-   		 with a theme specific prefix.
-		 Multiple valid prefixes can be provided as a comma-delimited list. -->
+
 	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
 		<properties>
-			<property name="prefixes" type="array" value="mythic" />
+			<property name="prefixes" type="array">
+				<element name="mythic"/>
+				<element name="hybrid"/>
+			</property>
 		</properties>
 	</rule>
 
