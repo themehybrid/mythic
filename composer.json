@@ -1,7 +1,7 @@
 {
 	"name"        : "justintadlock/mythic",
 	"type"        : "wordpress-theme",
-	"description" : "A WordPress starter theme.",
+	"description" : "Mythic is a next-generation starter theme designed to help theme authors write elegant, intelligent, and modern code.",
 	"keywords"    : ["wordpress"],
 	"homepage"    : "https://themehybrid.com/themes/mythic",
 	"license"     : "GPL-2.0-or-later",
