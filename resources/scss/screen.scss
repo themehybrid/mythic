@@ -16,99 +16,14 @@
 /// @link   https://themehybrid.com/themes/mythic
 ////
 
-// Settings.
-//
-// Settings handle the configuration and don't output CSS. This is a good
-// place to define things like variables.
+// Imports all of the files needed for front-end output. Note that the order is
+// very specific and should typically not be changed.
 
-@import 'settings/breaks';
-@import 'settings/colors';
-@import 'settings/dimensions';
-@import 'settings/fonts';
-
-// Tools.
-//
-// These are used throughout the code but don't output CSS on their own.
-// Things like mixins and extensions go here.
-
-@import 'tools/functions';
-@import 'tools/mixins';
-@import 'tools/extends';
-
-// Generic.
-//
-// This is the first point that real CSS is output. Resets, normalization,
-// fonts, etc. are best handled here. These are the base styles that other
-// styles will build upon.
-
-@import 'generic/index';
-
-// Elements.
-//
-// Elements are (or should be) class-less designs for the base
-// HTML elements.
-
-@import 'elements/index';
-
-// Components.
-//
-// Components make up the bulk of the actual theme design.  Nearly
-// every piece of the design is some type of component, whether it's
-// a one-off or reusable block of code.
-
-@import 'components/app';
-@import 'components/app-header';
-@import 'components/app-content';
-@import 'components/app-main';
-@import 'components/app-footer';
-@import 'components/archive-header';
-@import 'components/comments';
-@import 'components/comment';
-@import 'components/comment-respond';
-@import 'components/custom-header';
-@import 'components/entry';
-@import 'components/gallery';
-@import 'components/media-meta';
-@import 'components/nav-menu';
-@import 'components/nav-pagination';
-@import 'components/sidebar';
-@import 'components/widget';
-
-// Blocks.
-//
-// Gutenberg editor blocks on the frontend.
-
-@import 'blocks/wp-block-audio';
-@import 'blocks/wp-block-button';
-@import 'blocks/wp-block-categories';
-@import 'blocks/wp-block-code';
-@import 'blocks/wp-block-columns';
-@import 'blocks/wp-block-cover-image';
-@import 'blocks/wp-block-embed';
-@import 'blocks/wp-block-file';
-@import 'blocks/wp-block-gallery';
-@import 'blocks/wp-block-image';
-@import 'blocks/wp-block-latest-posts';
-@import 'blocks/wp-block-preformatted';
-@import 'blocks/wp-block-pullquote';
-@import 'blocks/wp-block-quote';
-@import 'blocks/wp-block-separator';
-@import 'blocks/wp-block-subhead';
-@import 'blocks/wp-block-table';
-@import 'blocks/wp-block-verse';
-
-// Vendor.
-//
-// Vendor files handle code for specific plugins and third-party
-// scripts that would overwrite earlier styles.
-
-@import 'vendor/index';
-
-// Utilities.
-//
-// Utilities are helper classes and overrides.  This gets loaded last.
-// If necessary, this is the only place where `!important` rules should
-// go, but only if necessary.
-
-@import 'utilities/a11y';
-@import 'utilities/helpers';
+@import 'settings/_index';
+@import 'tools/_index';
+@import 'generic/_index';
+@import 'elements/_index';
+@import 'components/_index';
+@import 'blocks/_index';
+@import 'vendor/_index';
+@import 'utilities/_index';
