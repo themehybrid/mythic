@@ -5,3 +5,30 @@
 /// @author Justin Tadlock <justintadlock@gmail.com>
 /// @link   https://themehybrid.com/themes/mythic
 ////
+
+////
+/// Text meant only for screen readers.
+/// @link https://rianrietveld.com/2015/04/04/the-screen-reader-text-class-why-and-how/
+////
+.screen-reader-text {
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute !important;
+    width: 1px;
+    word-wrap: normal !important;
+    &:focus,
+    &:hover,
+    &:active {
+        clip: auto !important;
+        display: block;
+        height: auto;
+        width: auto;
+        z-index: 100000;
+        /* Above WP toolbar. */
+    } // &:hover, &:active, &:focus
+} // .screen-reader-text
