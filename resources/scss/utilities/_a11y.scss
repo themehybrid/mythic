@@ -28,7 +28,6 @@
         display: block;
         height: auto;
         width: auto;
-        z-index: 100000;
-        /* Above WP toolbar. */
+        z-index: 100000; /* Above WP toolbar. */
     } // &:hover, &:active, &:focus
 } // .screen-reader-text
