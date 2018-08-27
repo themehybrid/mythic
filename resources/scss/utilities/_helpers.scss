@@ -12,11 +12,13 @@
 
 @each $color-name, $color-value in block-colors() {
 
-	.has-#{$color-name}-color {
-		color : #{$color-value};
+	.has-#{ $color-name }-color {
+	//	color : #{ $color-value };
+		color: var( --color-#{ $color-name} );
 	}
 
 	.has-#{$color-name}-background-color {
-		background-color : #{$color-value};
+	//	background-color: $color-value;
+		background-color : var( --color-#{ $color-name} );
 	}
 }

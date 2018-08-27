@@ -6,7 +6,7 @@
 /// @link   https://themehybrid.com/themes/mythic
 ////
 
-/// Returns an map of colors in name-value format. This function also merges
+/// Returns a map of colors in name-value format. This function also merges
 /// with the `block-colors()` map to create a map of all colors.
 ///
 /// @since  1.0.0
@@ -23,7 +23,7 @@
 	@return map-merge( $colors, block-colors() );
 }
 
-/// Returns an map of block colors in name-value format. These are the colors
+/// Returns a map of block colors in name-value format. These are the colors
 /// defined via the `editor-color-palette` setting in `app/functions-setup.php`
 /// for the WordPress editor.
 ///
