@@ -217,9 +217,8 @@ if ( process.env.sync ) {
 	 */
 	mix.browserSync( {
 		proxy : 'localhost',
-		port  : 8080,
 		files : [
-			'**/*.{css,js,jpg,jpeg,png,gif,svg,eot,ttf,woff,woff2}',
+			'dist/**/*.{css,js,jpg,jpeg,png,gif,svg,eot,ttf,woff,woff2}',
 			`${devPath}/views/**/*.php`,
 			'app/**/*.php',
 			'functions.php'
