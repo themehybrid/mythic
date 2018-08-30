@@ -21,6 +21,6 @@
 
 		<?php the_custom_header_markup() ?>
 
-		<?php Hybrid\View\display( 'nav/menu', 'primary', [ 'name' => 'primary' ] ) ?>
+		<?php Hybrid\View\display( 'nav/menu', 'primary', [ 'location' => 'primary' ] ) ?>
 
 	</header>

@@ -1,13 +1,13 @@
-<?php if ( has_nav_menu( $data->name ) ) : ?>
+<?php if ( has_nav_menu( $data->location ) ) : ?>
 
-	<nav <?php Hybrid\Attr\display( 'menu', $data->name ) ?>>
+	<nav <?php Hybrid\Attr\display( 'menu', $data->location ) ?>>
 
 		<h3 class="menu__title screen-reader-text">
-			<?php Hybrid\Menu\display_name( $data->name ) ?>
+			<?php Hybrid\Menu\display_name( $data->location ) ?>
 		</h3>
 
 		<?php wp_nav_menu( [
-			'theme_location' => $data->name,
+			'theme_location' => $data->location,
 			'container'      => '',
 			'menu_id'        => '',
 			'menu_class'     => 'menu__items',
