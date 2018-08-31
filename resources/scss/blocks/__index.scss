@@ -1,28 +1,30 @@
 ////
 /// Block imports.
 ///
-/// Styles for individual blocks in the block editor.
+/// Styles for individual blocks in the block editor. All of the core WP blocks
+/// are under the `/core` subfolder. Block styles for plugins should be in their
+/// own subfolders.
 ///
 /// @group  Blocks
 /// @author Justin Tadlock <justintadlock@gmail.com>
 /// @link   https://themehybrid.com/themes/mythic
 ////
 
-@import 'wp-block-audio';
-@import 'wp-block-button';
-@import 'wp-block-categories';
-@import 'wp-block-code';
-@import 'wp-block-columns';
-@import 'wp-block-cover-image';
-@import 'wp-block-embed';
-@import 'wp-block-file';
-@import 'wp-block-gallery';
-@import 'wp-block-image';
-@import 'wp-block-latest-posts';
-@import 'wp-block-preformatted';
-@import 'wp-block-pullquote';
-@import 'wp-block-quote';
-@import 'wp-block-separator';
-@import 'wp-block-subhead';
-@import 'wp-block-table';
-@import 'wp-block-verse';
+@import 'core/audio';
+@import 'core/button';
+@import 'core/categories';
+@import 'core/code';
+@import 'core/columns';
+@import 'core/cover-image';
+@import 'core/embed';
+@import 'core/file';
+@import 'core/gallery';
+@import 'core/image';
+@import 'core/latest-posts';
+@import 'core/preformatted';
+@import 'core/pullquote';
+@import 'core/quote';
+@import 'core/separator';
+@import 'core/subhead';
+@import 'core/table';
+@import 'core/verse';
