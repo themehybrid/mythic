@@ -32,3 +32,33 @@
 
 	@return map-get( font-families(), $name );
 }
+
+/// Returns a map of editor font sizes in name-value format. These are the sizes
+/// defined via the `editor-font-sizes` setting in `app/functions-setup.php`
+/// for the WordPress editor.
+///
+/// @since  1.0.0
+/// @access public
+/// @return {map}  Map of defined font sizes.
+
+@function editor-font-sizes() {
+
+	@return (
+		small   : 12px,
+		regular : 16px,
+		large   : 36px,
+		larger  : 48px
+	);
+}
+
+/// Returns a single editor font size value by name.
+///
+/// @since  1.0.0
+/// @access public
+/// @param  {string}  $name  Font size name.
+/// @return {string}         Font size value.
+
+@function editor-font-size( $name ) {
+
+	@return map-get( editor-font-sizes(), $name );
+}

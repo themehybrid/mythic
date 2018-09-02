@@ -20,3 +20,14 @@
 		background-color: #{ $color-value };
 	}
 }
+
+/// Loops through the editor font sizes and adds utility classes for them. This
+/// handles the `.has-{$size}-font-size` classes added via Gutenberg, which may
+/// be useful elsewhere.
+
+@each $font-size-name, $font-size-value in editor-font-sizes() {
+
+	.has-#{ $font-size-name }-font-size {
+		font-size: #{ $font-size-value };
+	}
+}
