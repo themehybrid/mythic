@@ -1,6 +1,6 @@
 ////
 /// Customize controls styles.
-/// Imports all of the `/tools` files.
+///
 /// Styles should focus on the customize controls panel. This covers panels,
 /// sections, and controls.
 ///
@@ -8,3 +8,9 @@
 /// @author Justin Tadlock <justintadlock@gmail.com>
 /// @link   https://themehybrid.com/themes/mythic
 ////
+
+// Uncomment any of the below to import styles for Hybrid Core's built-in
+// controls if your theme is using them.
+
+// @import '~hybrid/scss/customize-controls/palette';
+// @import '~hybrid/scss/customize-controls/radio-image';
