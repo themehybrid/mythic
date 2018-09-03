@@ -17,27 +17,20 @@
 # ------------------------------------------------------------------------------
 #
 # Creates the one true instance of the Hybrid Core application. You may access
-# this directly via the `\Hybrid\app()` function or `\Hybrid\App` static class
+# this instance via the `\Hybrid\app()` function or `\Hybrid\App` static class
 # after the application has booted.
 
 $mythic = new \Hybrid\Core\Application();
 
 # ------------------------------------------------------------------------------
-# Add bindings to the container.
+# Register service providers with the application.
 # ------------------------------------------------------------------------------
 #
-# Before booting the application, add any bindings to the container that are
-# necessary to run the theme.
+# Before booting the application, add any service providers that are necessary
+# for running the theme. Service providers are essentially the backbone of the
+# bootstrapping process.
 
-# Register customize class instance and boot it.
-$mythic->instance( 'mythic/customize', new \Mythic\Customize\Customize() )->boot();
-
-# Register the Laravel Mix manifest for cache-busting.
-$mythic->singleton( 'mythic/mix', function() {
-	$file = get_theme_file_path( 'dist/mix-manifest.json' );
-
-	return file_exists( $file ) ? json_decode( file_get_contents( $file ), true ) : null;
-} );
+$mythic->provider( \Mythic\Providers\AppServiceProvider::class );
 
 # ------------------------------------------------------------------------------
 # Perform bootstrap actions.
