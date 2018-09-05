@@ -12,13 +12,13 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-// Hybrid Core controls.
+// Hybrid Customize controls.
 //
-// Uncomment any of the below to import scripts for Hybrid Core's built-in
-// controls if your theme is using them.
+// Uncomment any of the below to import scripts for specific controls if using
+// the `hybrid-customize` add-on.
 
-// import checkboxMultiple from 'hybrid/js/customize-controls/checkbox-multiple.js';
-// import palette          from 'hybrid/js/customize-controls/palette.js';
-// import radioImage       from 'hybrid/js/customize-controls/radio-image.js';
-// import selectGroup      from 'hybrid/js/customize-controls/select-group.js';
-// import selectMultiple   from 'hybrid/js/customize-controls/select-multiple.js';
+// import checkboxMultiple from 'hybrid-customize/js/controls/checkbox-multiple.js';
+// import palette          from 'hybrid-customize/js/controls/palette.js';
+// import radioImage       from 'hybrid-customize/js/controls/radio-image.js';
+// import selectGroup      from 'hybrid-customize/js/controls/select-group.js';
+// import selectMultiple   from 'hybrid-customize/js/controls/select-multiple.js';

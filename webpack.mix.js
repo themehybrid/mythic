@@ -172,8 +172,8 @@ mix.webpackConfig( {
 	resolve     : {
 		alias : {
 			// Alias for Hybrid Core assets.
-			// Import from `hybrid/js` or `~hybrid/scss`.
-			hybrid : path.resolve( __dirname, 'vendor/justintadlock/hybrid-core/src/resources/' )
+			// Import from `hybrid-customize/js` or `~hybrid-customize/scss`.
+			'hybrid-customize' : path.resolve( __dirname, 'vendor/justintadlock/hybrid-customize/resources/' )
 		}
 	},
 	plugins     : [
