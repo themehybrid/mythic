@@ -3,7 +3,6 @@
 /.*              export-ignore
 /*.json          export-ignore
 /*.lock          export-ignore
-/*.log           export-ignore
 /*.xml           export-ignore
 /*.xml.dist      export-ignore
 /*.yml           export-ignore
