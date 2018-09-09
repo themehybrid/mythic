@@ -14,7 +14,13 @@
 	&__title {}
 
 	// Comments list wrapper.
-	&__list {}
+	&__list {
+
+		// Children lists (note that WP doesn't have a filter -- the
+		// only way to change this class is with a custom Walker).
+		// @link https://core.trac.wordpress.org/ticket/44923
+		.children {}
+	}
 
 	// Comments closed message.
 	&__closed {}
