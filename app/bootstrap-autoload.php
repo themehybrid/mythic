@@ -3,7 +3,8 @@
  * Autoload bootstrap file.
  *
  * This file is used to autoload classes and functions necessary for the theme
- * to run.
+ * to run. Classes utilize the PSR-4 autoloader in Composer and is defined in
+ * `composer.php`.
  *
  * @package   Mythic
  * @author    Justin Tadlock <justintadlock@gmail.com>
@@ -20,29 +21,11 @@ namespace Mythic;
 #
 # Auto-load any projects via the Composer autoloader. Be sure to check if the
 # file exists in case someone's using Composer to load their dependencies in
-# a different directory.
+# a different directory. This also autoloads our theme's classes.
 
 if ( file_exists( get_parent_theme_file_path( 'vendor/autoload.php' ) ) ) {
 	require_once( get_parent_theme_file_path( 'vendor/autoload.php' ) );
 }
-
-# ------------------------------------------------------------------------------
-# Autoload classes.
-# ------------------------------------------------------------------------------
-#
-# Register an autoloader for handling class loading. We're using Hybrid Core's
-# built-in autoloader for simplicity. Class names should be in Pascal Case (e.g.,
-# `HelloWorld`) and file names prefixed with `class-` and hyphenated (e.g.,
-# `class-hello-world.php`). You can also build your own autoloader or utilize
-# the autoloader in Composer.
-
-spl_autoload_register( function( $class ) {
-
-	\Hybrid\autoload( $class, [
-		'namespace' => __NAMESPACE__,
-		'path'      => get_parent_theme_file_path( 'app' )
-	] );
-} );
 
 # ------------------------------------------------------------------------------
 # Autoload functions files.

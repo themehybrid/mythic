@@ -12,6 +12,11 @@
 			"homepage": "https://themehybrid.com"
 		}
 	],
+	"autoload"    : {
+		"psr-4" : {
+			"Mythic\\" : "app/"
+		}
+	},
         "require": {
                 "php" : ">=5.6",
                 "composer/installers" : "~1.0",
