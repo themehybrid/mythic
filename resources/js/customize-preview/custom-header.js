@@ -1,3 +1,15 @@
+/**
+ * Custom header preview.
+ *
+ * This file handles the JavaScript for the live preview of the `custom-header`
+ * feature in the customizer.
+ *
+ * @package   Mythic
+ * @author    Justin Tadlock <justintadlock@gmail.com>
+ * @copyright Copyright (c) 2018, Justin Tadlock
+ * @link      https://themehybrid.com/themes/mythic
+ * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+ */
 
 // Site title.
 wp.customize( 'blogname', value => {
