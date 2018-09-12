@@ -131,7 +131,7 @@ mix.webpackConfig( {
 	externals   : { jquery : 'jQuery' },
 	resolve     : {
 		alias : {
-			// Alias for Hybrid Core assets.
+			// Alias for Hybrid Customize assets.
 			// Import from `hybrid-customize/js` or `~hybrid-customize/scss`.
 			'hybrid-customize' : path.resolve( __dirname, 'vendor/justintadlock/hybrid-customize/resources/' )
 		}
