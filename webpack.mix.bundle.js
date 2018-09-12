@@ -53,3 +53,17 @@ files.forEach( file => {
 folders.forEach( folder => {
 	mix.copyDirectory( folder, `${bundlePath}/${folder}` );
 } );
+
+// Delete the `vendor/bin` and `vendor/composer/installers` folder, which can
+// get left over, even in production.
+mix.then( () => {
+
+	let folders = [
+		`${bundlePath}/vendor/bin`,
+	 	`${bundlePath}/vendor/composer/installers`
+	];
+
+	folders.forEach( folder => {
+		rimraf.sync( folder );
+	} );
+} );
