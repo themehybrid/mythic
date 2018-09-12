@@ -22,16 +22,16 @@ const imageminMozjpeg   = require( 'imagemin-mozjpeg' );
 
 /*
  * -----------------------------------------------------------------------------
- * Theme Bundle Process
+ * Theme Export Process
  * -----------------------------------------------------------------------------
- * Configure the bundle process in `webpack.mix.bundle.js`. This bit of code
+ * Configure the export process in `webpack.mix.export.js`. This bit of code
  * should remain at the top of the file here so that it bails early when the
- * `bundle` command is run.
+ * `export` command is run.
  * -----------------------------------------------------------------------------
  */
 
-if ( process.env.bundle ) {
-	const bundle = require( './webpack.mix.bundle.js' );
+if ( process.env.export ) {
+	const exportTheme = require( './webpack.mix.export.js' );
 	return;
 }
 
