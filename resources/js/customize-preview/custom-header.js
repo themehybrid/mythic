@@ -2,7 +2,7 @@
 // Site title.
 wp.customize( 'blogname', value => {
 	value.bind( to => {
-		document.querySelector( '.app-header__title a' ).textContent = to;
+		document.querySelector( '.app-header__title-link' ).textContent = to;
 	} );
 } );
 
@@ -17,7 +17,7 @@ wp.customize( 'blogdescription', value => {
 wp.customize( 'header_textcolor', value => {
 	value.bind( to => {
 		var headerItems = document.querySelectorAll(
-			'.app-header__title a, .app-header__description'
+			'.app-header__title-link, .app-header__description'
 		);
 
 		headerItems.forEach( function( text ) {
