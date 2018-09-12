@@ -13,12 +13,8 @@
 		<ol class="comments__list">
 
 			<?php wp_list_comments( [
-				'style'        => 'ol',
-				'callback'     => function( $comment, $args, $depth ) {
+				'callback' => function( $comment, $args, $depth ) {
 					Hybrid\View\display( 'comment', Hybrid\Comment\hierarchy(), compact( 'comment', 'args', 'depth' ) );
-				},
-				'end-callback' => function() {
-					echo '</li>';
 				}
 			] ) ?>
 
