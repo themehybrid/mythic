@@ -4,7 +4,7 @@
  *
  * This file is used to autoload classes and functions necessary for the theme
  * to run. Classes utilize the PSR-4 autoloader in Composer and is defined in
- * `composer.php`.
+ * `composer.json`.
  *
  * @package   Mythic
  * @author    Justin Tadlock <justintadlock@gmail.com>
