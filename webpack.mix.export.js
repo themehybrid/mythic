@@ -55,10 +55,12 @@ folders.forEach( folder => {
 } );
 
 // Delete the `vendor/bin` and `vendor/composer/installers` folder, which can
-// get left over, even in production.
+// get left over, even in production. Mix will also create an additional
+// `mix-manifest.json` file in the root, which we don't need.
 mix.then( () => {
 
 	let folders = [
+		'mix-manifest.json',
 		`${exportPath}/vendor/bin`,
 	 	`${exportPath}/vendor/composer/installers`
 	];
