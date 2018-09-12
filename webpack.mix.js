@@ -19,59 +19,19 @@ const { mix }           = require( 'laravel-mix' );
 const ImageminPlugin    = require( 'imagemin-webpack-plugin' ).default;
 const CopyWebpackPlugin = require( 'copy-webpack-plugin' );
 const imageminMozjpeg   = require( 'imagemin-mozjpeg' );
-const rimraf            = require( 'rimraf' );
 
 /*
  * -----------------------------------------------------------------------------
  * Theme Bundle Process
  * -----------------------------------------------------------------------------
- * Creates a bundle of the production-ready theme with only the files and
- * folders needed for uploading to a site or zipping. Edit the `files` or
- * `folders` variables if you need to change something.
+ * Configure the bundle process in `webpack.mix.bundle.js`. This bit of code
+ * should remain at the top of the file here so that it bails early when the
+ * `bundle` command is run.
  * -----------------------------------------------------------------------------
  */
 
 if ( process.env.bundle ) {
-
-	// Folder name to bundle the files in.
-	let bundlePath = 'mythic';
-
-	// Theme root-level files to include.
-	let files = [
-		'style.css',
-		'functions.php',
-		'index.php',
-		'license.md',
-		'readme.md',
-		'screenshot.png'
-	];
-
-	// Folders to include.
-	let folders = [
-		'app',
-		'dist',
-		'resources/lang',
-	//	'resources/js',      // Required for WordPress.org.
-	//	'resources/scss',    // Required for WordPress.org.
-		'resources/views',
-		'vendor'
-	];
-
-	// Delete the previous bundle to start clean.
-	rimraf.sync( bundlePath );
-
-	// Loop through the root files and copy them over.
-	files.forEach( file => {
-		mix.copy( file, `${bundlePath}/${file}` );
-	} );
-
-	// Loop through the folders and copy them over.
-	folders.forEach( folder => {
-		mix.copyDirectory( folder, `${bundlePath}/${folder}` );
-	} );
-
-	// Bail early because we don't need to do anything else after this point.
-	// Everything else following below is for the build process.
+	const bundle = require( './webpack.mix.bundle.js' );
 	return;
 }
 
