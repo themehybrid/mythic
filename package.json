@@ -7,7 +7,7 @@
 	"homepage": "https://themehybrid.com/themes/mythic",
 	"main": "resources/js/app.js",
 	"scripts": {
-		"build": "npm run prod && npm run i18n && npm run bundle",
+		"build": "npm run prod && npm run i18n && npm run export",
 		"dev": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
 		"watch": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
 		"watch:sync": "cross-env sync=1 NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
