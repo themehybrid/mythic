@@ -14,8 +14,7 @@
 /resources/scss         export-ignore
 /resources/svg          export-ignore
 /tests/                 export-ignore
-/webpack.mix.js         export-ignore
-/webpack.mix.bundle.js  export-ignore
+/webpack*.js            export-ignore
 
 # Handle line endings.
 # See https://help.github.com/articles/dealing-with-line-endings/
