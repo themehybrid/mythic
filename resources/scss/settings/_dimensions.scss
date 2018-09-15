@@ -11,8 +11,8 @@
 ///
 /// @since  1.0.0
 /// @access public
-/// @return {int}  The content width in pixels.
+/// @return {number}  The content width in pixels.
 
 @function content-width() {
-	@return 750;
+	@return 750px;
 }
