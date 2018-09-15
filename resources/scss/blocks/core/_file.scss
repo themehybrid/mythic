@@ -23,7 +23,7 @@
 		padding:    0.5em 1em;
 	}
 
-	a#{&}__button {
+	a.wp-block-file__button {
 		text-decoration: none;
 
 		&:hover,
@@ -36,7 +36,7 @@
 		}
 	}
 
-	* + &__button {
+	* + .wp-block-file__button {
 		margin-left: 0.75em;
 	}
 }

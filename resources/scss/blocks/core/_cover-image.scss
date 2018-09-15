@@ -63,12 +63,12 @@
 		justify-content: flex-end;
 	}
 
-	&.has-left-content &-text {
+	&.has-left-content .wp-cover-image-text {
 		margin-left: 0;
 		text-align:  left;
 	}
 
-	&.has-right-content &-text {
+	&.has-right-content .wp-cover-image-text {
 		margin-right: 0;
 		text-align:   right;
 	}
