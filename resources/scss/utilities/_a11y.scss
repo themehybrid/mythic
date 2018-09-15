@@ -5,3 +5,34 @@
 /// @author Justin Tadlock <justintadlock@gmail.com>
 /// @link   https://themehybrid.com/themes/mythic
 ////
+
+// Text only shown to screen readers.
+
+.screen-reader-text {
+	clip:      rect( 1px, 1px, 1px, 1px );
+	clip-path: inset( 50% );
+	position:  absolute;
+	width:     1px;
+	height:    1px;
+	margin:    -1px;
+	overflow:  hidden;
+	padding:   0;
+	word-wrap: normal;
+	border:    none;
+
+	&:active,
+	&:focus {
+		clip:            auto;
+		clip-path:       none;
+		display:         block;
+		height:          auto;
+		width:           auto;
+		z-index:         100000;
+		text-decoration: none;
+	}
+}
+
+// Targets the "skip to content" link at the top of the page if it needs extra
+// style rules beyond the screen reader text rules.
+
+.skip-link {}
