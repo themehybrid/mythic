@@ -6,6 +6,7 @@
 /// @link   https://themehybrid.com/themes/mythic
 ////
 
+// The cover image `<div>` element. The image is added as a background.
 .wp-block-cover-image {
 	position:            relative;
 	background-size:     cover;
@@ -17,10 +18,13 @@
 	justify-content:     center;
 	align-items:         center;
 
+	// Parallax images should have a fixed background so that the image
+	// stays in place while everything else scrolls.
 	&.has-parallax {
 		background-attachment: fixed;
 	}
 
+	// Background dim.
 	&.has-background-dim::before {
 		content:         "";
 		position:         absolute;
@@ -30,6 +34,8 @@
 		right:            0;
 	}
 
+	// The background dim can be any number from 10-100. We're just running
+	// a simple loop to add a black background color over the element.
 	@for $dim from 1 through 10 {
 
 		&.has-background-dim-#{ $dim * 10 }::before {
@@ -37,24 +43,7 @@
 		}
 	}
 
-	&-text {
-		color:         color( white );
-		font-size:     2em;
-		line-height:   1.25;
-		z-index:       1;
-		margin-bottom: 0;
-		max-width:     content-width();
-		padding:       14px;
-		text-align:    center;
-
-		a,
-		a:hover,
-		a:focus,
-		a:active {
-			color: color( white );
-		}
-	}
-
+	// Left/Right text content.
 	&.has-left-content {
 		justify-content: flex-start;
 	}
@@ -63,16 +52,7 @@
 		justify-content: flex-end;
 	}
 
-	&.has-left-content .wp-cover-image-text {
-		margin-left: 0;
-		text-align:  left;
-	}
-
-	&.has-right-content .wp-cover-image-text {
-		margin-right: 0;
-		text-align:   right;
-	}
-
+	// Floated left/right element.
 	[data-align="left"] &,
 	[data-align="right"] &,
 	&.alignleft,
@@ -80,4 +60,35 @@
 		max-width: content-width() / 2;
 		width:     100%;
 	}
+}
+
+// Paragraph of text shown within the cover image element.
+.wp-block-cover-image-text {
+	color:         color( white );
+	font-size:     2em;
+	line-height:   1.25;
+	z-index:       1;
+	margin-bottom: 0;
+	max-width:     content-width();
+	padding:       14px;
+	text-align:    center;
+
+	a,
+	a:hover,
+	a:focus,
+	a:active {
+		color: color( white );
+	}
+}
+
+// Left-aligned text.
+.has-left-content .wp-block-cover-image-text {
+	margin-left: 0;
+	text-align:  left;
+}
+
+// Right-aligned text.
+.has-right-content .wp-block-cover-image-text {
+	margin-right: 0;
+	text-align:   right;
 }
