@@ -18,12 +18,9 @@
 	}
 
 	&__button {
-		background: color( black );
-		color:      color( white );
-		padding:    0.5em 1em;
-	}
-
-	a.wp-block-file__button {
+		background:      color( black );
+		color:           color( white );
+		padding:         0.5em 1em;
 		text-decoration: none;
 
 		&:hover,
@@ -35,8 +32,10 @@
 			text-decoration: none;
 		}
 	}
+}
 
-	* + .wp-block-file__button {
-		margin-left: 0.75em;
-	}
+// Give the file block button some spacing to the left if there's another element
+// preceding it.
+* + .wp-block-file__button {
+	margin-left: 0.75em;
 }
