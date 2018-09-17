@@ -21,6 +21,6 @@ Check out the [project wiki](https://github.com/justintadlock/mythic/wiki) to le
 
 ## Copyright and License
 
-Mythic is licensed under the [GNU GPL](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html), version 2 or later.
+Mythic is licensed under the [GNU GPL](https://www.gnu.org/licenses/old-licenses/gpl-2.0.html), version 2 or later.
 
 2018 &copy; Justin Tadlock.

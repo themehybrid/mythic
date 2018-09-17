@@ -5,12 +5,11 @@
  * This file holds some setup actions for scripts and styles as well as a helper
  * functions for work with assets.
  *
- * @package    Mythic
- * @subpackage Includes
- * @author     Justin Tadlock <justintadlock@gmail.com>
- * @copyright  Copyright (c) 2018, Justin Tadlock
- * @link       https://themehybrid.com/themes/mythic
- * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+ * @package   Mythic
+ * @author    Justin Tadlock <justintadlock@gmail.com>
+ * @copyright 2018 Justin Tadlock
+ * @license   https://www.gnu.org/licenses/old-licenses/gpl-2.0.html GPL-2.0-or-later
+ * @link      https://themehybrid.com/themes/mythic
  */
 
 namespace Mythic;
