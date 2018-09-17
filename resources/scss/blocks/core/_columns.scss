@@ -11,9 +11,14 @@
 
 	// Add styles based on the number of columns. Supports 2-6 columns.
 	&.has-2-columns {}
+}
 
-	// Individual columns.
-	.wp-block-column {
-		flex: 1;
-	}
+// Individual columns.
+.wp-block-column {
+	flex: 1;
+}
+
+// Editor specific styling. Make sure columns span correctly.
+.editor-inner-blocks {
+	flex: 1;
 }
