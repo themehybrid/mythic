@@ -16,8 +16,6 @@
 
 	// Left/right aligned gallery. Note that this refers to the entire
 	// gallery and not individual images.
-	[data-align="left"] &,
-	[data-align="right"] &,
 	&.alignleft,
 	&.alignright {
 		max-width: content-width() / 2;

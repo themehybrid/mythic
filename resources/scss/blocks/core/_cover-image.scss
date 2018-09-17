@@ -53,8 +53,6 @@
 	}
 
 	// Floated left/right element.
-	[data-align="left"] &,
-	[data-align="right"] &,
 	&.alignleft,
 	&.alignright {
 		max-width: content-width() / 2;
