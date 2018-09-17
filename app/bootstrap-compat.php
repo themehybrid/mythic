@@ -27,7 +27,7 @@ add_action( 'template_redirect',  'mythic_preview'        );
  *
  * @since  1.0.0
  * @access public
- * @return void
+ * @return string
  */
 function mythic_compat_message() {
 
