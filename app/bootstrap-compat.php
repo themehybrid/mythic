@@ -103,7 +103,7 @@ function mythic_load_customize() {
  */
 function mythic_preview() {
 
-	if ( isset( $_GET['preview'] ) ) {
+	if ( isset( $_GET['preview'] ) ) { // phpcs:WordPress.Security.NonceVerification.NoNonceVerification
 		wp_die( esc_html( mythic_compat_message() ) );
 	}
 }
