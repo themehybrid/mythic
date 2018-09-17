@@ -23,7 +23,6 @@
                 "justintadlock/hybrid-core" : "^5.0.0"
         },
 	"require-dev": {
-		"wp-coding-standards/wpcs": "^1.0.0",
-		"wimg/php-compatibility": "^8.2"
+		"samikeijonen/phpcs-composer": "dev-master"
 	}
 }
