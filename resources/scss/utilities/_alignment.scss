@@ -1,0 +1,54 @@
+////
+/// Alignment classes.
+///
+/// Primarily, we use this to build out style rules for the core WordPress
+/// `.align*` classes.
+///
+/// @group  Utilities
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://themehybrid.com/themes/mythic
+////
+
+// Left alignment.
+.alignleft {
+	@media( min-width: content-width() / 2 ) {
+		float:     left;
+		margin:    0 0 1.5rem 1.5rem;
+		max-width: 50%;
+	}
+}
+
+// Right alignment.
+.alignright {
+	@media( min-width: content-width() / 2 ) {
+		float:     left;
+		margin:    0 1.5rem 1.5rem 0;
+		max-width: 50%;
+	}
+}
+
+// Center alignment.
+.aligncenter {
+	display:      block;
+	margin-left:  auto;
+	margin-right: auto;
+	clear:        both;
+}
+
+// Align full and wide classes.
+.alignfull,
+.alignwide {
+	margin-left  : calc( -100vw / 2 + 100% / 2 );
+        margin-right : calc( -100vw / 2 + 100% / 2 );
+	width:        auto;
+	max-width:    100vw;
+}
+
+@media( min-width: content-width() ) {
+
+	.alignwide {
+		margin-left  : -25%;
+		margin-right : -25%;
+		max-width    : calc( #{ content-width() } + 50%;
+        }
+}
