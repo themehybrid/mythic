@@ -71,7 +71,7 @@ add_action( 'enqueue_block_editor_assets', function() {
  * @link   https://laravel.com/docs/5.6/mix#versioning-and-cache-busting
  * @since  1.0.0
  * @access public
- * @param  string  $path
+ * @param  string  $path  A relative path/file to append to the `dist` folder.
  * @return string
  */
 function asset( $path ) {

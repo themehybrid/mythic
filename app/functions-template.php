@@ -19,7 +19,7 @@ namespace Mythic;
  *
  * @since  1.0.0
  * @access public
- * @param  string  $sep
+ * @param  string  $sep  String to separate metadata.
  * @return string
  */
 function sep( $sep = '' ) {

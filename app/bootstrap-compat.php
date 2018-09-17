@@ -56,7 +56,7 @@ function mythic_compat_message() {
  *
  * @since  1.0.0
  * @access public
- * @param  string  $old_name
+ * @param  string  $old_name  Previous theme name/slug.
  * @return void
  */
 function mythic_switch_theme( $old_name ) {
@@ -85,7 +85,6 @@ function mythic_upgrade_notice() {
  *
  * @since  1.0.0
  * @access public
- * @param  string  $old_name
  * @return void
  */
 function mythic_load_customize() {

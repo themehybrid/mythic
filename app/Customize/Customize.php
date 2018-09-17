@@ -55,7 +55,7 @@ class Customize implements Bootable {
 	 * @link   https://developer.wordpress.org/themes/customize-api/customizer-objects/#panels
 	 * @since  1.0.0
 	 * @access public
-	 * @param  WP_Customize_Manager  $manager
+	 * @param  WP_Customize_Manager  $manager  Instance of the customize manager.
 	 * @return void
 	 */
 	public function registerPanels( WP_Customize_Manager $manager ) {}
@@ -66,7 +66,7 @@ class Customize implements Bootable {
 	 * @link   https://developer.wordpress.org/themes/customize-api/customizer-objects/#sections
 	 * @since  1.0.0
 	 * @access public
-	 * @param  WP_Customize_Manager  $manager
+	 * @param  WP_Customize_Manager  $manager  Instance of the customize manager.
 	 * @return void
 	 */
 	public function registerSections( WP_Customize_Manager $manager ) {}
@@ -77,7 +77,7 @@ class Customize implements Bootable {
 	 * @link   https://developer.wordpress.org/themes/customize-api/customizer-objects/#settings
 	 * @since  1.0.0
 	 * @access public
-	 * @param  WP_Customize_Manager  $manager
+	 * @param  WP_Customize_Manager  $manager  Instance of the customize manager.
 	 * @return void
 	 */
 	public function registerSettings( WP_Customize_Manager $manager ) {
@@ -102,7 +102,7 @@ class Customize implements Bootable {
 	 * @link   https://developer.wordpress.org/themes/customize-api/customizer-objects/#controls
 	 * @since  1.0.0
 	 * @access public
-	 * @param  WP_Customize_Manager  $manager
+	 * @param  WP_Customize_Manager  $manager  Instance of the customize manager.
 	 * @return void
 	 */
 	public function registerControls( WP_Customize_Manager $manager ) {}
@@ -113,7 +113,7 @@ class Customize implements Bootable {
 	 * @link   https://developer.wordpress.org/themes/customize-api/tools-for-improved-user-experience/#selective-refresh-fast-accurate-updates
 	 * @since  1.0.0
 	 * @access public
-	 * @param  WP_Customize_Manager  $manager
+	 * @param  WP_Customize_Manager  $manager  Instance of the customize manager.
 	 * @return void
 	 */
 	public function registerPartials( WP_Customize_Manager $manager ) {
