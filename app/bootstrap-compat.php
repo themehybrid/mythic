@@ -34,6 +34,7 @@ function mythic_compat_message() {
 	if ( version_compare( $GLOBALS['wp_version'], '4.9', '<' ) ) {
 
 		return sprintf(
+			// Translators: 1 is the required WordPress version and 2 is the user's current version.
 			__( 'Mythic requires at least WordPress version %1$s. You are running version %2$s. Please upgrade and try again.' ),
 			'4.9',
 			$GLOBALS['wp_version']
@@ -42,6 +43,7 @@ function mythic_compat_message() {
 	} elseif ( version_compare( PHP_VERSION, '5.6', '<' ) ) {
 
 		return sprintf(
+			// Translators: 1 is the required PHP version and 2 is the user's current version.
 			__( 'Mythic requires at least PHP version %1$s. You are running version %2$s. Please upgrade and try again.' ),
 			'5.6',
 			PHP_VERSION
