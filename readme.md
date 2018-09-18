@@ -11,6 +11,7 @@ There's a few requirements in order to develop a new theme or contribute back to
 * PHP 5.6+ (preferably 7+).
 * [Git](https://git-scm.com/) for version control.
 * [Composer](https://getcomposer.org/) for managing PHP dependencies.
+* [Node 8+](https://nodejs.org).
 * [NPM](https://www.npmjs.com/) or [Yarn](https://yarnpkg.com/en/) (your choice) for managing JS dependencies.
 
 You should feel reasonably comfortable using the command line. The theme tries to keep this as simple as possible, but some command line knowledge is necessary in modern development.
