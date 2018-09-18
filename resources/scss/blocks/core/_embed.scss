@@ -8,18 +8,22 @@
 
 .wp-block-embed {
 
-	&-vimeo {}
-	&-youtube {}
-
+	// Image embeds.
 	&.is-type-image {}
+
+	// Audio embeds.
 	&.is-type-audio {}
-	&.is-type-rich {} // text, twitter, etc.
+
+	// Rich text embeds (text, Twitter, etc.)
+	&.is-type-rich {}
+
+	// Video embeds.
 	&.is-type-video {}
 
-	&.is-provider-vimeo {}
-
+	// Directly target iframes.
 	iframe {}
 
+	// Caption below embedded content.
 	figcaption {
 		margin-top: 0.5em;
 		text-align: center;

@@ -1,14 +1,20 @@
 ////
-/// Customize controls style.
+/// Customize controls stylesheet.
 ///
-/// This is the primary style for the customize controls panel. Use this for
-/// importing styles for custom panels, sections, and controls.
+/// This is the primary stylesheet for the customize controls panel. Use this
+/// for importing styles for custom panels, sections, and controls.
 ///
 /// @group  Styles
 /// @author Justin Tadlock <justintadlock@gmail.com>
 /// @link   https://themehybrid.com/themes/mythic
 ////
 
-// Import `customize-controls` partials..
+// Uncomment any of the below to import styles for specific controls if using
+// the `hybrid-customize` add-on.
+
+// @import '~hybrid-customize/scss/controls/palette';
+// @import '~hybrid-customize/scss/controls/radio-image';
+
+// Import `customize-controls` partials.
 
 @import 'customize-controls/_index';
