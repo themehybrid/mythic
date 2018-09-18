@@ -35,8 +35,10 @@ add_action( 'wp_enqueue_scripts', function() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
+	// Enqueue theme scripts.
 	wp_enqueue_script( 'mythic-app', asset( 'js/app.js' ), null, null, true );
 
+	// Enqueue theme styles.
 	wp_enqueue_style( 'mythic-screen', asset( 'css/screen.css' ), null, null );
 
 } );
@@ -50,6 +52,7 @@ add_action( 'wp_enqueue_scripts', function() {
  */
 add_action( 'enqueue_block_editor_assets', function() {
 
+	// Enqueue theme editor styles.
 	wp_enqueue_style( 'mythic-editor', asset( 'css/editor.css' ), null, null );
 
 	// Unregister core block and theme styles.

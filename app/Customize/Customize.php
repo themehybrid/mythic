@@ -2,7 +2,7 @@
 /**
  * Customize class.
  *
- * This files shows some basics on how to set up and work with the WordPress
+ * This file shows some basics on how to set up and work with the WordPress
  * Customization API. This is the place to set up all of your theme options for
  * the customizer.
  *

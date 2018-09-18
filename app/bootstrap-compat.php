@@ -8,9 +8,8 @@
  * PHP requirement. Only call this file after initially checking that the site
  * doesn't meet either the WP or PHP requirement.
  *
- * @package    Mythic
- * @subpackage Includes
- * @author     Justin Tadlock <justintadlock@gmail.com>
+ * @package   Mythic
+ * @author    Justin Tadlock <justintadlock@gmail.com>
  * @copyright 2018 Justin Tadlock
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://themehybrid.com/themes/mythic

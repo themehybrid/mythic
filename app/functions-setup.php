@@ -32,7 +32,8 @@ namespace Mythic;
  */
 add_action( 'after_setup_theme', function() {
 
-	// Set content width.
+	// Sets the theme content width. This variable is also set in the
+	// `resources/scss/settings/_dimensions.scss` file.
 	$GLOBALS['content_width'] = 750;
 
 	// Load theme translations.
@@ -50,7 +51,8 @@ add_action( 'after_setup_theme', function() {
 	// Add selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
 
-	// Wide and full alignment.
+	// Wide and full alignment. The styles for alignment is housed in the
+	// `resources/scss/utilities/_alignment.scss` file.
 	add_theme_support( 'align-wide' );
 
 	// Outputs HTML5 markup for core features.
@@ -71,7 +73,8 @@ add_action( 'after_setup_theme', function() {
 		'header-text' => ''
 	] );
 
-	// Editor color palette.
+	// Editor color palette. These colors are also defined in the
+	// `resources/scss/settings/_colors.scss` file.
 	add_theme_support( 'editor-color-palette', [
 		[
 			'name'  => __( 'Charcoal' ),
@@ -95,7 +98,8 @@ add_action( 'after_setup_theme', function() {
 		]
 	] );
 
-	// Editor block font sizes.
+	// Editor block font sizes. These font sizes are also defined in the
+	// `resources/scss/settings/_fonts.scss` file.
 	add_theme_support( 'editor-font-sizes', [
 		[
 			'name'      => __( 'Small' ),
