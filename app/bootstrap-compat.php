@@ -31,12 +31,12 @@ add_action( 'template_redirect',  'mythic_preview'        );
  */
 function mythic_compat_message() {
 
-	if ( version_compare( $GLOBALS['wp_version'], '4.9', '<' ) ) {
+	if ( version_compare( $GLOBALS['wp_version'], '4.9.6', '<' ) ) {
 
 		return sprintf(
 			// Translators: 1 is the required WordPress version and 2 is the user's current version.
 			__( 'Mythic requires at least WordPress version %1$s. You are running version %2$s. Please upgrade and try again.' ),
-			'4.9',
+			'4.9.6',
 			$GLOBALS['wp_version']
 		);
 
