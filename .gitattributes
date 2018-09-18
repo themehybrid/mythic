@@ -14,6 +14,7 @@
 /resources/scss         export-ignore
 /resources/svg          export-ignore
 /tests/                 export-ignore
+/themeclaim.json        export-ignore
 /webpack*.js            export-ignore
 
 # Handle line endings.
