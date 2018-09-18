@@ -59,13 +59,13 @@ folders.forEach( folder => {
 // `mix-manifest.json` file in the root, which we don't need.
 mix.then( () => {
 
-	let folders = [
+	let files = [
 		'mix-manifest.json',
 		`${exportPath}/vendor/bin`,
 	 	`${exportPath}/vendor/composer/installers`
 	];
 
-	folders.forEach( folder => {
-		rimraf.sync( folder );
+	files.forEach( file => {
+		rimraf.sync( file );
 	} );
 } );
