@@ -49,6 +49,6 @@
 	.alignwide {
 		margin-left  : -25%;
 		margin-right : -25%;
-		max-width    : calc( #{ content-width() } + 50%;
+		max-width    : calc( #{ content-width() } + 50% );
         }
 }
