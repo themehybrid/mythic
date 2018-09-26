@@ -51,13 +51,6 @@
 	&.has-right-content {
 		justify-content: flex-end;
 	}
-
-	// Floated left/right element.
-	&.alignleft,
-	&.alignright {
-		max-width: content-width() / 2;
-		width:     100%;
-	}
 }
 
 // Paragraph of text shown within the cover image element.

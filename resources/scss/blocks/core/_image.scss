@@ -14,13 +14,6 @@
 		max-width: 100%;
 	}
 
-	&.aligncenter {
-		display:      block;
-		margin-left:  auto;
-		margin-right: auto;
-		text-align:   center;
-	}
-
 	&.is-resized {
 		width: min-content;
 

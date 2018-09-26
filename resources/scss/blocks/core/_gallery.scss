@@ -13,14 +13,6 @@
 	list-style-type: none;
 	padding:         0;
 	margin:          0 -8px 0 -8px;
-
-	// Left/right aligned gallery. Note that this refers to the entire
-	// gallery and not individual images.
-	&.alignleft,
-	&.alignright {
-		max-width: content-width() / 2;
-		width:     100%;
-	}
 }
 
 // The wrapper for individual gallery images/figures.

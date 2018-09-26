@@ -10,11 +10,6 @@
 	padding:    3em 0;
 	text-align: center;
 
-	&.alignleft,
-	&.alignright {
-		max-width: content-width() / 2;
-	}
-
 	cite,
 	footer {
 		position: relative;
