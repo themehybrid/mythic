@@ -1,0 +1,23 @@
+////
+/// Media-related utility styles.
+///
+/// @group  Utilities
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://themehybrid.com/themes/mythic
+////
+
+/// Outputs the emoji and smiley classes. These are to make sure that the images
+/// stay the same size as the surrounding text.
+
+img.wp-smiley,
+img.emoji {
+    display:        inline;
+    width:          1em;
+    height:         1em;
+    margin:         0 .07em;
+    padding:        0;
+    vertical-align: -0.1em;
+    background:     none;
+    border:         none;
+    box-shadow:     none;
+}
