@@ -109,10 +109,20 @@ var sassConfig = {
 	indentWidth : 1
 };
 
-// Compile SASS/CSS.
-mix.sass( `${devPath}/scss/screen.scss`,             'css', sassConfig )
-   .sass( `${devPath}/scss/editor.scss`,             'css', sassConfig )
-   .sass( `${devPath}/scss/customize-controls.scss`, 'css', sassConfig );
+if ( !process.env.sync ) {
+
+	// Compile SASS/CSS
+	mix.sass( `${devPath}/scss/screen.scss`, 'css', sassConfig )
+	   .sass( `${devPath}/scss/editor.scss`, 'css', sassConfig )
+	   .sass( `${devPath}/scss/customize-controls.scss`, 'css', sassConfig );
+} else {
+
+	// Use fast Sass for Browsersync
+	// @link https://github.com/JeffreyWay/laravel-mix/blob/master/docs/css-preprocessors.md#standalone-sass-builds
+	mix.standaloneSass( `${devPath}/scss/screen.scss`, 'css', sassConfig )
+	   .standaloneSass( `${devPath}/scss/editor.scss`, 'css', sassConfig )
+	   .standaloneSass( `${devPath}/scss/customize-controls.scss`, 'css', sassConfig );
+}
 
 /*
  * Add custom Webpack configuration.
