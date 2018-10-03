@@ -13,7 +13,7 @@
 .alignleft {
 	@media( min-width: content-width() / 2 ) {
 		float:     left;
-		margin:    0 0 1.5rem 1.5rem;
+		margin:    0 1.5rem 1.5rem 0;
 		max-width: 50%;
 	}
 }
@@ -22,7 +22,7 @@
 .alignright {
 	@media( min-width: content-width() / 2 ) {
 		float:     left;
-		margin:    0 1.5rem 1.5rem 0;
+		margin:    0 0 1.5rem 1.5rem;
 		max-width: 50%;
 	}
 }
