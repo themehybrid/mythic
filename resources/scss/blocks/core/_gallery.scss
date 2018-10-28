@@ -23,6 +23,13 @@
 	flex-direction:  column;
 	justify-content: center;
 	position:        relative;
+	// Fallback to 2 columns.
+	width:           calc( 100% / 2 - 16px );
+
+	// 1 column.
+	.columns-1 & {
+		width: calc( 100% / 1 - 16px );
+	}
 
 	// Image figure.
 	figure {
@@ -30,7 +37,7 @@
 		height:      100%;
 
 		// IE11 doesn't support flex and can't read this.
-		@supports( position: sticky ) {
+		@supports ( position: sticky ) {
 			display:         flex;
 			align-items:     flex-end;
 			justify-content: flex-start;
@@ -46,7 +53,7 @@
 		width: 100%;
 
 		// IE11 can't read this.
-		@supports( position: sticky ) {
+		@supports ( position: sticky ) {
 			width: auto;
 		}
 	}
@@ -59,43 +66,28 @@
 		padding:    40px 10px 5px;
 		text-align: center;
 		color:      color( white );
-		background: linear-gradient(
-			0deg,
-			rgba( color( black ), 0.7 ) 0,
-			rgba( color( black ), 0.3 ) 60%,
-			transparent
-		);
+		background: linear-gradient( 0deg, rgba( color( black ), 0.7 ) 0, rgba( color( black ), 0.3 ) 60%, transparent );
 
 		img {
 			display: inline;
 		}
 	}
-}
 
-// Cropped images.
-.is-cropped .blocks-gallery-item {
-	a,
-	img {
-		flex:       1;
-		width:      100%;
+	// Cropped images.
+	.is-cropped & {
+		a,
+		img {
+			flex:  1;
+			width: 100%;
 
-		// IE11 doesn't support object-fit.
-		@supports( position: sticky ) {
-			flex:       1;
-			height:     100%;
-			object-fit: cover;
+			// IE11 doesn't support object-fit.
+			@supports ( position: sticky ) {
+				flex:       1;
+				height:     100%;
+				object-fit: cover;
+			}
 		}
 	}
-}
-
-// Fallback to 2 columns.
-.blocks-gallery-item {
-	width: calc( 100% / 2 - 16px );
-}
-
-// 1 column.
-.columns-1 .blocks-gallery-item {
-	width: calc( 100% / 1 - 16px );
 }
 
 // 3-8 columns on larger screens.

@@ -23,6 +23,12 @@
 		padding:         0.5em 1em;
 		text-decoration: none;
 
+		// Give the file block button some spacing to the left if there's
+		// another element preceding it.
+		* + & {
+			margin-left: 0.75em;
+		}
+
 		&:hover,
 		&:visited,
 		&:focus,
@@ -32,10 +38,4 @@
 			text-decoration: none;
 		}
 	}
-}
-
-// Give the file block button some spacing to the left if there's another element
-// preceding it.
-* + .wp-block-file__button {
-	margin-left: 0.75em;
 }
