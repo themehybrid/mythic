@@ -44,6 +44,7 @@ class AppServiceProvider extends ServiceProvider {
 
 			$file = get_theme_file_path( 'dist/mix-manifest.json' );
 
+			// @codingStandardsIgnoreLine WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents
 			return file_exists( $file ) ? json_decode( file_get_contents( $file ), true ) : null;
 		} );
 	}
