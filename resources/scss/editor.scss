@@ -14,9 +14,9 @@
 @import 'settings/_index';
 @import 'tools/_index';
 
-// Prefixes all of the styles with `.edit-post-visual-editor` for use within
-// the block editor.
-.edit-post-visual-editor {
+// Prefixes all of the styles with `.editor-styles-wrapper` for use within the
+// block editor.
+.editor-styles-wrapper {
 
 	// Import styles that are needed *just* for the editor. There's no need
 	// to import everything, such as styles that don't have an effect on
