@@ -17,11 +17,11 @@
 			"Mythic\\" : "app/"
 		}
 	},
-        "require": {
-                "php" : ">=5.6",
-                "composer/installers" : "~1.0",
-                "justintadlock/hybrid-core" : "^5.0.0"
-        },
+	"require": {
+		"php" : ">=5.6",
+		"composer/installers" : "~1.0",
+		"justintadlock/hybrid-core" : "^5.0.0"
+	},
 	"require-dev": {
 		"samikeijonen/phpcs-composer": "dev-master"
 	}
