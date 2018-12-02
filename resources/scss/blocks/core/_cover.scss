@@ -1,13 +1,13 @@
 ////
-/// Cover image block.
+/// Cover (media) block.
 ///
 /// @group  Blocks
 /// @author Justin Tadlock <justintadlock@gmail.com>
 /// @link   https://themehybrid.com/themes/mythic
 ////
 
-// The cover image `<div>` element. The image is added as a background.
-.wp-block-cover-image {
+// The cover media `<div>` element. The media is added as a background.
+.wp-block-cover {
 	position:            relative;
 	background-size:     cover;
 	background-position: 50%;
@@ -51,10 +51,21 @@
 	&.has-right-content {
 		justify-content: flex-end;
 	}
+
+	&__video-background {
+		position:   absolute;
+		width:      100%;
+		height:     100%;
+		top:        50%;
+		left:       50%;
+		object-fit: fill;
+		transform:  translateX(-50%) translateY(-50%);
+		z-index:    1;
+	}
 }
 
 // Paragraph of text shown within the cover image element.
-.wp-block-cover-image-text {
+.wp-block-cover-text {
 	color:         color( white );
 	font-size:     2em;
 	line-height:   1.25;
@@ -73,13 +84,13 @@
 }
 
 // Left-aligned text.
-.has-left-content .wp-block-cover-image-text {
+.has-left-content .wp-block-cover-text {
 	margin-left: 0;
 	text-align:  left;
 }
 
 // Right-aligned text.
-.has-right-content .wp-block-cover-image-text {
+.has-right-content .wp-block-cover-text {
 	margin-right: 0;
 	text-align:   right;
 }
