@@ -1,0 +1,54 @@
+////
+/// Media text block.
+///
+/// @group  Blocks
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://themehybrid.com/themes/mythic
+////
+
+.wp-block-media-text {
+	display:               grid;
+	grid-template-rows:    auto;
+	align-items:           center;
+	grid-template-areas:   "media-text-media media-text-content";
+	grid-template-columns: 50% auto;
+
+	&.has-media-on-the-right {
+		grid-template-areas:   "media-text-content media-text-media";
+		grid-template-columns: auto 50%;
+	}
+
+	&__media {
+		grid-area: media-text-media;
+		margin:    0;
+	}
+
+	&__content {
+		word-break: break-word;
+		grid-area:  media-text-content;
+		padding:    0 8%;
+	}
+
+	> figure > img,
+	> figure > video {
+		max-width:      unset;
+		width:          100%;
+		vertical-align: middle;
+	}
+}
+
+@media ( max-width: break( 'small' ) ) {
+
+	.wp-block-media-text.is-stacked-on-mobile {
+		grid-template-columns: 100% !important; // Overwrite core's inline style.
+		grid-template-areas:
+			"media-text-media"
+			"media-text-content";
+	}
+
+	.wp-block-media-text.is-stacked-on-mobile.has-media-on-the-right {
+		grid-template-areas:
+			"media-text-content"
+			"media-text-media";
+	}
+}
