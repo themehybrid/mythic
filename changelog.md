@@ -1,5 +1,22 @@
 # Change Log
 
+## [1.0.2] - 2018-12-11
+
+### Added
+
+- Added in support for the core WP "Media & Text" block.  New stylesheet at `resources/scss/blocks/core/_media-text.scss`.
+
+### Fixed
+
+- Corrected whitespace issues in `composer.json`.
+- Bumped `postcss-preset-env` to ^6.4.0 to correct an issue where CSS variables were being output twice.
+
+### Changed
+
+- The core WP `cover-image` block was renamed to `cover` to accommodate different types of media.  Our block stylesheet changed to reflect this.  See `resources/scss/blocks/core/_cover.scss`.
+- Now using the `.editor-styles-wrapper` class instead of `.edit-post-visual-editor` for styling the block editor.
+- Updated Node and Composer packages.
+
 ## [1.0.1] - 2018-10-23
 
 ### Added
