@@ -13,7 +13,7 @@
  */
 
 // Import required packages.
-const { mix } = require( 'laravel-mix' );
+const mix     = require( 'laravel-mix' );
 const rimraf  = require( 'rimraf' );
 const fs      = require( 'fs' );
 
