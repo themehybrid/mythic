@@ -23,6 +23,7 @@
 		"justintadlock/hybrid-core" : "^5.0.0"
 	},
 	"require-dev": {
-		"samikeijonen/phpcs-composer": "dev-master"
+		"wptrt/wpthemereview": "*",
+		"dealerdirect/phpcodesniffer-composer-installer": "0.4.4"
 	}
 }

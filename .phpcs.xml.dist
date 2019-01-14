@@ -1,15 +1,19 @@
 <?xml version="1.0"?>
 <ruleset name="Mythic Theme Coding Standards">
 
-	<!--
-	 * Exclude any template files because we tend to use a different coding
-	 * style for them.
- 	-->
-	<exclude-pattern>/index.php</exclude-pattern>
-	<exclude-pattern>*/resources/views/*</exclude-pattern>
+	<!-- Exclude files and folders. -->
+	<exclude-pattern>*/vendor/*</exclude-pattern>
+	<exclude-pattern>*/node_modules/*</exclude-pattern>
 
-	<!-- Use the Foxland-Default rules. -->
-	<rule ref="Foxland-Default"/>
+	<!-- Only check the PHP files. -->
+	<arg name="extensions" value="php"/>
+
+	<!-- Check PHP version compatibility. -->
+	<rule ref="PHPCompatibilityWP"/>
+	<config name="testVersion" value="5.6-"/>
+
+	<!-- Use WPTRTCS: https://github.com/WPTRT/WPThemeRevie. -->
+	<rule ref="WPThemeReview"/>
 
 	<!-- Set textdomains. -->
 	<rule ref="WordPress.WP.I18n">
@@ -18,100 +22,6 @@
 				<element value="mythic"/>
 			</property>
 		</properties>
-	</rule>
-
-	<!-- Exclude WordPress rules. -->
-	<rule ref="WordPress">
-		<exclude name="WordPress.Arrays.ArrayDeclarationSpacing.NoSpaceBeforeArrayCloser"/>
-		<exclude name="WordPress.Arrays.ArrayDeclarationSpacing.SpaceBeforeArrayCloser"/>
-		<exclude name="WordPress.Arrays.CommaAfterArrayItem.NoComma"/>
-		<exclude name="WordPress.Files.FileName.InvalidClassFileName"/>
-		<exclude name="WordPress.Files.FileName.NotHyphenatedLowercase"/>
-		<exclude name="WordPress.NamingConventions.ValidHookName.UseUnderscores"/>
-		<exclude name="WordPress.WhiteSpace.DisallowInlineTabs.NonIndentTabsUsed"/>
-	</rule>
-
-	<!-- Exclude Generic rules. -->
-	<rule ref="Generic">
-		<exclude name="Generic.Arrays.ArrayIndent.KeyIncorrect"/>
-		<exclude name="Generic.Arrays.DisallowLongArraySyntax.Found"/>
-		<exclude name="Generic.Arrays.DisallowShortArraySyntax.Found"/>
-		<exclude name="Generic.Files.EndFileNoNewline.Found"/>
-		<exclude name="Generic.Files.InlineHTML.Found"/>
-		<exclude name="Generic.Files.LineLength.TooLong"/>
-		<exclude name="Generic.Files.LowercasedFilename.NotFound"/>
-		<exclude name="Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine"/>
-		<exclude name="Generic.NamingConventions.CamelCapsFunctionName.NotCamelCaps"/>
-		<exclude name="Generic.PHP.ClosingPHPTag.NotFound"/>
-		<exclude name="Generic.PHP.UpperCaseConstant.Found"/>
-		<exclude name="Generic.WhiteSpace.DisallowTabIndent.TabsUsed"/>
-		<exclude name="Generic.WhiteSpace.DisallowTabIndent.NonIndentTabsUsed"/>
-	</rule>
-
-	<!-- Exclude PEAR rules. -->
-	<rule ref="PEAR">
-		<exclude name="PEAR.Classes.ClassDeclaration.OpenBraceNewLine"/>
-		<exclude name="PEAR.Commenting.ClassComment.MissingAuthorTag"/>
-		<exclude name="PEAR.Commenting.ClassComment.MissingCategoryTag"/>
-		<exclude name="PEAR.Commenting.ClassComment.MissingLicenseTag"/>
-		<exclude name="PEAR.Commenting.ClassComment.MissingLinkTag"/>
-		<exclude name="PEAR.Commenting.ClassComment.MissingPackageTag"/>
-		<exclude name="PEAR.Commenting.FileComment.MissingCategoryTag"/>
-		<exclude name="PEAR.Commenting.FileComment.MissingVersion"/>
-		<exclude name="PEAR.Commenting.FunctionComment.MissingParamComment"/>
-		<exclude name="PEAR.Commenting.FunctionComment.SpacingAfterParamName"/>
-		<exclude name="PEAR.Commenting.FunctionComment.SpacingAfterParamType"/>
-		<exclude name="PEAR.Commenting.InlineComment.WrongStyle"/>
-		<exclude name="PEAR.ControlStructures.MultiLineCondition.SpacingAfterOpenBrace"/>
-		<exclude name="PEAR.Files.IncludingFile.BracketsNotRequired"/>
-		<exclude name="PEAR.Functions.FunctionCallSignature.CloseBracketLine"/>
-		<exclude name="PEAR.Functions.FunctionCallSignature.Indent"/>
-		<exclude name="PEAR.Functions.FunctionCallSignature.MultipleArguments"/>
-		<exclude name="PEAR.Functions.FunctionCallSignature.ContentAfterOpenBracket"/>
-		<exclude name="PEAR.Functions.FunctionCallSignature.SpaceBeforeCloseBracket"/>
-		<exclude name="PEAR.Functions.FunctionDeclaration.BraceOnSameLine"/>
-		<exclude name="PEAR.Functions.FunctionDeclaration.SpaceAfterFunction"/>
-		<exclude name="PEAR.NamingConventions.ValidFunctionName.FunctionNameInvalid"/>
-		<exclude name="PEAR.NamingConventions.ValidFunctionName.FunctionNoCapital"/>
-		<exclude name="PEAR.WhiteSpace.ScopeClosingBrace.Line"/>
-	</rule>
-
-	<!-- Exclude Squiz rules. -->
-	<rule ref="Squiz">
-		<exclude name="Squiz.Arrays.ArrayBracketSpacing.SpaceAfterBracket"/>
-		<exclude name="Squiz.Arrays.ArrayBracketSpacing.SpaceBeforeBracket"/>
-		<exclude name="Squiz.Arrays.ArrayDeclaration.NoComma"/>
-		<exclude name="Squiz.Arrays.ArrayDeclaration.NoCommaAfterLast"/>
-		<exclude name="Squiz.Classes.ClassDeclaration.OpenBraceNewLine"/>
-		<exclude name="Squiz.Commenting.FileComment.Missing"/>
-		<exclude name="Squiz.Commenting.InlineComment.WrongStyle"/>
-		<exclude name="Squiz.Commenting.FunctionComment.SpacingAfterParamType"/>
-		<exclude name="Squiz.Commenting.PostStatementComment.Found"/>
-		<exclude name="Squiz.ControlStructures.ElseIfDeclaration.NotAllowed"/>
-		<exclude name="Squiz.ControlStructures.InlineIfDeclaration.NoBrackets"/>
-		<exclude name="Squiz.Files.FileExtension.ClassFound"/>
-		<exclude name="Squiz.Formatting.OperatorBracket.MissingBrackets"/>
-		<exclude name="Squiz.Functions.GlobalFunction.Found"/>
-		<exclude name="Squiz.Functions.MultiLineFunctionDeclaration.BraceOnSameLine"/>
-		<exclude name="Squiz.Functions.MultiLineFunctionDeclaration.SpaceAfterFunction"/>
-		<exclude name="Squiz.NamingConventions.ValidFunctionName.NotCamelCaps"/>
-		<exclude name="Squiz.NamingConventions.ValidVariableName.NotCamelCaps"/>
-		<exclude name="Squiz.Operators.ComparisonOperatorUsage.ImplicitTrue"/>
-		<exclude name="Squiz.Operators.ComparisonOperatorUsage.NotAllowed"/>
-		<exclude name="Squiz.PHP.DisallowInlineIf.Found"/>
-		<exclude name="Squiz.PHP.EmbeddedPhp.NoSemicolon"/>
-		<exclude name="Squiz.WhiteSpace.ControlStructureSpacing.SpacingAfterOpen"/>
-		<exclude name="Squiz.WhiteSpace.ControlStructureSpacing.SpacingAfterOpenBrace"/>
-		<exclude name="Squiz.WhiteSpace.ControlStructureSpacing.SpacingBeforeClose"/>
-		<exclude name="Squiz.WhiteSpace.ControlStructureSpacing.SpaceBeforeCloseBrace"/>
-		<exclude name="Squiz.WhiteSpace.FunctionClosingBraceSpace.SpacingBeforeClose"/>
-		<exclude name="Squiz.WhiteSpace.FunctionClosingBraceSpace.SpacingBeforeNestedClose"/>
-		<exclude name="Squiz.WhiteSpace.FunctionOpeningBraceSpace.SpacingAfter"/>
-		<exclude name="Squiz.WhiteSpace.FunctionSpacing.After"/>
-		<exclude name="Squiz.WhiteSpace.FunctionSpacing.AfterLast"/>
-		<exclude name="Squiz.WhiteSpace.FunctionSpacing.Before"/>
-		<exclude name="Squiz.WhiteSpace.FunctionSpacing.BeforeFirst"/>
-		<exclude name="Squiz.WhiteSpace.ScopeClosingBrace.ContentBefore"/>
 	</rule>
 
 </ruleset>
