@@ -28,6 +28,7 @@ let files = [
 	'index.php',
 	'license.md',
 	'readme.md',
+//	'readme.txt',        // Required for WordPress.org theme review.
 	'screenshot.png'
 ];
 
