@@ -24,7 +24,7 @@ namespace Mythic;
 # a different directory. This also autoloads our theme's classes.
 
 if ( file_exists( get_parent_theme_file_path( 'vendor/autoload.php' ) ) ) {
-	require_once( get_parent_theme_file_path( 'vendor/autoload.php' ) );
+	require_once( get_parent_theme_file_path( 'vendor/autoload.php' ) ); // phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
 }
 
 # ------------------------------------------------------------------------------
@@ -35,7 +35,7 @@ if ( file_exists( get_parent_theme_file_path( 'vendor/autoload.php' ) ) ) {
 # files to the array without the `.php` extension.
 
 array_map( function( $file ) {
-	require_once( get_parent_theme_file_path( "app/{$file}.php" ) );
+	require_once( get_parent_theme_file_path( "app/{$file}.php" ) ); // phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
 }, [
 	'functions-assets',
 	'functions-setup',

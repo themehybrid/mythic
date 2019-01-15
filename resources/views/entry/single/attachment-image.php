@@ -30,7 +30,7 @@
 
 		<div class="media-gallery">
 			<h3 class="media-gallery__title"><?php esc_html_e( 'Gallery' ) ?></h3>
-			<?php echo $gallery ?>
+			<?php echo $gallery // phpcs:ignore WordPress.Security.EscapeOutput ?>
 		</div>
 
 	<?php endif ?>
