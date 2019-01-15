@@ -39,15 +39,15 @@
 		"eslint-config-wordpress": "^2.0.0",
 		"imagemin-mozjpeg": "^6.0.0",
 		"imagemin-webpack-plugin": "^2.4.0",
-		"laravel-mix": "^4.0.13",
+		"laravel-mix": "^4.0.14",
 		"node-wp-i18n": "^1.2.2",
 		"postcss-preset-env": "^6.5.0",
 		"rimraf": "^2.6.3",
-		"sass": "^1.15.3",
+		"sass": "^1.16.0",
 		"sass-loader": "^7.1.0",
 		"stylelint": "^9.9.0",
 		"stylelint-config-wordpress": "^13.1.0",
 		"theme-claim": "^0.1.2",
-		"vue-template-compiler": "^2.5.21"
+		"vue-template-compiler": "^2.5.22"
 	}
 }
