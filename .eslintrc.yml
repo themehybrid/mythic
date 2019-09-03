@@ -1,0 +1,11 @@
+---
+  extends:
+    - "plugin:@wordpress/eslint-plugin/recommended"
+  parserOptions:
+    sourceType: module
+  env:
+    browser: true
+    es6: true
+  rules:
+    space-in-parens: 0
+    wrap-iife: 0
