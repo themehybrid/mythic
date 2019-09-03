@@ -6,6 +6,7 @@
   env:
     browser: true
     es6: true
+    jquery: true
   rules:
     space-in-parens: 0
     wrap-iife: 0
