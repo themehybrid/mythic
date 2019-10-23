@@ -10,20 +10,20 @@
 /// @link   https://themehybrid.com/themes/mythic
 ////
 
-@import 'app';
-@import 'app-header';
-@import 'app-content';
-@import 'app-main';
-@import 'app-footer';
-@import 'archive-header';
-@import 'comments';
-@import 'comment';
-@import 'comment-respond';
-@import 'custom-header';
-@import 'entry';
-@import 'gallery';
-@import 'media-meta';
-@import 'nav-menu';
-@import 'nav-pagination';
-@import 'sidebar';
-@import 'widget';
+@use 'app';
+@use 'app-header';
+@use 'app-content';
+@use 'app-main';
+@use 'app-footer';
+@use 'archive-header';
+@use 'comments';
+@use 'comment';
+@use 'comment-respond';
+@use 'custom-header';
+@use 'entry';
+@use 'gallery';
+@use 'media-meta';
+@use 'nav-menu';
+@use 'nav-pagination';
+@use 'sidebar';
+@use 'widget';

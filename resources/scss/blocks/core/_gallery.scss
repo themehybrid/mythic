@@ -6,6 +6,9 @@
 /// @link   https://themehybrid.com/themes/mythic
 ////
 
+@use "../../settings/breaks";
+@use "../../settings/colors";
+
 // The wrapper element for the entire gallery.
 .wp-block-gallery {
 	display:         flex;
@@ -58,11 +61,11 @@
 		max-height: 100%;
 		padding:    40px 10px 5px;
 		text-align: center;
-		color:      color( white );
+		color:      colors.color( white );
 		background: linear-gradient(
 			0deg,
-			rgba( color( black ), 0.7 ) 0,
-			rgba( color( black ), 0.3 ) 60%,
+			rgba( colors.color( black ), 0.7 ) 0,
+			rgba( colors.color( black ), 0.3 ) 60%,
 			transparent
 		);
 
@@ -99,7 +102,7 @@
 }
 
 // 3-8 columns on larger screens.
-@media ( min-width: break( small ) ) {
+@media ( min-width: breaks.break( small ) ) {
 
 	@for $i from 3 through 8 {
 

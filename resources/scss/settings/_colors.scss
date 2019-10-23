@@ -6,6 +6,8 @@
 /// @link   https://themehybrid.com/themes/mythic
 ////
 
+@use "sass:map";
+
 /// Returns a map of colors in name-value format. This function also merges
 /// with the `block-colors()` map to create a map of all colors.
 ///
@@ -20,7 +22,7 @@
 		black : #000
 	);
 
-	@return map-merge( $colors, block-colors() );
+	@return map.merge( $colors, block-colors() );
 }
 
 /// Returns a map of block colors in name-value format. These are the colors
@@ -50,7 +52,7 @@
 
 @function color( $name ) {
 
-	@return map-get( colors(), $name );
+	@return map.get( colors(), $name );
 }
 
 /// Returns a single block color value by name.
@@ -62,5 +64,5 @@
 
 @function block-color( $name ) {
 
-	@return map-get( block-colors(), $name );
+	@return map.get( block-colors(), $name );
 }

@@ -11,22 +11,22 @@
 ////
 
 // Import core blocks.
-@import 'core/audio';
-@import 'core/button';
-@import 'core/categories';
-@import 'core/code';
-@import 'core/columns';
-@import 'core/cover';
-@import 'core/embed';
-@import 'core/file';
-@import 'core/gallery';
-@import 'core/image';
-@import 'core/latest-posts';
-@import 'core/media-text';
-@import 'core/preformatted';
-@import 'core/pullquote';
-@import 'core/quote';
-@import 'core/separator';
-@import 'core/subhead';
-@import 'core/table';
-@import 'core/verse';
+@use 'core/audio';
+@use 'core/button';
+@use 'core/categories';
+@use 'core/code';
+@use 'core/columns';
+@use 'core/cover';
+@use 'core/embed';
+@use 'core/file';
+@use 'core/gallery';
+@use 'core/image';
+@use 'core/latest-posts';
+@use 'core/media-text';
+@use 'core/preformatted';
+@use 'core/pullquote';
+@use 'core/quote';
+@use 'core/separator';
+@use 'core/subhead';
+@use 'core/table';
+@use 'core/verse';

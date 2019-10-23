@@ -6,11 +6,14 @@
 /// @link   https://themehybrid.com/themes/mythic
 ////
 
+@use "../settings/colors";
+@use "../settings/fonts";
+
 /// Loops through the theme colors and adds utility classes for them. Primarily,
 /// these are the `.has-{$color}-color` and `.has-{$color}-background-color`
 /// classes added via Gutenberg. However, they are useful elsewhere.
 
-@each $color-name, $color-value in block-colors() {
+@each $color-name, $color-value in colors.block-colors() {
 
 	.has-#{ $color-name }-color {
 		color : #{ $color-value };
@@ -25,7 +28,7 @@
 /// handles the `.has-{$size}-font-size` classes added via Gutenberg, which may
 /// be useful elsewhere.
 
-@each $font-size-name, $font-size-value in editor-font-sizes() {
+@each $font-size-name, $font-size-value in fonts.editor-font-sizes() {
 
 	.has-#{ $font-size-name }-font-size {
 		font-size: #{ $font-size-value };

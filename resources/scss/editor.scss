@@ -11,8 +11,7 @@
 ////
 
 // Import settings and tools.
-@import 'settings/_index';
-@import 'tools/_index';
+@use "sass:meta";
 
 // Prefixes all of the styles with `.editor-styles-wrapper` for use within the
 // block editor.
@@ -22,7 +21,7 @@
 	// to import everything, such as styles that don't have an effect on
 	// block output.
 
-	@import 'elements/_index';
-	@import 'blocks/_index';
-	@import 'utilities/_index';
+	@include meta.load-css('elements/_index');
+	@include meta.load-css('blocks/_index');
+	@include meta.load-css('utilities/_index');
 }

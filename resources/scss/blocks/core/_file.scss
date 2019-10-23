@@ -6,6 +6,8 @@
 /// @link   https://themehybrid.com/themes/mythic
 ////
 
+@use "../../settings/colors";
+
 .wp-block-file {
 	margin-bottom: 1.5em;
 
@@ -18,8 +20,8 @@
 	}
 
 	&__button {
-		background:      color( black );
-		color:           color( white );
+		background:      colors.color( black );
+		color:           colors.color( white );
 		padding:         0.5em 1em;
 		text-decoration: none;
 
@@ -27,7 +29,7 @@
 		&:visited,
 		&:focus,
 		&:active {
-			color:           color( white );
+			color:           colors.color( white );
 			opacity:         0.85;
 			text-decoration: none;
 		}

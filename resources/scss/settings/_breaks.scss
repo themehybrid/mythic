@@ -6,6 +6,8 @@
 /// @link   https://themehybrid.com/themes/mythic
 ////
 
+@use "sass:map";
+
 /// Returns an map of page breaks in name-value format.
 ///
 /// @since  1.0.0
@@ -30,5 +32,5 @@
 
 @function break( $name ) {
 
-	@return map-get( breaks(), $name );
+	@return map.get( breaks(), $name );
 }
