@@ -19,11 +19,9 @@
 // Imports all of the files needed for front-end output. Note that the order is
 // very specific and should typically not be changed.
 
-@import 'settings/_index';
-@import 'tools/_index';
-@import 'generic/_index';
-@import 'elements/_index';
-@import 'components/_index';
-@import 'blocks/_index';
-@import 'vendor/_index';
-@import 'utilities/_index';
+@use 'generic/_index' as generic;
+@use 'elements/_index' as elements;
+@use 'components/_index' as components;
+@use 'blocks/_index' as blocks;
+@use 'vendor/_index' as vendor;
+@use 'utilities/_index' as utilities;

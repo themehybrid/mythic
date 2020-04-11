@@ -6,6 +6,8 @@
 /// @link   https://themehybrid.com/themes/mythic
 ////
 
+@use "../../settings/breaks";
+
 .wp-block-latest-posts {
 
 	&.is-grid {
@@ -20,7 +22,7 @@
 		}
 	}
 
-	@media ( min-width: break( small ) ) {
+	@media ( min-width: breaks.break( small ) ) {
 
 		@for $i from 2 through 6 {
 

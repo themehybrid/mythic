@@ -6,6 +6,9 @@
 /// @link   https://themehybrid.com/themes/mythic
 ////
 
+@use "../../settings/colors";
+@use "../../settings/dimensions";
+
 // The cover media `<div>` element. The media is added as a background.
 .wp-block-cover {
 	position:            relative;
@@ -39,7 +42,7 @@
 	@for $dim from 1 through 10 {
 
 		&.has-background-dim-#{ $dim * 10 }::before {
-			background-color: rgba( color( black ), $dim * 0.1 );
+			background-color: rgba( colors.color( black ), $dim * 0.1 );
 		}
 	}
 
@@ -66,12 +69,12 @@
 
 // Paragraph of text shown within the cover image element.
 .wp-block-cover-text {
-	color:         color( white );
+	color:         colors.color( white );
 	font-size:     2em;
 	line-height:   1.25;
 	z-index:       1;
 	margin-bottom: 0;
-	max-width:     content-width();
+	max-width:     dimensions.content-width();
 	padding:       14px;
 	text-align:    center;
 
@@ -79,7 +82,7 @@
 	a:hover,
 	a:focus,
 	a:active {
-		color: color( white );
+		color: colors.color( white );
 	}
 }
 

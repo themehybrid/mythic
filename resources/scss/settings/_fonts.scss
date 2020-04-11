@@ -6,6 +6,8 @@
 /// @link   https://themehybrid.com/themes/mythic
 ////
 
+@use "sass:map";
+
 /// Returns a map of font families in name-value format.
 ///
 /// @since  1.0.0
@@ -30,7 +32,7 @@
 
 @function font-family( $name ) {
 
-	@return map-get( font-families(), $name );
+	@return map.get( font-families(), $name );
 }
 
 /// Returns a map of editor font sizes in name-value format. These are the sizes
@@ -60,5 +62,5 @@
 
 @function editor-font-size( $name ) {
 
-	@return map-get( editor-font-sizes(), $name );
+	@return map.get( editor-font-sizes(), $name );
 }

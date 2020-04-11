@@ -12,9 +12,9 @@
 // Uncomment any of the below to import styles for specific controls if using
 // the `hybrid-customize` add-on.
 
-// @import '~hybrid-customize/scss/controls/palette';
-// @import '~hybrid-customize/scss/controls/radio-image';
+// @use '~hybrid-customize/scss/controls/palette';
+// @use '~hybrid-customize/scss/controls/radio-image';
 
 // Import `customize-controls` partials.
 
-@import 'customize-controls/_index';
+@use 'customize-controls/_index';

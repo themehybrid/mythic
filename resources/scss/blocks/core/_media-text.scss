@@ -6,6 +6,8 @@
 /// @link   https://themehybrid.com/themes/mythic
 ////
 
+@use "../../settings/breaks";
+
 .wp-block-media-text {
 	display:               grid;
 	grid-template-rows:    auto;
@@ -37,7 +39,7 @@
 	}
 }
 
-@media ( max-width: break( 'small' ) ) {
+@media ( max-width: breaks.break( 'small' ) ) {
 
 	.wp-block-media-text.is-stacked-on-mobile {
 		grid-template-columns: 100% !important; // Overwrite core's inline style.

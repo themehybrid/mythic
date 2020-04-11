@@ -1,4 +1,7 @@
 {
+	"plugins": [
+		"stylelint-scss"
+	],
 	"extends": "stylelint-config-wordpress/scss",
 	"rules": {
 		"string-quotes": null,
