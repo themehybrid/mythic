@@ -3,3 +3,5 @@
 /composer.lock
 /phpcs.xml
 /.phpcs.xml
+/.idea
+/mythic
