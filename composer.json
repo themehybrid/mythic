@@ -1,29 +1,66 @@
 {
-	"name"        : "justintadlock/mythic",
-	"type"        : "wordpress-theme",
-	"description" : "Mythic is a next-generation starter theme designed to help theme authors write elegant, intelligent, and modern code.",
-	"keywords"    : ["wordpress"],
-	"homepage"    : "https://themehybrid.com/themes/mythic",
-	"license"     : "GPL-2.0-or-later",
-	"authors"     : [
+	"name": "justintadlock/mythic",
+	"description": "Mythic is a next-generation starter theme designed to help theme authors write elegant, intelligent, and modern code.",
+	"license": "GPL-2.0-or-later",
+	"type": "wordpress-theme",
+	"keywords": [
+		"wordpress"
+	],
+	"authors": [
 		{
-			"name"    : "Justin Tadlock",
-			"email"   : "justintadlock@gmail.com",
+			"name": "Justin Tadlock",
+			"email": "justintadlock@gmail.com",
 			"homepage": "https://themehybrid.com"
 		}
 	],
-	"autoload"    : {
-		"psr-4" : {
-			"Mythic\\" : "app/"
-		}
-	},
+	"homepage": "https://themehybrid.com/themes/mythic",
 	"require": {
-		"php" : ">=5.6",
-		"composer/installers" : "~1.0",
-		"justintadlock/hybrid-core" : "^5.0.0"
+		"php": ">=5.6",
+		"themehybrid/hybrid-attr": "^1.0",
+		"themehybrid/hybrid-core": "^6.0",
+		"themehybrid/hybrid-lang": "^1.0",
+		"themehybrid/hybrid-media-meta": "^1.0",
+		"themehybrid/hybrid-pagination": "^1.0",
+		"themehybrid/hybrid-template": "^1.0",
+		"themehybrid/hybrid-template-hierarchy": "^1.0",
+		"themehybrid/hybrid-template-manager": "^1.0",
+		"themehybrid/hybrid-theme": "^1.0",
+		"themehybrid/hybrid-tools": "^1.0",
+		"themehybrid/hybrid-view": "^1.0"
 	},
 	"require-dev": {
-		"wptrt/wpthemereview": "*",
-		"dealerdirect/phpcodesniffer-composer-installer": "0.4.4"
+		"humanmade/psalm-plugin-wordpress": "^2.1",
+		"php-parallel-lint/php-parallel-lint": "^1.3",
+		"sirbrillig/phpcs-variable-analysis": "^2.11",
+		"slevomat/coding-standard": "^8.12",
+		"szepeviktor/phpstan-wordpress": "^1.3",
+		"tideways/ext-tideways-stubs": "^5.5",
+		"vimeo/psalm": "^4.0",
+		"wptrt/wpthemereview": "^0.2.1"
+	},
+	"autoload": {
+		"psr-4": {
+			"Mythic\\": "app/"
+		}
+	},
+	"config": {
+		"allow-plugins": {
+			"composer/installers": true,
+			"composer/package-versions-deprecated": true,
+			"dealerdirect/phpcodesniffer-composer-installer": true
+		}
+	},
+	"scripts": {
+		"analyze": [
+			"@phpstan:analyze",
+			"@psalm:analyze",
+			"@phpcs:analyze"
+		],
+		"lint": "@php ./vendor/bin/parallel-lint --exclude .git --exclude vendor ./app",
+		"phpcs:analyze": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcs",
+		"phpcs:fix": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcbf",
+		"phpstan:analyze": "@php ./vendor/bin/phpstan analyze",
+		"psalm:analyze": "@php ./vendor/bin/psalm",
+		"post-install-cmd": "@php ./vendor/bin/phpcs --config-set default_standard Mythic"
 	}
 }
