@@ -39,5 +39,6 @@ array_map( function( $file ) {
 }, [
 	'functions-assets',
 	'functions-setup',
-	'functions-template'
+	'functions-template',
+	'functions-media'
 ] );

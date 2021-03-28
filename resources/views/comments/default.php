@@ -14,7 +14,7 @@
 
 			<?php wp_list_comments( [
 				'callback' => function( $comment, $args, $depth ) {
-					Hybrid\View\display( 'comment', Hybrid\Comment\hierarchy(), compact( 'comment', 'args', 'depth' ) );
+					Hybrid\View\display( 'comment', Hybrid\Theme\Comment\hierarchy(), compact( 'comment', 'args', 'depth' ) );
 				}
 			] ) ?>
 
