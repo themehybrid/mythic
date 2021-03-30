@@ -20,7 +20,7 @@
 # this instance via the `\Hybrid\app()` function or `\Hybrid\App` static class
 # after the application has booted.
 
-$mythic = new \Hybrid\Core\Application();
+$mythic = \Hybrid\booted() ? \Hybrid\app() : new \Hybrid\Core\Application();
 
 # ------------------------------------------------------------------------------
 # Register service providers with the application.
@@ -30,6 +30,14 @@ $mythic = new \Hybrid\Core\Application();
 # for running the theme. Service providers are essentially the backbone of the
 # bootstrapping process.
 
+$mythic->provider( \Hybrid\Attr\Provider::class );
+$mythic->provider( \Hybrid\Lang\Provider::class );
+$mythic->provider( \Hybrid\Media\Meta\Provider::class );
+$mythic->provider( \Hybrid\Pagination\Provider::class );
+$mythic->provider( \Hybrid\Template\Hierarchy\Provider::class );
+$mythic->provider( \Hybrid\Template\Manager\Provider::class );
+$mythic->provider( \Hybrid\Theme\Provider::class );
+$mythic->provider( \Hybrid\View\Provider::class );
 $mythic->provider( \Mythic\Providers\AppServiceProvider::class );
 
 # ------------------------------------------------------------------------------
