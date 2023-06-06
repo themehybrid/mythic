@@ -19,8 +19,8 @@
 		"lint:styles:fix": "cross-env stylelint './resources/scss/**/*.scss' --syntax scss --fix",
 		"lint:scripts": "cross-env eslint './resources/js/**/*.js'",
 		"i18n": "npm run i18n:textdomain && npm run i18n:pot",
-		"i18n:textdomain": "npx wpi18n addtextdomain --exclude=vendor,node_modules",
-		"i18n:pot": "npx wpi18n makepot",
+		"i18n:textdomain": "npx wpi18n addtextdomain --exclude=vendor,node_modules,mythic",
+		"i18n:pot": "npx wpi18n makepot --exclude=vendor,node_modules,mythic",
 		"rename": "theme-claim"
 	},
 	"repository": {
