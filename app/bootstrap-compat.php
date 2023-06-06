@@ -39,12 +39,12 @@ function mythic_compat_message() {
 			$GLOBALS['wp_version']
 		);
 
-	} elseif ( version_compare( PHP_VERSION, '5.6', '<' ) ) {
+	} elseif ( version_compare( PHP_VERSION, '7.4', '<' ) ) {
 
 		return sprintf(
 			// Translators: 1 is the required PHP version and 2 is the user's current version.
 			__( 'Mythic requires at least PHP version %1$s. You are running version %2$s. Please upgrade and try again.' ),
-			'5.6',
+			'7.4',
 			PHP_VERSION
 		);
 	}

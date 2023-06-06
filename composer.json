@@ -15,7 +15,7 @@
 	],
 	"homepage": "https://themehybrid.com/themes/mythic",
 	"require": {
-		"php": ">=5.6",
+		"php": ">=7.4",
 		"themehybrid/hybrid-attr": "^1.0",
 		"themehybrid/hybrid-core": "^6.0",
 		"themehybrid/hybrid-lang": "^1.0",
