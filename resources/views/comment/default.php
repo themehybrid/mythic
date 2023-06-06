@@ -7,7 +7,7 @@
 		<?php Hybrid\Theme\Comment\display_permalink( [
 			'text' => sprintf(
 				// Translators: 1 is the comment date and 2 is the time.
-				esc_html__( '%1$s at %2$s' ),
+				esc_html__( '%1$s at %2$s', 'mythic' ),
 				Hybrid\Theme\Comment\render_date(),
 				Hybrid\Theme\Comment\render_time()
 			)
@@ -21,7 +21,7 @@
 		<?php if ( ! Hybrid\Theme\Comment\is_approved() ) : ?>
 
 			<p class="comment__moderation">
-				<?php esc_html_e( 'Your comment is awaiting moderation.' ) ?>
+				<?php esc_html_e( 'Your comment is awaiting moderation.', 'mythic' ) ?>
 			</p>
 
 		<?php endif ?>

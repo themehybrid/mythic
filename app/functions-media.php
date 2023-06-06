@@ -67,7 +67,7 @@ function render_image_sizes( array $args = [] ) {
 
             $label = sprintf(
             // Translators: Media dimensions - 1 is width and 2 is height.
-                esc_html__( '%1$s &#215; %2$s', 'hybrid-core' ),
+                esc_html__( '%1$s &#215; %2$s', 'mythic' ),
                 number_format_i18n( absint( $image[1] ) ),
                 number_format_i18n( absint( $image[2] ) )
             );
