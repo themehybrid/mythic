@@ -15,8 +15,10 @@
 
 namespace Mythic\Providers;
 
-use Hybrid\Tools\ServiceProvider;
+use Hybrid\Core\ServiceProvider;
 use Mythic\Customize\Customize;
+use Hybrid\View\Contracts\Engine as EngineContract;
+use Hybrid\View\Contracts\View as ViewContract;
 
 /**
  * App service provider.
@@ -35,6 +37,10 @@ class AppServiceProvider extends ServiceProvider {
 	 * @return void
 	 */
 	public function register() {
+
+        // Create aliases for the view and engine.
+        $this->app->alias( ViewContract::class, 'view' );
+        $this->app->alias( EngineContract::class, 'view/engine' );
 
 		// Bind a single instance of our customizer class.
 		$this->app->singleton( Customize::class );

@@ -32,3 +32,14 @@ function sep( $sep = '' ) {
 		)
 	);
 }
+
+/**
+ * Returns the relative path to where templates are held in the theme.
+ *
+ * @since  2.0.0
+ * @access public
+ * @return array
+ */
+add_filter( 'hybrid/template/path', function() {
+    return 'resources/views';
+} );
