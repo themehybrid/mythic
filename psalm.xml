@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<psalm xmlns="https://getpsalm.org/schema/config">
+
+    <plugins>
+        <pluginClass class="PsalmWordPress\Plugin" />
+    </plugins>
+
+    <projectFiles>
+        <directory name="app"/>
+        <directory name="resources/views"/>
+        <ignoreFiles>
+            <directory name="vendor"/>
+            <directory name="node_modules"/>
+            <directory name="dist"/>
+        </ignoreFiles>
+    </projectFiles>
+
+    <issueHandlers>
+
+        <UndefinedFunction errorLevel="suppress"/>
+        <UndefinedClass errorLevel="suppress"/>
+        <UndefinedDocblockClass errorLevel="suppress"/>
+        <UndefinedConstant errorLevel="suppress"/>
+        <UndefinedGlobalVariable errorLevel="suppress"/>
+        <InvalidGlobal errorLevel="suppress"/>
+        <InvalidClone errorLevel="suppress"/>
+        <MissingDependency errorLevel="suppress"/>
+        <InvalidCatch errorLevel="suppress"/>
+
+    </issueHandlers>
+</psalm>

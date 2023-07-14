@@ -12,7 +12,7 @@
  *
  * @package   Mythic
  * @author    Justin Tadlock <justintadlock@gmail.com>
- * @copyright 2018 Justin Tadlock
+ * @copyright 2023 Justin Tadlock
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://themehybrid.com/themes/mythic
  */
@@ -77,22 +77,22 @@ add_action( 'after_setup_theme', function() {
 	// `resources/scss/settings/_colors.scss` file.
 	add_theme_support( 'editor-color-palette', [
 		[
-			'name'  => __( 'Charcoal' ),
+			'name'  => __( 'Charcoal', 'mythic' ),
 			'slug'  => 'charcoal',
 			'color' => '#282c34'
 		],
 		[
-			'name'  => __( 'Regent' ),
+			'name'  => __( 'Regent', 'mythic' ),
 			'slug'  => 'regent',
 			'color' => '#8c97a7',
 		],
 		[
-			'name'  => __( 'Husk' ),
+			'name'  => __( 'Husk', 'mythic' ),
 			'slug'  => 'husk',
 			'color' => '#B9A364',
 		],
 		[
-			'name'  => __( 'Red Stage' ),
+			'name'  => __( 'Red Stage', 'mythic' ),
 			'slug'  => 'red-stage',
 			'color' => '#b15330',
 		]
@@ -102,26 +102,26 @@ add_action( 'after_setup_theme', function() {
 	// `resources/scss/settings/_fonts.scss` file.
 	add_theme_support( 'editor-font-sizes', [
 		[
-			'name'      => __( 'Small' ),
-			'shortName' => __( 'S' ),
+			'name'      => __( 'Small', 'mythic' ),
+			'shortName' => __( 'S', 'mythic' ),
 			'size'      => 12,
 			'slug'      => 'small'
 		],
 		[
-			'name'      => __( 'Regular' ),
-			'shortName' => __( 'M' ),
+			'name'      => __( 'Regular', 'mythic' ),
+			'shortName' => __( 'M', 'mythic' ),
 			'size'      => 16,
 			'slug'      => 'regular'
 		],
 		[
-			'name'      => __( 'Large' ),
-			'shortName' => __( 'L' ),
+			'name'      => __( 'Large', 'mythic' ),
+			'shortName' => __( 'L', 'mythic' ),
 			'size'      => 36,
 			'slug'      => 'large'
 		],
 		[
-			'name'      => __( 'Larger' ),
-			'shortName' => __( 'XL' ),
+			'name'      => __( 'Larger', 'mythic' ),
+			'shortName' => __( 'XL', 'mythic' ),
 			'size'      => 48,
 			'slug'      => 'larger'
 		]
@@ -201,7 +201,7 @@ add_action( 'after_setup_theme', function() {
 add_action( 'init', function() {
 
 	register_nav_menus( [
-		'primary' => esc_html_x( 'Primary', 'nav menu location' )
+		'primary' => esc_html_x( 'Primary', 'nav menu location', 'mythic' )
 	] );
 
 }, 5 );
@@ -248,7 +248,7 @@ add_action( 'widgets_init', function() {
 
 	register_sidebar( [
 		'id'   => 'primary',
-		'name' => esc_html_x( 'Primary', 'sidebar' )
+		'name' => esc_html_x( 'Primary', 'sidebar', 'mythic' )
 	] + $args );
 
 }, 5 );

@@ -10,7 +10,7 @@
  *
  * @package   Mythic
  * @author    Justin Tadlock <justintadlock@gmail.com>
- * @copyright 2018 Justin Tadlock
+ * @copyright 2023 Justin Tadlock
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://themehybrid.com/themes/mythic
  */
@@ -34,17 +34,17 @@ function mythic_compat_message() {
 
 		return sprintf(
 			// Translators: 1 is the required WordPress version and 2 is the user's current version.
-			__( 'Mythic requires at least WordPress version %1$s. You are running version %2$s. Please upgrade and try again.' ),
+			__( 'Mythic requires at least WordPress version %1$s. You are running version %2$s. Please upgrade and try again.', 'mythic' ),
 			'4.9.6',
 			$GLOBALS['wp_version']
 		);
 
-	} elseif ( version_compare( PHP_VERSION, '5.6', '<' ) ) {
+	} elseif ( version_compare( PHP_VERSION, '7.4', '<' ) ) {
 
 		return sprintf(
 			// Translators: 1 is the required PHP version and 2 is the user's current version.
-			__( 'Mythic requires at least PHP version %1$s. You are running version %2$s. Please upgrade and try again.' ),
-			'5.6',
+			__( 'Mythic requires at least PHP version %1$s. You are running version %2$s. Please upgrade and try again.', 'mythic' ),
+			'7.4',
 			PHP_VERSION
 		);
 	}

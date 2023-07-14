@@ -1,0 +1,272 @@
+# <!=Copyright (C) 2023 Justin Tadlock
+# This file is distributed under the GNU General Public License v2.0 or later.=!>
+msgid ""
+msgstr ""
+"Project-Id-Version: Mythic 2.0.0.alpha.1\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/mythic\n"
+"POT-Creation-Date: 2023-06-06 15:04:49+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2023-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"X-Generator: node-wp-i18n 1.2.2\n"
+
+#: app/bootstrap-compat.php:37
+#. Translators: 1 is the required WordPress version and 2 is the user's current
+#. version.
+msgid ""
+"Mythic requires at least WordPress version %1$s. You are running version "
+"%2$s. Please upgrade and try again."
+msgstr ""
+
+#: app/bootstrap-compat.php:46
+#. Translators: 1 is the required PHP version and 2 is the user's current
+#. version.
+msgid ""
+"Mythic requires at least PHP version %1$s. You are running version %2$s. "
+"Please upgrade and try again."
+msgstr ""
+
+#: app/functions-media.php:70
+#. Translators: Media dimensions - 1 is width and 2 is height.
+msgid "%1$s &#215; %2$s"
+msgstr ""
+
+#: app/functions-setup.php:80
+msgid "Charcoal"
+msgstr ""
+
+#: app/functions-setup.php:85
+msgid "Regent"
+msgstr ""
+
+#: app/functions-setup.php:90
+msgid "Husk"
+msgstr ""
+
+#: app/functions-setup.php:95
+msgid "Red Stage"
+msgstr ""
+
+#: app/functions-setup.php:105
+msgid "Small"
+msgstr ""
+
+#: app/functions-setup.php:106
+msgid "S"
+msgstr ""
+
+#: app/functions-setup.php:111
+msgid "Regular"
+msgstr ""
+
+#: app/functions-setup.php:112
+msgid "M"
+msgstr ""
+
+#: app/functions-setup.php:117
+msgid "Large"
+msgstr ""
+
+#: app/functions-setup.php:118
+msgid "L"
+msgstr ""
+
+#: app/functions-setup.php:123
+msgid "Larger"
+msgstr ""
+
+#: app/functions-setup.php:124
+msgid "XL"
+msgstr ""
+
+#: resources/views/comment/default.php:10 resources/views/comment/ping.php:8
+#. Translators: 1 is the comment date and 2 is the time.
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: resources/views/comment/default.php:24
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: resources/views/comments/default.php:28
+msgid "Comments are closed."
+msgstr ""
+
+#: resources/views/content/404.php:7
+msgid "Whoah, partner!"
+msgstr ""
+
+#: resources/views/content/404.php:10
+msgid ""
+"It looks like you stumbled upon a page that does not exist. Perhaps rolling "
+"the dice with a search might help."
+msgstr ""
+
+#: resources/views/entry/single/attachment-audio.php:16
+msgid "Audio Info"
+msgstr ""
+
+#: resources/views/entry/single/attachment-audio.php:19
+#: resources/views/entry/single/attachment-video.php:19
+msgid "Run Time"
+msgstr ""
+
+#: resources/views/entry/single/attachment-audio.php:20
+msgid "Artist"
+msgstr ""
+
+#: resources/views/entry/single/attachment-audio.php:21
+msgid "Album"
+msgstr ""
+
+#: resources/views/entry/single/attachment-audio.php:22
+msgid "Track Number"
+msgstr ""
+
+#: resources/views/entry/single/attachment-audio.php:23
+msgid "Year"
+msgstr ""
+
+#: resources/views/entry/single/attachment-audio.php:24
+msgid "Genre"
+msgstr ""
+
+#: resources/views/entry/single/attachment-audio.php:25
+#: resources/views/entry/single/attachment-image.php:50
+#: resources/views/entry/single/attachment-video.php:21
+msgid "Name"
+msgstr ""
+
+#: resources/views/entry/single/attachment-audio.php:26
+#: resources/views/entry/single/attachment-image.php:51
+#: resources/views/entry/single/attachment-video.php:22
+msgid "Mime Type"
+msgstr ""
+
+#: resources/views/entry/single/attachment-audio.php:27
+#: resources/views/entry/single/attachment-image.php:52
+#: resources/views/entry/single/attachment-video.php:23
+msgid "Type"
+msgstr ""
+
+#: resources/views/entry/single/attachment-audio.php:28
+#: resources/views/entry/single/attachment-image.php:53
+#: resources/views/entry/single/attachment-video.php:24
+msgid "Size"
+msgstr ""
+
+#: resources/views/entry/single/attachment-image.php:9
+#. Translators: %s is a list of image size links.
+msgid "Sizes: %s"
+msgstr ""
+
+#: resources/views/entry/single/attachment-image.php:32
+msgid "Gallery"
+msgstr ""
+
+#: resources/views/entry/single/attachment-image.php:40
+msgid "Image Info"
+msgstr ""
+
+#: resources/views/entry/single/attachment-image.php:43
+#: resources/views/entry/single/attachment-video.php:20
+msgid "Dimensions"
+msgstr ""
+
+#: resources/views/entry/single/attachment-image.php:44
+msgid "Date"
+msgstr ""
+
+#: resources/views/entry/single/attachment-image.php:45
+msgid "Camera"
+msgstr ""
+
+#: resources/views/entry/single/attachment-image.php:46
+msgid "Aperture"
+msgstr ""
+
+#: resources/views/entry/single/attachment-image.php:47
+msgid "Focal Length"
+msgstr ""
+
+#: resources/views/entry/single/attachment-image.php:48
+msgid "ISO"
+msgstr ""
+
+#: resources/views/entry/single/attachment-image.php:49
+msgid "Shutter Speed"
+msgstr ""
+
+#: resources/views/entry/single/attachment-video.php:16
+msgid "Video Info"
+msgstr ""
+
+#: resources/views/footer/default.php:4
+msgid "Powered by crazy ideas and passion."
+msgstr ""
+
+#: resources/views/header/default.php:14
+msgid "Skip to content"
+msgstr ""
+
+#: resources/views/nav/pagination/comments.php:2
+#: resources/views/nav/pagination/posts.php:2
+msgid "&larr; Previous"
+msgstr ""
+
+#: resources/views/nav/pagination/comments.php:3
+#: resources/views/nav/pagination/posts.php:3
+msgid "Next &rarr;"
+msgstr ""
+
+#: resources/views/nav/pagination/comments.php:4
+msgid "Comments Navigation"
+msgstr ""
+
+#: resources/views/nav/pagination/post.php:4
+msgid "Pages:"
+msgstr ""
+
+#: resources/views/nav/pagination/posts.php:4
+msgid "Posts Navigation"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "Mythic"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "https://themehybrid.com/themes/mythic"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Mythic is a next-generation starter theme designed to help theme authors "
+"write elegant, intelligent, and modern code."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Justin Tadlock"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://themehybrid.com"
+msgstr ""
+
+#: app/functions-setup.php:204
+msgctxt "nav menu location"
+msgid "Primary"
+msgstr ""
+
+#: app/functions-setup.php:251
+msgctxt "sidebar"
+msgid "Primary"
+msgstr ""
+
+#: app/functions-template.php:31
+msgctxt "meta separator"
+msgid "&middot;"
+msgstr ""

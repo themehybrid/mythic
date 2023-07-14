@@ -8,7 +8,7 @@ The theme's primary goal is to offer a modern development experience for WordPre
 
 There's a few requirements in order to develop a new theme or contribute back to the project:
 
-* PHP 5.6+ (preferably 7+).
+* PHP 7.4+ (preferably 8+).
 * [Git](https://git-scm.com/) for version control.
 * [Composer](https://getcomposer.org/) for managing PHP dependencies.
 * [Node 8+](https://nodejs.org).
@@ -24,4 +24,4 @@ Check out the [project wiki](https://github.com/justintadlock/mythic/wiki) to le
 
 Mythic is licensed under the [GNU GPL](https://www.gnu.org/licenses/gpl-2.0.html), version 2 or later.
 
-2018 &copy; Justin Tadlock.
+2023 &copy; Justin Tadlock.

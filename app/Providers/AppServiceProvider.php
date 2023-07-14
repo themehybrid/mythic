@@ -8,15 +8,17 @@
  *
  * @package   Mythic
  * @author    Justin Tadlock <justintadlock@gmail.com>
- * @copyright 2018 Justin Tadlock
+ * @copyright 2023 Justin Tadlock
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://themehybrid.com/themes/mythic
  */
 
 namespace Mythic\Providers;
 
-use Hybrid\Tools\ServiceProvider;
+use Hybrid\Core\ServiceProvider;
 use Mythic\Customize\Customize;
+use Hybrid\View\Contracts\Engine as EngineContract;
+use Hybrid\View\Contracts\View as ViewContract;
 
 /**
  * App service provider.
@@ -35,6 +37,10 @@ class AppServiceProvider extends ServiceProvider {
 	 * @return void
 	 */
 	public function register() {
+
+        // Create aliases for the view and engine.
+        $this->app->alias( ViewContract::class, 'view' );
+        $this->app->alias( EngineContract::class, 'view/engine' );
 
 		// Bind a single instance of our customizer class.
 		$this->app->singleton( Customize::class );

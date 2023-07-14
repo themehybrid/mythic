@@ -7,7 +7,7 @@
  *
  * @package   Mythic
  * @author    Justin Tadlock <justintadlock@gmail.com>
- * @copyright 2018 Justin Tadlock
+ * @copyright 2023 Justin Tadlock
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://themehybrid.com/themes/mythic
  */
@@ -28,7 +28,18 @@ function sep( $sep = '' ) {
 		'mythic/sep',
 		sprintf(
 			' <span class="sep">%s</span> ',
-			$sep ?: esc_html_x( '&middot;', 'meta separator' )
+			$sep ?: esc_html_x( '&middot;', 'meta separator', 'mythic' )
 		)
 	);
 }
+
+/**
+ * Returns the relative path to where templates are held in the theme.
+ *
+ * @since  2.0.0
+ * @access public
+ * @return array
+ */
+add_filter( 'hybrid/template/path', function() {
+    return 'resources/views';
+} );
