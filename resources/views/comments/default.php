@@ -14,7 +14,7 @@
 
 			<?php wp_list_comments( [
 				'callback' => function( $comment, $args, $depth ) {
-					Hybrid\View\display( 'comment', Hybrid\Comment\hierarchy(), compact( 'comment', 'args', 'depth' ) );
+					Hybrid\View\display( 'comment', Hybrid\Theme\Comment\hierarchy(), compact( 'comment', 'args', 'depth' ) );
 				}
 			] ) ?>
 
@@ -25,7 +25,7 @@
 	<?php if ( ! comments_open() ) : ?>
 
 		<p class="comments__closed">
-			<?php esc_html_e( 'Comments are closed.' ) ?>
+			<?php esc_html_e( 'Comments are closed.', 'mythic' ) ?>
 		</p>
 
 	<?php endif ?>

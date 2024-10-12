@@ -8,7 +8,7 @@
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php Hybrid\View\display( 'entry/archive', Hybrid\Post\hierarchy() ) ?>
+				<?php Hybrid\View\display( 'entry/archive', Hybrid\Theme\Post\hierarchy() ) ?>
 
 			<?php endwhile ?>
 

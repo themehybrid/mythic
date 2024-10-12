@@ -6,7 +6,7 @@
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php Hybrid\View\display( 'entry/single', Hybrid\Post\hierarchy() ) ?>
+				<?php Hybrid\View\display( 'entry/single', Hybrid\Theme\Post\hierarchy() ) ?>
 
 				<?php comments_template() ?>
 

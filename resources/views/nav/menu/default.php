@@ -3,7 +3,7 @@
 	<nav <?php Hybrid\Attr\display( 'menu', $data->location ) ?>>
 
 		<h3 class="menu__title screen-reader-text">
-			<?php Hybrid\Menu\display_name( $data->location ) ?>
+			<?php Hybrid\Theme\Menu\display_name( $data->location ) ?>
 		</h3>
 
 		<?php wp_nav_menu( [
